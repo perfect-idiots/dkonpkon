@@ -21,22 +21,22 @@ function compile (source, target, level) {
     jtry(() => statSync(target).isDirectory(), () => false) || mkdirSync(target)
     readdirSync(source).forEach(item => compile(join(source, item), join(target, item), level + 1))
   } else if (stats.isFile()) {
-    const sourcecode = readFileSync(source).toString('utf8')
+    const sourcecode = readFileSync(source)
     const {dir, name} = parse(target)
     switch (extname(source)) {
       case '.pug': {
-        const fn = pug.compile(sourcecode, {doctype: 'html', pretty: true})
+        const fn = pug.compile(sourcecode.toString('utf8'), {doctype: 'html', pretty: true})
         const html = fn({projdir, src, out, source, target, sourcecode})
         writeFileSync(join(dir, name + '.html'), html, {encoding: 'utf8'})
         break
       }
       case '.stylus': {
-        const css = stylus.render(sourcecode)
+        const css = stylus.render(sourcecode.toString('utf8'))
         writeFileSync(join(dir, name + '.css'), css, {encoding: 'utf8'})
         break
       }
       case '.less': {
-        less.render(sourcecode).then(
+        less.render(sourcecode.toString('utf8')).then(
           ({css}) => writeFileSync(join(dir, name + '.css'), css, {encoding: 'utf8'})
         )
         break
