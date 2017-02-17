@@ -26,7 +26,7 @@ function compile (source, target, level) {
     switch (extname(source)) {
       case '.pug': {
         const fn = pug.compile(sourcecode.toString('utf8'), {doctype: 'html', pretty: true})
-        const html = fn({projdir, src, out, source, target, sourcecode})
+        const html = fn({projdir, src, out, source, target, sourcecode, require})
         writeFileSync(join(dir, name + '.html'), html, {encoding: 'utf8'})
         break
       }
