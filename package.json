@@ -8,7 +8,8 @@
     "just-try": "^2.0.1"
   },
   "scripts": {
-    "compile": "./script/compile.js"
+    "compile": "./script/compile.js",
+    "test": "npm run compile"
   },
   "author": "Hoang Van Khai <hvksmr1996@gmail.com>",
   "license": "MIT"
