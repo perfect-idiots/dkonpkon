@@ -11,6 +11,7 @@ const jtry = require('just-try')
 const projdir = dirname(__dirname)
 const src = join(projdir, 'src')
 const out = join(projdir, 'out')
+const lib = join(projdir, 'lib')
 
 compile(src, out, 0)
 info('done.')
@@ -25,8 +26,8 @@ function compile (source, target, level) {
     const {dir, name} = parse(target)
     switch (extname(source)) {
       case '.pug': {
-        const fn = pug.compile(sourcecode.toString('utf8'), {doctype: 'html', pretty: true})
-        const html = fn({projdir, src, out, source, target, sourcecode, require})
+        const fn = pug.compile(sourcecode.toString('utf8'), {doctype: 'html', pretty: true, filename: source})
+        const html = fn({projdir, src, out, source, target, sourcecode, require, getlib, jreq})
         writeFileSync(join(dir, name + '.html'), html, {encoding: 'utf8'})
         break
       }
@@ -48,4 +49,12 @@ function compile (source, target, level) {
   } else {
     throw new Error(`Invalid type of fs entry: ${source}`)
   }
+}
+
+function getlib (...name) {
+  return jreq(lib, ...name)
+}
+
+function jreq (...name) {
+  return require(join(...name))
 }

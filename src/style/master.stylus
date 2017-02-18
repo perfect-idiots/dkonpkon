@@ -1,0 +1,53 @@
+
+*
+  font-weight: normal
+  font-style: normal
+  font-family: 'Roboto', 'Product Sans', 'Cantarell', 'Segoe UI', 'Calibri', serif
+
+body
+  &.pattern-background
+    background-image: url(../image/wooden-pattern.png)
+  &.transparent-background
+    background-color: transparent
+
+footer
+  font-size: 0.75em
+
+button
+  background-color: red
+  border: 1px solid white
+  height: 2.5em
+  &:hover, &.hover
+    background-color: orange
+  &:active, &.active
+    background-color: yellow
+
+.center
+  text-align: center
+
+.horizontal
+  > *
+    display: inline-block
+
+.vertical
+  > *
+    display: block
+
+#main-side-pane
+  border: 1px solid red
+  background-color: rgba(255, 215, 125, 0.5)
+  padding: 0px
+  margin: 0px
+
+#main-nav
+  ul, ol, li
+    display: block
+    margin: 0px
+    padding: 0px
+  *
+    width: 256px
+
+#main-iframe
+  border: none
+  margin: 0px
+  padding: 0px

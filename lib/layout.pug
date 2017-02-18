@@ -1,0 +1,32 @@
+doctype html
+- const {parse} = require('path')
+- const {readdirSync} = require('fs')
+- const dash2cspc = getlib('dash-to-camel-and-spaces.js')
+html
+  head
+    meta(charset = 'utf-8')
+    title
+      block title
+    link(rel = 'stylesheet' href = '../style/master.css')
+  body.pattern-background
+    header#main-header
+      h1#main-title.center
+        block title
+          | Title
+    section#main-section.horizontal
+      block aside
+        aside#main-side-pane
+          header
+            h2 Navigation
+          nav#main-nav.vertical
+            ul.menu
+              each item in readdirSync('src/page')
+                - const {name} = parse(item)
+                li.menu-item: a(target = 'main-iframe' href = name + '.html')
+                  button= dash2cspc(name)
+      main
+        block main
+          article Main Content
+    footer#main-footer
+      section.center
+        p Copyright &copy; 2017 Hoàng Văn Khải
