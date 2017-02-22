@@ -26,7 +26,9 @@ html
               each item in sitemap
                 - const [title, filename] = item
                 li.menu-item(on-view = (filename === name))
-                  a(href = filename + '.html'): button: span.text= title
+                  a(href = filename + '.html'): button
+                    img.before.icon(src = '../image/' + filename + '.svg')
+                    span.text= title
     section#main-section.main
       header#main-header
       h1#main-title.center: block title

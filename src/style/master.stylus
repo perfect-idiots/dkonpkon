@@ -13,12 +13,16 @@ body
 body
   width: 100%
   aside-size = 3em
-  aside-icon-size = aside-size - 0.25em
+  aside-icon-size-subtract = 0.25em
+  aside-icon-size = aside-size - aside-icon-size-subtract
   aside-size-hover = 15em
+  aside-button-font-size = 1em
   .aside:not(:hover)
     width: aside-size
     .text
-      display: none
+      opacity: 0
+    button .icon
+      padding: aside-icon-size-subtract
   .aside:not(:hover) + .main
     width: 'calc(100% - %s)' % aside-size
   .aside:hover
@@ -50,15 +54,19 @@ body
       text-shadow: 1px 1px 1px white
     button
       font-size: 1em
-      height: 3em
+      height: aside-size
       background: blue
-      *
+      padding: 0px
+      .icon
         display: inline-block
-      img.icon
+        vertical-align: middle
+        height: aside-size
         left: 0px
         top: 0px
         width: aside-icon-size
         height: aside-icon-size
+      .text
+        width: 'calc(100% - %s)' % aside-icon-size
       &:hover
         background: lighten(blue, 25%)
       &:active
@@ -67,6 +75,9 @@ body
         content: '>'
         position: absolute
         right: 16px
+        padding-top: ((aside-size - aside-button-font-size) / 2)
+        line-height: 1em
+        font-size: aside-button-font-size
         font-weight: bold
         display: none
       &:hover::after
