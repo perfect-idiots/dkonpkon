@@ -1,17 +1,18 @@
 extends ../../lib/layout.pug
+include ../../lib/components.pug
 
 block title
   | Personal Information
 
 block main
   article
-    a(name = 'self'): h2 About myself
+    +subtitle(2, 'self', 'About myself')
     ul
       li Full Name: Hoàng Văn Khải
       li Year of Birth: 1996
       li Gender: Male
   article
-    a(name = 'family'): h2 About my family
+    +subtitle(2, 'family', 'About my family')
     ul
       li Father
         ul
