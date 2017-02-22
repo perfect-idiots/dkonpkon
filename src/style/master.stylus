@@ -23,9 +23,12 @@ body
     *
       width: 100%
       color: white
+      cursor: default
+      user-select: none
     .title
       padding: 0px
       margin: 0px
+      margin-bottom: 1em
       font-size: 0.75em
       text-transform: uppercase
       text-align: center
@@ -44,6 +47,10 @@ body
         right: 16px
         font-weight: bold
         display: inline-block
+    [on-view]
+      &, & *
+        text-shadow: 0px 0px 1px white
+        font-weight: bold
   .main
     position: absolute
     right: 0px
@@ -95,3 +102,11 @@ ul
   border: none
   margin: 0px
   padding: 0px
+
+a.subtitle
+  color: inherit
+  text-decoration: inherit
+  &:hover
+    .subtitle-header::after
+      content: ' #'
+      color: rgba(0, 0, 0, 0.5)
