@@ -14,10 +14,14 @@ body
   width: 100%
   .aside:not(:hover)
     width: 3em
+    .text
+      display: none
   .aside:not(:hover) + .main
     width: calc(100% - 3em)
   .aside:hover
     width: 15em
+    .text
+      display: inline-block
   .aside:hover + .main
     width: calc(100% - 15em)
   .aside
