@@ -1,2 +1,3 @@
 mixin subtitle(level, name, content)
-  a(name = name href = '#' + name): #{'h' + level} content
+  a.subtitle(name = name href = '#' + name)
+    #{'h' + level}.subtitle-header= content
