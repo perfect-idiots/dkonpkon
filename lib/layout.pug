@@ -20,13 +20,13 @@ html
     .aside.horizontal.hang-children
       block aside
         aside#main-side-pane
-          header: h2.title Navigation
+          header: h2.title: span.text Navigator
           nav#main-nav.vertical
             ul.menu
               each item in sitemap
                 - const [title, filename] = item
                 li.menu-item(on-view = (filename === name))
-                  a(href = filename + '.html'): button= title
+                  a(href = filename + '.html'): button: span.text= title
     section#main-section.main
       header#main-header
       h1#main-title.center: block title
