@@ -12,11 +12,18 @@ body
 
 body
   width: 100%
+  .aside:not(:hover)
+    width: 3em
+  .aside:not(:hover) + .main
+    width: calc(100% - 3em)
+  .aside:hover
+    width: 15em
+  .aside:hover + .main
+    width: calc(100% - 15em)
   .aside
     position: fixed
     left: 0px
     top: 0px
-    width: 20%
     height: 100%
     background: blue
     color: white
@@ -35,6 +42,7 @@ body
       font-family: 'Tahoma', 'Geneva', 'Verdana', sans-serif
       text-shadow: 1px 1px 1px white
     button
+      font-size: 1em
       height: 3em
       background: blue
       &:hover
@@ -46,16 +54,21 @@ body
         position: absolute
         right: 16px
         font-weight: bold
+        display: none
+      &:hover::after
         display: inline-block
+        opacity: 0.5
+      &:active::after
+        display: inline-block
+        opacity: 1
     [on-view]
       &, & *
         text-shadow: 0px 0px 1px white
         font-weight: bold
-  .main
+  .aside + .main
     position: absolute
     right: 0px
     top: 0px
-    width: 78%
   &, & .aside, & .main
     display: inline-block
     padding: 0px
