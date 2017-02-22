@@ -85,11 +85,6 @@ ul
   display: inline-block
   vertical-align: top
 
-# -side-pane
-  background-color: rgba(255, 215, 125, 0.5)
-  padding: 0px
-  margin: 0px
-
 #main-nav
   ul, ol, li
     display: block
