@@ -1,0 +1,16 @@
+*::-webkit-scrollbar
+  width: 0.75em
+  height: 0.75em
+  background: transparent
+  cursor: default
+
+*::-webkit-scrollbar-button
+  width: 0px
+  height: 0px
+
+*::-webkit-scrollbar-thumb
+  background: red
+  &:hover
+    background: orange
+  &:active
+    background: yellow
