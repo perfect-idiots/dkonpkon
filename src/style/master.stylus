@@ -6,7 +6,7 @@
 
 body
   &.pattern-background
-    background-image: white
+    background-color: white
   &.transparent-background
     background-color: transparent
 
