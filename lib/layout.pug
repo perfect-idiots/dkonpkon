@@ -1,11 +1,13 @@
 doctype html
 -
-  const {parse} = require('path')
+  const {parse, join} = require('path')
   const {readdirSync, readFileSync} = require('fs')
   const yaml = require('js-yaml')
   const dash2cspc = getlib('dash-to-camel-and-spaces.js')
   const getlibfile = getlib('getlibfile')
   const sitemap = yaml.load(getlibfile('map.yaml'))
+  const license = readFileSync(join(projdir, 'LICENSE.md'), {encoding: 'utf8'})
+| !{'<!-- \r\n' + license + '\r\n -->'}
 html
   head
     meta(charset = 'utf-8')
