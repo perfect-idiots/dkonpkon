@@ -1,6 +1,6 @@
 doctype html
 -
-  const {parse, join} = require('path')
+  const {parse, join, basename} = require('path')
   const {readdirSync, readFileSync} = require('fs')
   const yaml = require('js-yaml')
   const dash2cspc = getlib('dash-to-camel-and-spaces.js')
@@ -22,9 +22,9 @@ html
           nav#main-nav.vertical
             ul.menu
               each item in sitemap
-                - const [name, file] = item
-                li.menu-item: a(href = file + '.html')
-                  button= name
+                - const [title, filename] = item
+                li.menu-item(on-view = (filename === name))
+                  a(href = filename + '.html'): button= title
     section#main-section.main
       header#main-header
       h1#main-title.center: block title
