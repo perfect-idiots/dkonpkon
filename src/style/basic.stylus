@@ -1,0 +1,12 @@
+
+hidden, [hidden], .hidden
+  display: none !important
+
+b, .bold
+  font-weight: bold !important
+
+i, .italic
+  font-style: italic !important
+
+u, .underline
+  text-decoration: underline !important

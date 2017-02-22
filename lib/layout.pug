@@ -1,32 +1,35 @@
 doctype html
-- const {parse} = require('path')
-- const {readdirSync} = require('fs')
-- const dash2cspc = getlib('dash-to-camel-and-spaces.js')
+-
+  const {parse} = require('path')
+  const {readdirSync, readFileSync} = require('fs')
+  const yaml = require('js-yaml')
+  const dash2cspc = getlib('dash-to-camel-and-spaces.js')
+  const getlibfile = getlib('getlibfile')
+-
+  const sitemap = yaml.load(getlibfile('map.yaml'))
 html
   head
     meta(charset = 'utf-8')
-    title
-      block title
+    title: block title
+    link(rel = 'stylesheet' href = '../style/basic.css')
     link(rel = 'stylesheet' href = '../style/master.css')
-  body.pattern-background
-    header#main-header
-      h1#main-title.center
-        block title
-          | Title
-    section#main-section.horizontal
+  body.pattern-background.horizontal.hang-children
+    .aside.horizontal.hang-children
       block aside
         aside#main-side-pane
-          header
-            h2 Navigation
+          header: h2.title Navigation
           nav#main-nav.vertical
             ul.menu
-              each item in readdirSync('src/page')
-                - const {name} = parse(item)
-                li.menu-item: a(target = 'main-iframe' href = name + '.html')
-                  button= dash2cspc(name)
+              each item in sitemap
+                - const [name, file] = item
+                li.menu-item: a(href = file + '.html')
+                  button= name
+    section#main-section.main
+      header#main-header
+      h1#main-title.center: block title
       main
         block main
           article Main Content
-    footer#main-footer
-      section.center
-        p Copyright &copy; 2017 Hoàng Văn Khải
+      footer#main-footer
+        section.center
+          p Copyright &copy; 2017 Hoàng Văn Khải

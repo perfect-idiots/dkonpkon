@@ -5,10 +5,12 @@
   "dependencies": {
     "pug": "^2.0.0-beta11",
     "stylus": "^0.54.0",
-    "just-try": "^2.0.1"
+    "just-try": "^2.0.1",
+    "js-yaml": "^3.6.1"
   },
   "scripts": {
     "compile": "./script/compile.js",
+    "preview": "zsh -c 'sensible-browser ./out/index.html &; exit'",
     "test": "npm run compile"
   },
   "author": "Hoang Van Khai <hvksmr1996@gmail.com>",
