@@ -12,18 +12,21 @@ body
 
 body
   width: 100%
+  aside-size = 3em
+  aside-icon-size = aside-size - 0.25em
+  aside-size-hover = 15em
   .aside:not(:hover)
-    width: 3em
+    width: aside-size
     .text
       display: none
   .aside:not(:hover) + .main
-    width: calc(100% - 3em)
+    width: 'calc(100% - %s)' % aside-size
   .aside:hover
     width: 15em
     .text
       display: inline-block
   .aside:hover + .main
-    width: calc(100% - 15em)
+    width: 'calc(100% - %s)' % aside-size-hover
   .aside
     position: fixed
     left: 0px
@@ -49,6 +52,13 @@ body
       font-size: 1em
       height: 3em
       background: blue
+      *
+        display: inline-block
+      img.icon
+        left: 0px
+        top: 0px
+        width: aside-icon-size
+        height: aside-icon-size
       &:hover
         background: lighten(blue, 25%)
       &:active
