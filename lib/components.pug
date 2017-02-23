@@ -4,3 +4,7 @@ mixin subtitle(level, name, content)
 
 mixin image-container(src)
   figure.image-container: img.image(src = src)
+
+mixin font-icon-container(char, font)
+  figure.font-icon-container
+    .icon(style = {'font-family': font})= char
