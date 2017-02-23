@@ -1,3 +1,6 @@
 mixin subtitle(level, name, content)
   a.subtitle(name = name href = '#' + name)
-    #{'h' + level}.subtitle-header= content
+    #{'h' + level}.heading.subtitle-header= content
+
+mixin image-container(src)
+  .image-container: img.image(src = src)

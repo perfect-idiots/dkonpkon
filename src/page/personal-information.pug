@@ -7,14 +7,16 @@ block title
 block main
   .horizontal.horizontal-children.hang-children
     article
-      div
+      +image-container('../image/avatar.jpg')
+      .text
         +subtitle(2, 'self', 'About myself')
         ul
           li Full Name: Hoàng Văn Khải
           li Year of Birth: 1996
           li Gender: Male
     article
-      div
+      +image-container('../image/home.jpg')
+      .text
         +subtitle(2, 'family', 'About my family')
         ul
           li Father

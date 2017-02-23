@@ -12,6 +12,8 @@ html
   head
     meta(charset = 'utf-8')
     title: block title
+    block icon
+      link(rel = 'shortcut icon' href = '../image/icon.png')
     link(rel = 'stylesheet' href = '../style/font.css')
     link(rel = 'stylesheet' href = '../style/basic.css')
     link(rel = 'stylesheet' href = '../style/scrollbar.css')
@@ -31,7 +33,7 @@ html
                     span.text= title
     section#main-section.main
       header#main-header
-      h1#main-title.center: block title
+        h1#main-title.center: block title
       main
         block main
           article Main Content
