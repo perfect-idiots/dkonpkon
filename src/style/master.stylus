@@ -24,6 +24,8 @@ body
     width: aside-size
     .text
       opacity: 0
+    [on-view] button
+      background-color: rgba(0, 0, 0, 0.25)
     button
       .icon
         padding: aside-icon-size-subtract
@@ -151,6 +153,9 @@ ul
   &, & .image, & img
     width: 100%
     height: 100%
+    display: inline-block
+    padding: 0px
+    margin: 0px
 
 #main-nav
   ul, ol, li
