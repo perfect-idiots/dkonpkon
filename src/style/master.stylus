@@ -1,171 +1,171 @@
 
 *
-  font-weight: normal
-  font-style: normal
-  font-family: 'Roboto', 'Product Sans', 'Cantarell', 'Segoe UI', 'Verdana', 'Helvetica', sans-serif
-  transition-duration: 0.5s
-  transition-timing-function: ease
+  font-weight normal
+  font-style normal
+  font-family 'Roboto', 'Product Sans', 'Cantarell', 'Segoe UI', 'Verdana', 'Helvetica', sans-serif
+  transition-duration 0.5s
+  transition-timing-function ease
 
 body
   &.pattern-background
-    background-image: url(../image/wooden-pattern.png)
-    background-attachment: fixed
+    background-image url(../image/wooden-pattern.png)
+    background-attachment fixed
   &.transparent-background
-    background-color: transparent
+    background-color transparent
 
 body
-  width: 100%
+  width 100%
   aside-size = 3em
   aside-icon-size-subtract = 0.25em
   aside-icon-size = aside-size - aside-icon-size-subtract
   aside-size-hover = 15em
   aside-button-font-size = 1em
   .aside:not(:hover)
-    width: aside-size
+    width aside-size
     .text
-      opacity: 0
+      opacity 0
     [on-view] button
-      background-color: rgba(0, 0, 0, 0.25)
+      background-color rgba(0, 0, 0, 0.25)
     button
       .icon
-        padding: aside-icon-size-subtract
+        padding aside-icon-size-subtract
       .text
-        font-size: 0px
-        width: 0px
+        font-size 0px
+        width 0px
   .aside:not(:hover) + .main
-    width: 'calc(100% - %s)' % aside-size
+    width 'calc(100% - %s)' % aside-size
   .aside:hover
-    width: 15em
+    width 15em
     .text
-      display: inline-block
+      display inline-block
   .aside:hover + .main
-    width: 'calc(100% - %s)' % aside-size-hover
+    width 'calc(100% - %s)' % aside-size-hover
   .aside
-    position: fixed
-    left: 0px
-    top: 0px
-    height: 100%
-    background: blue
-    color: white
+    position fixed
+    left 0px
+    top 0px
+    height 100%
+    background blue
+    color white
     *
-      width: 100%
-      color: white
-      cursor: default
-      user-select: none
+      width 100%
+      color white
+      cursor default
+      user-select none
     .title
-      padding: 0px
-      margin: 0px
-      margin-bottom: 1em
-      font-size: 0.75em
-      text-transform: uppercase
-      text-align: center
-      font-family: 'Tahoma', 'Geneva', 'Verdana', sans-serif
-      text-shadow: 1px 1px 1px white
+      padding 0px
+      margin 0px
+      margin-bottom 1em
+      font-size 0.75em
+      text-transform uppercase
+      text-align center
+      font-family 'Tahoma', 'Geneva', 'Verdana', sans-serif
+      text-shadow 1px 1px 1px white
     button
-      font-size: 1em
-      height: aside-size
-      background: blue
-      padding: 0px
-      overflow: hidden
-      text-align: left
+      font-size 1em
+      height aside-size
+      background blue
+      padding 0px
+      overflow hidden
+      text-align left
       .icon
-        display: inline-block
-        vertical-align: middle
-        height: aside-size
-        left: 0px
-        width: aside-icon-size
-        height: aside-icon-size
+        display inline-block
+        vertical-align middle
+        height aside-size
+        left 0px
+        width aside-icon-size
+        height aside-icon-size
       .text
-        width: 'calc(100% - %s)' % aside-icon-size
-        text-align: center
+        width 'calc(100% - %s)' % aside-icon-size
+        text-align center
       &:hover
-        background: lighten(blue, 25%)
+        background lighten(blue, 25%)
       &:active
-        background: lighten(blue, 50%)
+        background lighten(blue, 50%)
       &::after
-        content: '>'
-        position: absolute
-        right: 16px
-        padding-top: ((aside-size - aside-button-font-size) / 2)
-        line-height: 1em
-        font-size: aside-button-font-size
-        font-weight: bold
-        display: none
+        content '>'
+        position absolute
+        right 16px
+        padding-top ((aside-size - aside-button-font-size) / 2)
+        line-height 1em
+        font-size aside-button-font-size
+        font-weight bold
+        display none
       &:hover::after
-        display: inline-block
-        opacity: 0.5
+        display inline-block
+        opacity 0.5
       &:active::after
-        display: inline-block
-        opacity: 1
+        display inline-block
+        opacity 1
     [on-view]
       &, & *
-        text-shadow: 0px 0px 1px white
-        font-weight: bold
+        text-shadow 0px 0px 1px white
+        font-weight bold
   .aside + .main
-    position: absolute
-    right: 0px
-    top: 0px
+    position absolute
+    right 0px
+    top 0px
   &, & .aside, & .main
-    display: inline-block
-    padding: 0px
-    margin: 0px
+    display inline-block
+    padding 0px
+    margin 0px
 
 footer
-  font-size: 0.75em
+  font-size 0.75em
 
 button
-  background-color: red
-  border: none
-  height: 2.5em
+  background-color red
+  border none
+  height 2.5em
   &:hover, &.hover
-    background-color: orange
+    background-color orange
   &:active, &.active
-    background-color: yellow
+    background-color yellow
 
 ul
-  margin-left: 20px
-  padding: 0px
+  margin-left 20px
+  padding 0px
 
 .center
-  text-align: center
+  text-align center
 
 .horizontal
   > *
-    display: inline-block
+    display inline-block
 
 .vertical
   > *
-    display: block
+    display block
 
 .horizontal-children
   & > * > *
-    display: inline-block
+    display inline-block
 
 .vertical-children
   & > * > *
-    display: inline-block
+    display inline-block
 
 .hang-children > *
-  display: inline-block
-  vertical-align: top
+  display inline-block
+  vertical-align top
 
 .horizontal article .image-container
   &, & .image, & img
-    width: 100%
-    height: 100%
-    display: inline-block
-    padding: 0px
-    margin: 0px
+    width 100%
+    height 100%
+    display inline-block
+    padding 0px
+    margin 0px
 
 #main-nav
   ul, ol, li
-    display: block
-    margin: 0px
-    padding: 0px
+    display block
+    margin 0px
+    padding 0px
 
 #main-section
   & > *
-    display: block
+    display block
   main
     szratio = 0.3
     width = 512px
@@ -175,41 +175,41 @@ ul
     artpadding = 7px
     imgwidth = (width * szratio)
     txtwidth = width - imgwidth - artmargin - artpadding - 5px
-    padding: padding
-    background-color: rgba(255, 255, 255, 0.3)
+    padding padding
+    background-color rgba(255, 255, 255, 0.3)
     article
-      width: width
-      height: height
-      margin: artmargin
-      padding: artpadding
-      background-color: rgba(255, 255, 255, 0.3)
+      width width
+      height height
+      margin artmargin
+      padding artpadding
+      background-color rgba(255, 255, 255, 0.3)
       & > *
-        height: height
+        height height
       .subtitle .heading
-        padding-top: 0px
-        margin-top: 0px
+        padding-top 0px
+        margin-top 0px
       .image-container
-        width: imgwidth
+        width imgwidth
       .text
-        overflow-x: auto
-        overflow-y: scroll
-        width: txtwidth
-        text-align: justify
+        overflow-x auto
+        overflow-y scroll
+        width txtwidth
+        text-align justify
 
 #main-iframe
-  border: none
-  margin: 0px
-  padding: 0px
+  border none
+  margin 0px
+  padding 0px
 
 a.subtitle
-  color: inherit
-  text-decoration: inherit
+  color inherit
+  text-decoration inherit
   .heading::after
-    content: ' #'
-    color: inherit
+    content ' #'
+    color inherit
   &:not(:hover)
     .heading::after
-      opacity: 0
+      opacity 0
   &:hover
     .heading::after
-      opacity: 0.5
+      opacity 0.5

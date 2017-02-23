@@ -1,12 +1,12 @@
 
 hidden, [hidden], .hidden
-  display: none !important
+  display none !important
 
 b, .bold
-  font-weight: bold !important
+  font-weight bold !important
 
 i, .italic
-  font-style: italic !important
+  font-style italic !important
 
 u, .underline
-  text-decoration: underline !important
+  text-decoration underline !important
