@@ -2,7 +2,7 @@
 *
   font-weight: normal
   font-style: normal
-  font-family: 'Roboto', 'Product Sans', 'Cantarell', 'Segoe UI', 'Verdana', 'Helvetica', serif
+  font-family: 'Roboto', 'Product Sans', 'Cantarell', 'Segoe UI', 'Verdana', 'Helvetica', sans-serif
   transition-duration: 0.5s
   transition-timing-function: ease
 
