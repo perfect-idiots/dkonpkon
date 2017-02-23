@@ -134,6 +134,14 @@ ul
   > *
     display: block
 
+.horizontal-children
+  > * > *
+    display: inline-block
+
+.vertical-children
+  > * > *
+    display: inline-block
+
 .hang-children > *
   display: inline-block
   vertical-align: top
