@@ -3,6 +3,8 @@
   font-weight: normal
   font-style: normal
   font-family: 'Roboto', 'Product Sans', 'Cantarell', 'Segoe UI', 'Verdana', 'Helvetica', serif
+  transition-duration: 0.5s
+  transition-timing-function: ease
 
 body
   &.pattern-background
@@ -21,8 +23,12 @@ body
     width: aside-size
     .text
       opacity: 0
-    button .icon
-      padding: aside-icon-size-subtract
+    button
+      .icon
+        padding: aside-icon-size-subtract
+      .text
+        font-size: 0px
+        width: 0px
   .aside:not(:hover) + .main
     width: 'calc(100% - %s)' % aside-size
   .aside:hover
@@ -57,12 +63,12 @@ body
       height: aside-size
       background: blue
       padding: 0px
+      overflow: hidden
       .icon
         display: inline-block
         vertical-align: middle
         height: aside-size
         left: 0px
-        top: 0px
         width: aside-icon-size
         height: aside-icon-size
       .text
