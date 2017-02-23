@@ -64,6 +64,7 @@ body
       background: blue
       padding: 0px
       overflow: hidden
+      text-align: left
       .icon
         display: inline-block
         vertical-align: middle
@@ -73,6 +74,7 @@ body
         height: aside-icon-size
       .text
         width: 'calc(100% - %s)' % aside-icon-size
+        text-align: center
       &:hover
         background: lighten(blue, 25%)
       &:active
