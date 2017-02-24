@@ -7,6 +7,12 @@
   transition-timing-function ease
 
 body
+  &.mountains-background
+    background-image url(../image/mountains-background.jpg)
+    background-attachment fixed
+    background-size cover
+    background-position center
+    background-repeat no-repeat
   &.pattern-background
     background-image url(../image/wooden-pattern.png)
     background-attachment fixed
