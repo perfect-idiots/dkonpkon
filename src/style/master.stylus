@@ -48,8 +48,6 @@ body
     *
       width 100%
       color white
-      cursor default
-      user-select none
     .title
       padding 0px
       margin 0px
@@ -181,8 +179,6 @@ img
     txtwidth = width - imgwidth - artmargin - artpadding - 5px
     padding padding
     background-color rgba(255, 255, 255, 0.3)
-    user-select none
-    cursor default
     article
       width width
       height height

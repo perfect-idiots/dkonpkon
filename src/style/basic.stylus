@@ -10,3 +10,18 @@ i, .italic
 
 u, .underline
   text-decoration underline !important
+
+:not(.allow-user-select)
+  user-select none
+
+.allow-user-select
+  user-select initial
+
+:not(.text-cursor):not(.pointer-cursor)
+  cursor default
+
+.text-cursor
+  cursor text
+
+.pointer-cursor
+  cursor pointer
