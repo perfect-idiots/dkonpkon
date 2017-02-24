@@ -126,6 +126,10 @@ ul
   margin-left 20px
   padding 0px
 
+img
+  -webkit-user-drag: none
+  -moz-user-drag: none    
+
 .center
   text-align center
 
@@ -177,6 +181,8 @@ ul
     txtwidth = width - imgwidth - artmargin - artpadding - 5px
     padding padding
     background-color rgba(255, 255, 255, 0.3)
+    user-select: none
+    cursor: default
     article
       width width
       height height
