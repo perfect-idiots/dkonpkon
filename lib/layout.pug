@@ -43,6 +43,7 @@ html
         block main
           article Main Content
       footer#main-footer
+        - const href = 'https://github.com/KSXGitHub/homework-project-personal-website/blob/master/LICENSE.md'
         section.center
           p
             div.
@@ -51,10 +52,6 @@ html
             div.
               This software comes with absolutely <strong>no warranty</strong>
             div.
-              See the
-              <a href="https://github.com/KSXGitHub/homework-project-personal-website/blob/master/LICENSE.md"> 
-                MIT License
-              </a>
-              for more details
+              See the #[a.underline.pointer-cursor(href = href) MIT License] for more details
 
 
