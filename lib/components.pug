@@ -31,3 +31,13 @@ mixin bgimage-container(url)
 mixin font-icon-container(char, font)
   figure.font-icon-container
     .icon(style = {'font-family': font})= char
+
+mixin icon(url)
+  -
+    const style = {
+      'background-image': `url(${url})`,
+      'background-position': 'center',
+      'background-size': 'contain',
+      'background-repeat': 'no-repeat'
+    }
+  .icon(style = style)

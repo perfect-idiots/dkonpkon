@@ -37,22 +37,24 @@ body
   aside-button-font-size = 1em
   .aside:not(:hover)
     width aside-size
+    padding-left aside-icon-size-subtract
     .text
       opacity 0
     button
+      height aside-size
       .icon
-        padding aside-icon-size-subtract
+        padding-right aside-icon-size-subtract
       .text
         font-size 0px
         width 0px
   .aside:not(:hover) + .main
-    width 'calc(100% - %s)' % aside-size
+    width 'calc(100% - %s)' % (aside-size + aside-icon-size-subtract)
   .aside:hover
     width 15em
     .text
       display inline-block
   .aside:hover + .main
-    width 'calc(100% - %s)' % aside-size-hover
+    width 'calc(100% - %s)' % (aside-size-hover + aside-icon-size-subtract)
   .aside
     position fixed
     left 0px

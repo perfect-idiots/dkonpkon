@@ -34,7 +34,7 @@ html
                 - const [title, filename] = item
                 li.menu-item(on-view = (filename === name))
                   a(href = filename + '.html'): button
-                    img.before.icon(src = '../image/' + filename + '.svg')
+                    .before.icon: +icon('../image/' + filename + '.svg')
                     span.text= title
     section#main-section.main
       header#main-header
