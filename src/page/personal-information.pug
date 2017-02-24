@@ -6,24 +6,18 @@ block title
 
 block main
   .horizontal.horizontal-children.hang-children
-    article
-      +image-container('../image/lego-batman.jpg')
-      .text
-        +subtitle(2, 'self', 'About myself')
-        ul
-          li Full Name: Hoàng Văn Khải
-          li Year of Birth: 1996
-          li Gender: Male
-    article
-      +image-container('../image/home.jpg')
-      .text
-        +subtitle(2, 'family', 'About my family')
-        ul
-          li Father
-            ul
-              li Name: <i>&lt;SECRET&gt;</i>
-              li Job: Farming
-          li Mother
-            ul
-              li Name: <i>&lt;SECRET&gt;</i>
-              li Job: Farming
+    +article(2, 'self', 'About myself', '../image/lego-batman.jpg')
+      ul
+        li Full Name: Hoàng Văn Khải
+        li Year of Birth: 1996
+        li Gender: Male 
+    +article(2, 'family', 'About my family', '../image/home.jpg')
+      ul
+        li Father
+          ul
+            li Name: <i>&lt;SECRET&gt;</i>
+            li Job: Farming
+        li Mother
+          ul
+            li Name: <i>&lt;SECRET&gt;</i>
+            li Job: Farming

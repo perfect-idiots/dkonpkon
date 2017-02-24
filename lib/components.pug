@@ -2,6 +2,18 @@ mixin subtitle(level, name, content)
   a.subtitle(name = name href = '#' + name)
     #{'h' + level}.heading.subtitle-header= content
 
+mixin article(level, name, title, image)
+  -
+    const {rngString} = getlib('random-string')
+    const checkbox = 'checkbox-' + rngString(8)
+  input(id = checkbox name = checkbox type = 'checkbox' hidden)
+  label(for = checkbox): article.horizontal.hang-children
+    if image
+      +image-container(image)
+    .text
+      +subtitle(level, name, title)
+      block
+
 mixin image-container(src)
   figure.image-container: img.image(src = src)
 
