@@ -1,3 +1,6 @@
+mixin style(href)
+  link(rel = 'stylesheet' type = 'text/css' href = href)
+
 mixin subtitle(level, name, content)
   a.subtitle(name = name href = '#' + name)
     #{'h' + level}.pointer-cursor.heading= content

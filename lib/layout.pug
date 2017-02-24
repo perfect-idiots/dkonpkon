@@ -7,6 +7,8 @@
   const sitemap = yaml.load(getlibfile('map.yaml'))
   const license = readFileSync(join(projdir, 'LICENSE.md'), {encoding: 'utf8'})
 
+include components.pug
+
 doctype html
 
 | !{'\n\n<!--\n' + license + '\n-->\n\n'}
@@ -17,10 +19,10 @@ html
     title: block title
     block icon
       link(rel = 'shortcut icon' href = '../image/icon.png')
-    link(rel = 'stylesheet' href = '../style/font.css')
-    link(rel = 'stylesheet' href = '../style/basic.css')
-    link(rel = 'stylesheet' href = '../style/scrollbar.css')
-    link(rel = 'stylesheet' href = '../style/master.css')
+    +style('../style/font.css')
+    +style('../style/basic.css')
+    +style('../style/scrollbar.css')
+    +style('../style/master.css')
   body.mountains-background.horizontal.hang-children
     .aside.horizontal.hang-children
       block aside
