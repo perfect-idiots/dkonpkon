@@ -12,6 +12,10 @@
 npm test
 ```
 
+## Preview
+
+Open `out` folder
+
 ## License
 
 See [MIT License](./LICENSE.md)
