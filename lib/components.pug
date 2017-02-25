@@ -1,8 +1,8 @@
 mixin style(href)
-  link(rel = 'stylesheet' type = 'text/css' href = href)
+  link(rel = 'stylesheet' type = 'text/css' href = href)&attributes(attributes)
 
 mixin subtitle(level, name, content)
-  a.subtitle(name = name href = '#' + name)
+  a.subtitle(name = name href = '#' + name)&attributes(attributes)
     #{'h' + level}.pointer-cursor.heading= content
 
 mixin article(level, name, title, image)
@@ -10,7 +10,7 @@ mixin article(level, name, title, image)
     const {rngString} = getlib('random-string')
     const checkbox = 'checkbox-' + rngString(8)
   input(id = checkbox name = checkbox type = 'checkbox' hidden)
-  label(for = checkbox): article.horizontal.hang-children
+  label(for = checkbox)&attributes(attributes): article.horizontal.hang-children
     if image
       +image-container(image)
     .text
@@ -18,18 +18,18 @@ mixin article(level, name, title, image)
       block
 
 mixin image-container(src)
-  figure.image-container: img.image(src = src)
+  figure.image-container&attributes(attributes): img.image(src = src)
 
 mixin bgimage-container(url)
   -
     const style = {
       background: `url(${url})`
     }
-  figure.bgimage-container
+  figure.bgimage-container&attributes(attributes)
     .bgimage(style = style)
 
 mixin font-icon-container(char, font)
-  figure.font-icon-container
+  figure.font-icon-container&attributes(attributes)
     .icon(style = {'font-family': font})= char
 
 mixin icon(url)
@@ -40,4 +40,4 @@ mixin icon(url)
       'background-size': 'contain',
       'background-repeat': 'no-repeat'
     }
-  .icon(style = style)
+  .icon(style = style)&attributes(attributes)
