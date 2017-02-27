@@ -200,8 +200,7 @@ img
         .image-container
           width imgwidth
         .text
-          overflow-x auto
-          overflow-y scroll
+          overflow hidden
           width txtwidth
           text-align justify
       &:hover
@@ -213,7 +212,6 @@ img
     .zoom-in:checked + .zoom-in-target
       padding = 2em
       position fixed
-      overflow scroll
       z-index 100
       background-color white
       left 0px
@@ -230,6 +228,8 @@ img
         top padding
         width 256px
         height 256px
+      .text
+        overflow auto
 
 #main-iframe
   border none
