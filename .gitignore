@@ -13,6 +13,8 @@ tmp.*
 temp.*
 *.tmp
 *.temp
+/src/media/*
+!/src/media/*.md
 
 # Logs
 logs
