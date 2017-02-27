@@ -229,7 +229,10 @@ img
         width 256px
         height 256px
       .text
+        font-size = 1.5em
         overflow auto
+        font-size font-size
+        padding (font-size / 2)
 
 #main-iframe
   border none
