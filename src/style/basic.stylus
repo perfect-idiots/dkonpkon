@@ -11,6 +11,9 @@ i, em, .italic
 u, .underline
   text-decoration underline !important
 
+code, .code
+  font-family 'consolas', 'Source Code Mono', 'Ubuntu Mono', 'Lucida Console', 'Courier New', monospace
+
 :not(.allow-user-select)
   user-select none
 
