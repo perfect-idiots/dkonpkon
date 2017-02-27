@@ -230,7 +230,7 @@ img
         width 256px
         height 256px
       .text
-        font-size = 1.5em
+        font-size = 1.25em
         font-size font-size
         padding (font-size / 2)
       &, & *
