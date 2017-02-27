@@ -248,7 +248,7 @@ img
         width imgsize
         height imgsize
       .text
-        font-size = 1.25em
+        font-size = 1em
         font-size font-size
         padding (font-size / 2)
         margin-right imgsize
