@@ -64,6 +64,8 @@ body
     color white
     overflow-x hidden
     overflow-y auto
+    box-shadow 1px 0px 5px black
+    z-index 50
     *
       width 100%
       color white
