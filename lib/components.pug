@@ -22,7 +22,6 @@ mixin article(level, name, title, image)
   -
     const {rngString} = getlib('random-string')
     const id = 'checkbox-' + rngString(8)
-  // input.zoom-in(id = id type = 'checkbox' hidden)
   +zoom-in(id)
   label.zoom-in-target(for = id)&attributes(attributes): article.horizontal.hang-children
     if image
