@@ -2,10 +2,10 @@
 hidden, [hidden], .hidden
   display none !important
 
-b, .bold
+b, strong, .bold, .strong
   font-weight bold !important
 
-i, .italic
+i, em, .italic
   font-style italic !important
 
 u, .underline
