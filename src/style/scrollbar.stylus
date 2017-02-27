@@ -8,8 +8,8 @@
   height 0px
 
 *::-webkit-scrollbar-thumb
-  background red
+  background rgba(255, 255, 255, 0.33)
   &:hover
-    background orange
+    background rgba(255, 255, 255, 0.66)
   &:active
-    background yellow
+    background rgba(255, 255, 255, 0.99)
