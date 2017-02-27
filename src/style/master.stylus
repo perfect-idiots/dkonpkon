@@ -132,7 +132,7 @@ ul
 
 img
   -webkit-user-drag none
-  -moz-user-drag none    
+  -moz-user-drag none
 
 .center
   text-align center
@@ -185,30 +185,51 @@ img
     txtwidth = width - imgwidth - artmargin - artpadding - 5px
     padding padding
     background-color rgba(255, 255, 255, 0.3)
-    article
-      width width
-      height height
-      margin artmargin
-      padding artpadding
-      background-color rgba(255, 255, 255, 0.3)
-      & > *
+    .zoom-in:not(:checked) + .zoom-in-target
+      article
+        width width
         height height
-      .subtitle .heading
-        padding-top 0px
-        margin-top 0px
-      .image-container
-        width imgwidth
-      .text
-        overflow-x auto
-        overflow-y scroll
-        width txtwidth
-        text-align justify
-    &:hover
-      article:hover
-        box-shadow 2px 2px 2px black
-      article:not(:hover)
-        filter blur(1px)
-        opacity 0.75
+        margin artmargin
+        padding artpadding
+        background-color rgba(255, 255, 255, 0.3)
+        & > *
+          height height
+        .subtitle .heading
+          padding-top 0px
+          margin-top 0px
+        .image-container
+          width imgwidth
+        .text
+          overflow-x auto
+          overflow-y scroll
+          width txtwidth
+          text-align justify
+      &:hover
+        article:hover
+          box-shadow 2px 2px 2px black
+        article:not(:hover)
+          filter blur(1px)
+          opacity 0.75
+    .zoom-in:checked + .zoom-in-target
+      padding = 2em
+      position fixed
+      overflow scroll
+      z-index 100
+      background-color white
+      left 0px
+      top 0px
+      right 0px
+      bottom 0px
+      padding padding
+      *
+        user-select initial
+        cursor initial
+      .image
+        position absolute
+        right padding
+        top padding
+        width 256px
+        height 256px
 
 #main-iframe
   border none

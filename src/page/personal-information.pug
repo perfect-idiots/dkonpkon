@@ -7,17 +7,21 @@ block title
 block main
   horizontal.horizontal-children.hang-children
     +article(2, 'self', 'About myself', '../image/lego-batman.jpg')
-      ul
-        li Full Name: Hoàng Văn Khải
-        li Year of Birth: 1996
-        li Gender: Male 
+      .description
+        ul
+          li Full Name: Hoàng Văn Khải
+          li Year of Birth: 1996
+          li Gender: Male
+      .content
     +article(2, 'family', 'About my family', '../image/home.jpg')
-      ul
-        li Father
-          ul
-            li Name: <i>&lt;SECRET&gt;</i>
-            li Job: Farming
-        li Mother
-          ul
-            li Name: <i>&lt;SECRET&gt;</i>
-            li Job: Farming
+      .description
+        ul
+          li Father
+            ul
+              li Name: <i>&lt;SECRET&gt;</i>
+              li Job: Farming
+          li Mother
+            ul
+              li Name: <i>&lt;SECRET&gt;</i>
+              li Job: Farming
+      .content
