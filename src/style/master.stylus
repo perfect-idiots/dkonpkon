@@ -203,12 +203,12 @@ img
           overflow hidden
           width txtwidth
           text-align justify
-      &:hover
-        article:hover
-          box-shadow 2px 2px 2px black
-        article:not(:hover)
-          filter blur(1px)
-          opacity 0.75
+    &:hover .zoom-in:not(:checked) + .zoom-in-target
+      article:hover
+        box-shadow 2px 2px 2px black
+      article:not(:hover)
+        filter blur(1px)
+        opacity 0.75
     .zoom-in:checked + .zoom-in-target
       padding = 2em
       position fixed
