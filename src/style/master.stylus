@@ -205,6 +205,15 @@ img
           overflow hidden
           width txtwidth
           text-align justify
+        &::after
+          content 'Click to read more'
+          text-align right
+          color rgba(0, 0, 0, 0.33)
+          display inline-block
+          position relative
+          right (artmargin + artpadding)
+          bottom (artmargin + artpadding + 5px)
+          width width
         .zoom-out-button
           display none
     &:hover .zoom-in:not(:checked) + .zoom-in-target
