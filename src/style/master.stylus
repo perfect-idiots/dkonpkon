@@ -206,7 +206,7 @@ img
           width txtwidth
           text-align justify
         &::after
-          content 'Click to read more'
+          content 'Click here to read more'
           text-align right
           color rgba(0, 0, 0, 0.33)
           display inline-block
