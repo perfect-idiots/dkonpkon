@@ -214,6 +214,8 @@ img
           right (artmargin + artpadding)
           bottom (artmargin + artpadding + 5px)
           width width
+        &:hover::after
+          color rgba(0, 0, 0, 0.66)
         .zoom-out-button
           display none
     &:hover .zoom-in:not(:checked) + .zoom-in-target
