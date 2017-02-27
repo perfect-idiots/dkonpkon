@@ -228,6 +228,7 @@ img
         opacity 0.75
     .zoom-in:checked + .zoom-in-target
       padding = 2em
+      imgsize = 256px
       position fixed
       z-index 100
       background-color white
@@ -244,12 +245,13 @@ img
         position absolute
         right padding
         top padding
-        width 256px
-        height 256px
+        width imgsize
+        height imgsize
       .text
         font-size = 1.25em
         font-size font-size
         padding (font-size / 2)
+        margin-right imgsize
       .zoom-out-button
         width = 15em
         height = 3em
