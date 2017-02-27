@@ -203,6 +203,8 @@ img
           overflow hidden
           width txtwidth
           text-align justify
+        .zoom-out-button
+          display none
     &:hover .zoom-in:not(:checked) + .zoom-in-target
       article:hover
         box-shadow 2px 2px 2px black
@@ -233,6 +235,30 @@ img
         font-size = 1.25em
         font-size font-size
         padding (font-size / 2)
+      .zoom-out-button
+        width = 15em
+        height = 3em
+        background transparent
+        &::before
+          content 'close'
+          text-transform uppercase
+          text-align center
+          vertical-align middle
+          display inline-block
+          background #446cb3
+          color white
+          font-size 1em
+          position fixed
+          right padding
+          bottom padding
+          width width
+          height height
+          line-height height
+        &:not(:hover)
+          opacity 0.5
+        &:hover, &:hover::before
+          opacity 1
+          box-shadow 0px 0px 3px blue
       &, & *
         &::-webkit-scrollbar-thumb
           background red

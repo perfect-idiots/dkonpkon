@@ -1,6 +1,19 @@
 mixin style(href)
   link(rel = 'stylesheet' type = 'text/css' href = href)&attributes(attributes)
 
+mixin zoom-in(id)
+  input.zoom-in(
+    id = (id || 'default-zoom-in')
+    name = 'zoom-in'
+    type = 'radio'
+    checked = !id
+    hidden
+  )&attributes(attributes)
+
+mixin zoom-out-button
+  label.zoom-out-button(for = 'default-zoom-in')&attributes(attributes)
+    block
+
 mixin subtitle(level, name, content)
   a.subtitle(name = name href = '#' + name)&attributes(attributes)
     #{'h' + level}.pointer-cursor.heading= content
@@ -8,14 +21,16 @@ mixin subtitle(level, name, content)
 mixin article(level, name, title, image)
   -
     const {rngString} = getlib('random-string')
-    const checkbox = 'checkbox-' + rngString(8)
-  input.zoom-in(id = checkbox type = 'checkbox' hidden)
-  label.zoom-in-target(for = checkbox)&attributes(attributes): article.horizontal.hang-children
+    const id = 'checkbox-' + rngString(8)
+  // input.zoom-in(id = id type = 'checkbox' hidden)
+  +zoom-in(id)
+  label.zoom-in-target(for = id)&attributes(attributes): article.horizontal.hang-children
     if image
       +image-container(image)
     .text
       +subtitle(level, name, title)
       block
+    +zoom-out-button
 
 mixin image-container(src)
   figure.image-container&attributes(attributes): img.image(src = src)
