@@ -205,6 +205,8 @@ img
           overflow hidden
           width txtwidth
           text-align justify
+          :not(.description)
+            display none
         &::after
           content 'Click here to read more'
           text-align right
