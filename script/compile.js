@@ -24,7 +24,7 @@ function compile (source, target, level) {
   } else if (stats.isFile()) {
     const sourcecode = readFileSync(source)
     const {dir, name} = parse(target)
-    switch (extname(source)) {
+    switch (extname(source).toLowerCase()) {
       case '.pug': case '.jade': {
         const fn = pug.compile(sourcecode.toString('utf8'), {doctype: 'html', pretty: true, filename: source})
         const html = fn({projdir, src, out, source, target, dir, name, sourcecode, require, getlib, jreq})
