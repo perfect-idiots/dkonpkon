@@ -1,4 +1,4 @@
-# Homework: Personal Website
+# Homework: Group Website
 
 ## Requirements
 
@@ -8,7 +8,16 @@
 
 ## Building
 
+### Install Dependencies
+
+```bash
+npm install
+npm install --only=dev
 ```
+
+### Build stuffs
+
+```bash
 npm test
 ```
 
