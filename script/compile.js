@@ -3,9 +3,11 @@
 
 const {dirname, extname, join, parse} = require('path')
 const {readdirSync, readFileSync, statSync, mkdirSync, writeFileSync} = require('fs')
+const {assign} = Object
 const {info} = global.console
 const pug = require('pug')
 const stylus = require('stylus')
+const markdown = require('jstransformer-markdown-it')
 const less = require('less')
 const jtry = require('just-try')
 const projdir = dirname(__dirname)
@@ -26,7 +28,8 @@ function compile (source, target, level) {
     const {dir, name} = parse(target)
     switch (extname(source).toLowerCase()) {
       case '.pug': case '.jade': {
-        const fn = pug.compile(sourcecode.toString('utf8'), {doctype: 'html', pretty: true, filename: source})
+        const filters = {md: renderMarkdownIt}
+        const fn = pug.compile(sourcecode.toString('utf8'), {doctype: 'html', pretty: true, filename: source, filters})
         const html = fn({projdir, src, out, source, target, dir, name, sourcecode, require, getlib, jreq})
         writeFileSync(join(dir, name + '.html'), html, {encoding: 'utf8'})
         break
@@ -57,4 +60,9 @@ function getlib (...name) {
 
 function jreq (...name) {
   return require(join(...name))
+}
+
+function renderMarkdownIt (text, options) {
+  const actualOptions = assign(options, {linkify: true, langPrefix: 'markdown-it'})
+  return markdown.render(text, actualOptions)
 }
