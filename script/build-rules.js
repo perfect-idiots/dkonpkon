@@ -1,6 +1,6 @@
 'use strict'
 
-const {assign} = Object
+const {assign, getOwnPropertyNames} = Object
 
 module.exports = [
   [
@@ -16,14 +16,13 @@ module.exports = [
   [
     /\.(stylus|styl)$/,
     '.css',
-    (sourcecode, locals) => {
-      const stylus = require('stylus')
-      let object = stylus(sourcecode.toString('utf8'))
-      for (const name in locals) {
-        object = object.define(name, locals[name])
-      }
-      return object.render()
-    }
+    (sourcecode, locals) =>
+      getOwnPropertyNames(locals)
+        .reduce(
+          (object, name) => object.define(name, locals[name]),
+          require('stylus')(sourcecode.toString('utf8'))
+        )
+        .render()
   ]
 ]
 
