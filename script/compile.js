@@ -1,21 +1,15 @@
 #! /usr/bin/env node
 'use strict'
 
-const {dirname, extname, join, parse} = require('path')
+const {dirname, join, parse} = require('path')
 const {readdirSync, readFileSync, statSync, mkdirSync, writeFileSync} = require('fs')
-const {assign} = Object
 const {info} = global.console
-const pug = require('pug')
-const stylus = require('stylus')
-const markdown = require('jstransformer-markdown-it')
-const less = require('less')
 const jtry = require('just-try')
 const rgxmap = require('./build-rules.js')
 const projdir = dirname(__dirname)
 const src = join(projdir, 'src')
 const out = join(projdir, 'out')
 const lib = join(projdir, 'lib')
-const outfolder = new Set()
 
 compile(src, out, 0)
 info('done.')
@@ -48,9 +42,4 @@ function getlib (...name) {
 
 function jreq (...name) {
   return require(join(...name))
-}
-
-function renderMarkdownIt (text, options) {
-  const actualOptions = assign(options, {linkify: true, langPrefix: 'markdown-it'})
-  return markdown.render(text, actualOptions)
 }
