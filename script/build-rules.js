@@ -41,6 +41,6 @@ function renderMarkdownIt (text, options) {
     highlight: true,
     langPrefix: 'markdown-language-'
   }
-  const actualOptions = assign(options, defaultOptions)
+  const actualOptions = assign({}, defaultOptions, options)
   return require('jstransformer-markdown-it').render(text, actualOptions)
 }
