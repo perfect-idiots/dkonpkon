@@ -15,6 +15,7 @@ const projdir = dirname(__dirname)
 const src = join(projdir, 'src')
 const out = join(projdir, 'out')
 const lib = join(projdir, 'lib')
+const outfolder = new Set()
 
 compile(src, out, 0)
 info('done.')
@@ -29,9 +30,10 @@ function compile (source, target, level) {
     const {dir, name} = parse(target)
     rgxmap.some(([regex, suffix, compile]) => {
       if (regex.test(source)) {
+        const target = join(dir, name + suffix)
         const locals = {projdir, src, out, source, target, dir, name, sourcecode, require, getlib, jreq}
         const output = compile(sourcecode, locals)
-        writeFileSync(join(dir, name + suffix), output)
+        writeFileSync(target, output)
         return true
       }
     }) || writeFileSync(target, sourcecode)
