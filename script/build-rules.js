@@ -27,7 +27,7 @@ module.exports = [
   [
     /\.(markdown-it|markdown|md)$/,
     '.html',
-    (sourcecode) =>
+    sourcecode =>
       require('jstransformer-markdown-it').render(sourcecode.toString('utf8'))
   ]
 ]
