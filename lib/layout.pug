@@ -1,56 +1,6 @@
--
-  const {parse, join, basename} = require('path')
-  const {readdirSync, readFileSync} = require('fs')
-  const yaml = require('js-yaml')
-  const dash2cspc = getlib('dash-to-camel-and-spaces.js')
-  const getlibfile = getlib('getlibfile.js')
-  const sitemap = yaml.load(getlibfile('map.yaml'))
-  const license = readFileSync(join(projdir, 'LICENSE.md'), {encoding: 'utf8'})
 
 include components.pug
 
 doctype html
 
 | !{'\n\n<!--\n' + license + '\n-->\n\n'}
-
-html
-  head
-    meta(charset = 'utf-8')
-    title: block title
-    block icon
-      link(rel = 'shortcut icon' href = '../image/icon.png')
-    +style('../style/font.css')
-    +style('../style/basic.css')
-    +style('../style/scrollbar.css')
-    +style('../style/master.css')
-  body.mountains-background.horizontal.hang-children
-    +zoom-in
-    .aside.horizontal.hang-children
-      block aside
-        aside#main-side-pane
-          header: h2.title: span.text Navigator
-          nav#main-nav.vertical
-            ul.menu
-              each item in sitemap
-                - const [title, filename] = item
-                li.menu-item(on-view = (filename === name))
-                  a(href = filename + '.html'): button
-                    .before.icon: +icon('../image/' + filename + '.svg')
-                    span.text= title
-    section#main-section.main
-      header#main-header
-        h1#main-title.center: block title
-      main
-        block main
-          article Main Content
-      footer#main-footer
-        - const href = 'https://github.com/KSXGitHub/homework-project-personal-website/blob/master/LICENSE.md'
-        section.center
-          p
-            div.
-              Copyright &copy; 2017 Hoàng Văn Khải
-          p
-            div.
-              This software comes with absolutely <strong>no warranty</strong>
-            div.
-              See the #[a.underline.pointer-cursor(href = href) MIT License] for more details

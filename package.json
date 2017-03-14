@@ -1,5 +1,5 @@
 {
-  "name": "personal-website",
+  "name": "dkonpkon",
   "version": "0.0.0",
   "description": "Just a website",
   "dependencies": {
@@ -8,12 +8,13 @@
     "just-try": "^2.0.1",
     "js-yaml": "^3.6.1",
     "less": "^2.7.2",
-    "jstransformer-markdown-it": "^2.0.0"
+    "jstransformer-markdown-it": "^2.0.0",
+    "standard": "^8.4.0"
   },
   "scripts": {
     "compile": "node ./script/compile.js",
     "preview": "zsh -c 'sensible-browser ./out/index.html &; exit'",
-    "test": "npm run compile"
+    "test": "standard && npm run compile"
   },
   "author": "Hoang Van Khai <hvksmr1996@gmail.com>",
   "license": "MIT"
