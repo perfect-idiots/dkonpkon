@@ -10,6 +10,7 @@ out
 out.*
 quick-test
 quick-test.*
+*.vscode
 tmp
 temp
 tmp.*
