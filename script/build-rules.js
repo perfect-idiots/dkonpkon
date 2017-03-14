@@ -23,6 +23,12 @@ module.exports = [
           require('stylus')(sourcecode.toString('utf8'))
         )
         .render()
+  ],
+  [
+    /\.(markdown-it|markdown|md)$/,
+    '.html',
+    (sourcecode) =>
+      require('jstransformer-markdown-it').render(sourcecode.toString('utf8'))
   ]
 ]
 
