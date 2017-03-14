@@ -33,6 +33,14 @@ module.exports = [
 ]
 
 function renderMarkdownIt (text, options) {
-  const actualOptions = assign(options, {linkify: true, langPrefix: 'markdown-it'})
+  const defaultOptions = {
+    linkify: true,
+    typographer: true,
+    html: true,
+    breaks: false,
+    highlight: true,
+    langPrefix: 'markdown-language-'
+  }
+  const actualOptions = assign(options, defaultOptions)
   return require('jstransformer-markdown-it').render(text, actualOptions)
 }
