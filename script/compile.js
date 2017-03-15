@@ -38,7 +38,7 @@ function compile (source, target, level) {
         info(':: Compiling ' + source)
         const output = compile(sourcecode, locals)
         writeFileSync(target, output)
-        info('-- Created ' + target)
+        info('   Created ' + target)
         return true
       } else {
         info(':: Skipping ' + source)
@@ -75,7 +75,7 @@ function updateVersion (source, target) {
   if (sourcemtime > targetmtime) {
     info(':: Copying ' + source)
     writeFileSync(target, readFileSync(source))
-    info('-- Created ' + target)
+    info('   Created ' + target)
   } else {
     info(':: Skipping ' + source)
   }
@@ -84,11 +84,11 @@ function updateVersion (source, target) {
 function removeEmptyDirectory (dirname) {
   readdirSync(dirname).length || jtry(() => {
     rmdirSync(dirname)
-    info('-- Removed ' + dirname)
+    info('   Removed ' + dirname)
   })
 }
 
 function removeFile (filename) {
   unlinkSync(filename)
-  info('-- Removed ' + filename)
+  info('   Removed ' + filename)
 }
