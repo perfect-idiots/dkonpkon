@@ -59,7 +59,7 @@ function updateVersion (source, target) {
   if (sourcemtime > targetmtime) {
     info(':: Copying ' + source)
     writeFileSync(target, readFileSync(source))
-    info(':: Created ' + target)
+    info('-- Created ' + target)
   } else {
     info(':: Skipping ' + source)
   }
