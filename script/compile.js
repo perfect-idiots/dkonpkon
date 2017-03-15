@@ -36,7 +36,7 @@ function compile (source, target, level) {
         info('-- Created ' + target)
         return true
       } else {
-        info(':: Skiping ' + source)
+        info(':: Skipping ' + source)
         return true
       }
     }) || updateVersion(source, target)
@@ -61,6 +61,6 @@ function updateVersion (source, target) {
     writeFileSync(target, readFileSync(source))
     info(':: Created ' + target)
   } else {
-    info(':: Skiping ' + source)
+    info(':: Skipping ' + source)
   }
 }
