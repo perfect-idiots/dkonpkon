@@ -36,6 +36,7 @@ function compile (source, target, level) {
         return true
       } else {
         console.info(':: Skiping ' + source)
+        return true
       }
     }) || writeFileSync(target, sourcecode)
   } else {
