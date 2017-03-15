@@ -38,10 +38,10 @@ function compile (source, target, level) {
         info('▸▸ @bd ' + source)
         const output = compile(sourcecode, locals)
         writeFileSync(target, output)
-        info('   +++ ' + target)
+        info('   +++ ' + target + ' (up to date)')
         return true
       } else {
-        info('▸▸ @ig ' + source)
+        info('▸▸ @ig ' + source + ' (already up to date)')
         return true
       }
     }) || updateVersion(source, target)
@@ -75,9 +75,9 @@ function updateVersion (source, target) {
   if (sourcemtime > targetmtime) {
     info('▸▸ @cp ' + source)
     writeFileSync(target, readFileSync(source))
-    info('   +++ ' + target)
+    info('   +++ ' + target + ' (up to date)')
   } else {
-    info('▸▸ @ig ' + source)
+    info('▸▸ @ig ' + source + ' (already up to date)')
   }
 }
 
@@ -85,12 +85,12 @@ function removeEmptyDirectory (dirname) {
   readdirSync(dirname).length || jtry(() => {
     info('▸▸ @rm ' + dirname)
     rmdirSync(dirname)
-    info('   --- ' + dirname)
+    info('   --- ' + dirname + ' (empty directory)')
   })
 }
 
 function removeFile (filename) {
   info('▸▸ @rm ' + filename)
   unlinkSync(filename)
-  info('   --- ' + filename)
+  info('   --- ' + filename + ' (redundant file)')
 }
