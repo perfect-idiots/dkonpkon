@@ -2,7 +2,7 @@
 'use strict'
 
 const {dirname, join, parse} = require('path')
-const {readdirSync, readFileSync, statSync, mkdirSync, writeFileSync} = require('fs')
+const {readdirSync, readFileSync, statSync, mkdirSync, rmdirSync, writeFileSync, unlinkSync} = require('fs')
 const {info} = global.console
 const jtry = require('just-try')
 const rgxmap = require('./build-rules.js')
@@ -11,8 +11,10 @@ const src = join(projdir, 'src')
 const out = join(projdir, 'out')
 const lib = join(projdir, 'lib')
 const tryGetModifiedDate = file => jtry(() => statSync(file).mtime, () => -Infinity)
+const createdOutputFiles = new Set()
 
 compile(src, out, 0)
+clean(out)
 info('done.')
 
 function compile (source, target, level) {
@@ -27,6 +29,7 @@ function compile (source, target, level) {
       const target = join(dir, name + suffix)
       const sourcemtime = stats.mtime
       const targetmtime = tryGetModifiedDate(target)
+      createdOutputFiles.add(target)
       if (sourcemtime > targetmtime) {
         const sourcecode = readFileSync(source)
         const locals = {projdir, src, out, source, target, dir, name, sourcecode, require, getlib, jreq, sourcemtime, targetmtime}
@@ -45,6 +48,16 @@ function compile (source, target, level) {
   }
 }
 
+function clean (target) {
+  const stats = statSync(target)
+  if (stats.isDirectory()) {
+    readdirSync(target).forEach(item => clean(join(target, item)))
+    removeEmptyDirectory(target)
+  } else if (stats.isFile()) {
+    createdOutputFiles.has(target) || removeFile(target)
+  }
+}
+
 function getlib (...name) {
   return jreq(lib, ...name)
 }
@@ -56,6 +69,7 @@ function jreq (...name) {
 function updateVersion (source, target) {
   const sourcemtime = tryGetModifiedDate(source)
   const targetmtime = tryGetModifiedDate(target)
+  createdOutputFiles.add(target)
   if (sourcemtime > targetmtime) {
     info(':: Copying ' + source)
     writeFileSync(target, readFileSync(source))
@@ -63,4 +77,16 @@ function updateVersion (source, target) {
   } else {
     info(':: Skipping ' + source)
   }
+}
+
+function removeEmptyDirectory (dirname) {
+  readdirSync(dirname).length || jtry(() => {
+    rmdirSync(dirname)
+    info('-- Removed ' + dirname)
+  })
+}
+
+function removeFile (filename) {
+  unlinkSync(filename)
+  info('-- Removed ' + filename)
 }
