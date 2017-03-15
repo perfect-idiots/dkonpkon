@@ -20,7 +20,6 @@ function compile (source, target, level) {
     jtry(() => statSync(target).isDirectory(), () => false) || mkdirSync(target)
     readdirSync(source).forEach(item => compile(join(source, item), join(target, item), level + 1))
   } else if (stats.isFile()) {
-    const sourcecode = readFileSync(source)
     const {dir, name} = parse(target)
     rgxmap.some(([regex, suffix, compile]) => {
       if (!regex.test(source)) return false
@@ -28,6 +27,7 @@ function compile (source, target, level) {
       const sourcemtime = stats.mtime
       const targetmtime = jtry(() => statSync(target).mtime, () => -Infinity)
       if (sourcemtime > targetmtime) {
+        const sourcecode = readFileSync(source)
         const locals = {projdir, src, out, source, target, dir, name, sourcecode, require, getlib, jreq, sourcemtime, targetmtime}
         console.info(':: Compiling ' + source)
         const output = compile(sourcecode, locals)
