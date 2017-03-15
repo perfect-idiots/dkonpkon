@@ -10,6 +10,7 @@ const projdir = dirname(__dirname)
 const src = join(projdir, 'src')
 const out = join(projdir, 'out')
 const lib = join(projdir, 'lib')
+const tryGetModifiedDate = file => jtry(() => statSync(file).mtime, () => -Infinity)
 
 compile(src, out, 0)
 info('done.')
@@ -25,7 +26,7 @@ function compile (source, target, level) {
       if (!regex.test(source)) return false
       const target = join(dir, name + suffix)
       const sourcemtime = stats.mtime
-      const targetmtime = jtry(() => statSync(target).mtime, () => -Infinity)
+      const targetmtime = tryGetModifiedDate(target)
       if (sourcemtime > targetmtime) {
         const sourcecode = readFileSync(source)
         const locals = {projdir, src, out, source, target, dir, name, sourcecode, require, getlib, jreq, sourcemtime, targetmtime}
@@ -38,7 +39,7 @@ function compile (source, target, level) {
         console.info(':: Skiping ' + source)
         return true
       }
-    }) || updateVersion(target, source)
+    }) || updateVersion(source, target)
   } else {
     throw new Error(`Invalid type of fs entry: ${source}`)
   }
@@ -52,4 +53,8 @@ function jreq (...name) {
   return require(join(...name))
 }
 
-function updateVersion () {}
+function updateVersion (source, target) {
+  const sourcemtime = tryGetModifiedDate(source)
+  const targetmtime = tryGetModifiedDate(target)
+  sourcemtime > targetmtime && writeFileSync(target, readFileSync(source))
+}
