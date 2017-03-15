@@ -30,13 +30,13 @@ function compile (source, target, level) {
       if (sourcemtime > targetmtime) {
         const sourcecode = readFileSync(source)
         const locals = {projdir, src, out, source, target, dir, name, sourcecode, require, getlib, jreq, sourcemtime, targetmtime}
-        console.info(':: Compiling ' + source)
+        info(':: Compiling ' + source)
         const output = compile(sourcecode, locals)
         writeFileSync(target, output)
-        console.info('-- Created ' + target)
+        info('-- Created ' + target)
         return true
       } else {
-        console.info(':: Skiping ' + source)
+        info(':: Skipping ' + source)
         return true
       }
     }) || updateVersion(source, target)
@@ -56,5 +56,11 @@ function jreq (...name) {
 function updateVersion (source, target) {
   const sourcemtime = tryGetModifiedDate(source)
   const targetmtime = tryGetModifiedDate(target)
-  sourcemtime > targetmtime && writeFileSync(target, readFileSync(source))
+  if (sourcemtime > targetmtime) {
+    info(':: Copying ' + source)
+    writeFileSync(target, readFileSync(source))
+    info(':: Created ' + target)
+  } else {
+    info(':: Skipping ' + source)
+  }
 }
