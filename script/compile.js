@@ -35,13 +35,13 @@ function compile (source, target, level) {
       if (sourcemtime > targetmtime) {
         const sourcecode = readFileSync(source)
         const locals = {projdir, src, out, source, target, dir, name, sourcecode, require, getlib, jreq, sourcemtime, targetmtime}
-        info(':: Compiling ' + source)
+        info('▸▸ @bd ' + source)
         const output = compile(sourcecode, locals)
         writeFileSync(target, output)
-        info('   Created ' + target)
+        info('   +++ ' + target + ' (up to date)')
         return true
       } else {
-        info(':: Skipping ' + source)
+        info('▸▸ @ig ' + source + ' (already up to date)')
         return true
       }
     }) || updateVersion(source, target)
@@ -73,22 +73,24 @@ function updateVersion (source, target) {
   const targetmtime = tryGetModifiedDate(target)
   createdOutputFiles.add(target)
   if (sourcemtime > targetmtime) {
-    info(':: Copying ' + source)
+    info('▸▸ @cp ' + source)
     writeFileSync(target, readFileSync(source))
-    info('   Created ' + target)
+    info('   +++ ' + target + ' (up to date)')
   } else {
-    info(':: Skipping ' + source)
+    info('▸▸ @ig ' + source + ' (already up to date)')
   }
 }
 
 function removeEmptyDirectory (dirname) {
   readdirSync(dirname).length || jtry(() => {
+    info('▸▸ @rm ' + dirname)
     rmdirSync(dirname)
-    info('   Removed ' + dirname)
+    info('   --- ' + dirname + ' (empty directory)')
   })
 }
 
 function removeFile (filename) {
+  info('▸▸ @rm ' + filename)
   unlinkSync(filename)
-  info('   Removed ' + filename)
+  info('   --- ' + filename + ' (redundant file)')
 }
