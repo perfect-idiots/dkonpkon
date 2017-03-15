@@ -13,9 +13,11 @@ const lib = join(projdir, 'lib')
 const tryGetModifiedDate = file => jtry(() => statSync(file).mtime, () => -Infinity)
 const createdOutputFiles = new Set()
 
+info('\nBUILDING...')
 compile(src, out, 0)
+info('\nCLEANING...')
 clean(out)
-info('done.')
+info('\ndone.')
 
 function compile (source, target, level) {
   const stats = statSync(source)
