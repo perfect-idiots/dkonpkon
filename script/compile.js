@@ -30,13 +30,13 @@ function compile (source, target, level) {
       if (sourcemtime > targetmtime) {
         const sourcecode = readFileSync(source)
         const locals = {projdir, src, out, source, target, dir, name, sourcecode, require, getlib, jreq, sourcemtime, targetmtime}
-        console.info(':: Compiling ' + source)
+        info(':: Compiling ' + source)
         const output = compile(sourcecode, locals)
         writeFileSync(target, output)
-        console.info('-- Created ' + target)
+        info('-- Created ' + target)
         return true
       } else {
-        console.info(':: Skiping ' + source)
+        info(':: Skiping ' + source)
         return true
       }
     }) || updateVersion(source, target)
