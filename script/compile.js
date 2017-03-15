@@ -38,7 +38,7 @@ function compile (source, target, level) {
         console.info(':: Skiping ' + source)
         return true
       }
-    }) || writeFileSync(target, sourcecode)
+    }) || updateVersion(target, source)
   } else {
     throw new Error(`Invalid type of fs entry: ${source}`)
   }
@@ -51,3 +51,5 @@ function getlib (...name) {
 function jreq (...name) {
   return require(join(...name))
 }
+
+function updateVersion () {}
