@@ -56,5 +56,11 @@ function jreq (...name) {
 function updateVersion (source, target) {
   const sourcemtime = tryGetModifiedDate(source)
   const targetmtime = tryGetModifiedDate(target)
-  sourcemtime > targetmtime && writeFileSync(target, readFileSync(source))
+  if (sourcemtime > targetmtime) {
+    info(':: Copying ' + source)
+    writeFileSync(target, readFileSync(source))
+    info(':: Created ' + target)
+  } else {
+    info(':: Skiping ' + source)
+  }
 }
