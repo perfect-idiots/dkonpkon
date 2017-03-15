@@ -26,7 +26,7 @@ function compile (source, target, level) {
       if (!regex.test(source)) return false
       const target = join(dir, name + suffix)
       const sourcemtime = stats.mtime
-      const targetmtime = jtry(() => statSync(target).mtime, () => Infinity)
+      const targetmtime = jtry(() => statSync(target).mtime, () => -Infinity)
       if (sourcemtime > targetmtime) {
         const locals = {projdir, src, out, source, target, dir, name, sourcecode, require, getlib, jreq, sourcemtime, targetmtime}
         console.info(':: Compiling ' + source)
