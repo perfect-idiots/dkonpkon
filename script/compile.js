@@ -2,9 +2,10 @@
 'use strict'
 
 const {dirname, join, parse} = require('path')
-const {readdirSync, readFileSync, statSync, mkdirSync, rmdirSync, writeFileSync, unlinkSync} = require('fs')
+const {readdirSync, readFileSync, statSync, rmdirSync, writeFileSync, unlinkSync} = require('fs')
 const {info} = global.console
 const jtry = require('just-try')
+const {mkdirSync} = require('fs-force')
 const rgxmap = require('./build-rules.js')
 const projdir = dirname(__dirname)
 const src = join(projdir, 'src')
@@ -22,7 +23,7 @@ info('\ndone.')
 function compile (source, target, level) {
   const stats = statSync(source)
   if (stats.isDirectory()) {
-    jtry(() => statSync(target).isDirectory(), () => false) || mkdirSync(target)
+    mkdirSync(target)
     readdirSync(source).forEach(item => compile(join(source, item), join(target, item), level + 1))
   } else if (stats.isFile()) {
     const {dir, name} = parse(target)
