@@ -38,7 +38,7 @@ function compile (source, target, level) {
         info('▸▸ @bd ' + source)
         const output = compile(sourcecode, locals)
         writeFileSync(target, output)
-        info('   +++ ' + target + ' (up to date)')
+        info(`   ${isFinite(targetmtime) ? '~~~' : '+++'} ` + target + ' (up to date)')
         return true
       } else {
         info('▸▸ @ig ' + source + ' (already up to date)')
@@ -75,7 +75,7 @@ function updateVersion (source, target) {
   if (sourcemtime > targetmtime) {
     info('▸▸ @cp ' + source)
     writeFileSync(target, readFileSync(source))
-    info('   +++ ' + target + ' (up to date)')
+    info(`   ${isFinite(targetmtime) ? '~~~' : '+++'} ` + target + ' (up to date)')
   } else {
     info('▸▸ @ig ' + source + ' (already up to date)')
   }
