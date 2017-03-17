@@ -2,7 +2,7 @@
 
 const jstransformer = require('jstransformer')
 const getJsTrfm = name => jstransformer(require(`jstransformer-${name}`))
-const {assign, getOwnPropertyNames} = Object
+const {assign} = Object
 
 module.exports = [
   [
