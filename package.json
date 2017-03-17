@@ -9,7 +9,8 @@
     "jstransformer": "^1.0.0",
     "jstransformer-pug": "^0.2.3",
     "jstransformer-stylus": "^1.3.0",
-    "jstransformer-markdown-it": "^2.0.0"
+    "jstransformer-markdown-it": "^2.0.0",
+    "dependency-tree": "^5.9.0"
   },
   "scripts": {
     "compile": "node ./script/compile.js",
