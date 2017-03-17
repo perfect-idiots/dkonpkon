@@ -26,7 +26,7 @@ function compile (source, target, level) {
     readdirSync(source).forEach(item => compile(join(source, item), join(target, item), level + 1))
   } else if (stats.isFile()) {
     const {dir, name} = parse(target)
-    rgxmap.some(([regex, suffix, compile]) => {
+    rgxmap.some(([regex, suffix, build]) => {
       if (!regex.test(source)) return false
       const target = join(dir, name + suffix)
       const sourcemtime = stats.mtime
@@ -36,7 +36,7 @@ function compile (source, target, level) {
         const sourcecode = readFileSync(source)
         const locals = {projdir, src, out, source, target, dir, name, sourcecode, require, getlib, jreq, sourcemtime, targetmtime}
         info('▸▸ @bd ' + source)
-        const output = compile(sourcecode, locals)
+        const output = build(sourcecode, locals)
         writeFileSync(target, output)
         info(`   ${isFinite(targetmtime) ? '~~~' : '+++'} ` + target + ' (up to date)')
         return true
