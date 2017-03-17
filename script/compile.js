@@ -36,7 +36,7 @@ function compile (source, target, level) {
         const sourcecode = readFileSync(source)
         const locals = {projdir, src, out, source, target, dir, name, sourcecode, require, getlib, jreq, sourcemtime, targetmtime}
         info('▸▸ @bd ' + source)
-        const output = build(sourcecode, locals)
+        const output = build(sourcecode, locals).body
         writeFileSync(target, output)
         info(`   ${isFinite(targetmtime) ? '~~~' : '+++'} ` + target + ' (up to date)')
         return true
