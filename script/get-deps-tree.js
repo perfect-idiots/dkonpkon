@@ -18,6 +18,8 @@ function genNodeDeps (name) {
     if (/\.js$/.test(name)) {
       const filter = string => !/node_modules/.test(string)
       depNODE[name] = jsDepTree.toList({filename: name, directory: projdir, filter})
+    } else {
+      depNODE[name] = []
     }
   } else if (stats.isDirectory()) {
     readdirSync(name).map(item => join(name, item)).forEach(genNodeDeps)
