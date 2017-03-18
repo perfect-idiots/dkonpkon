@@ -27,19 +27,16 @@ info('\ndone.')
 
 function updateMarkedChanges () {
   for (const dependent in depsTree) {
-    const prevmtime = mtimeTable[dependent]
-    const currmtime = Number(statSync(dependent).mtime)
-    if (!prevmtime || currmtime > prevmtime) {
-      mtimeTable[dependent] = currmtime
-      markedChanges.add(dependent)
+    check(dependent) && markedChanges.add(dependent)
+    for (const dependency of depsTree[dependent] || []) {
+      check(dependency) && markedChanges.add(dependent)
     }
-    for (const dependency of depsTree[dependent]) {
-      const prevmtime = mtimeTable[dependent]
-      const currmtime = Number(statSync(dependency).mtime)
-      if (!prevmtime || currmtime > prevmtime) {
-        mtimeTable[dependency] = currmtime
-        markedChanges.add(dependent)
-      }
+    function check (name) {
+      const prevmtime = mtimeTable[name]
+      const currmtime = Number(statSync(name).mtime)
+      const result = !prevmtime || currmtime > prevmtime
+      if (result) mtimeTable[name] = currmtime
+      return result
     }
   }
   writeFileSync(join(dep, 'mtime.json'), JSON.stringify(mtimeTable, {space: 2}))
