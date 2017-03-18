@@ -27,11 +27,17 @@ info('\ndone.')
 
 function updateMarkedChanges () {
   for (const dependent in depsTree) {
+    const prevmtime = mtimeTable[dependent]
+    const currmtime = Number(statSync(dependent).mtime)
+    if (!prevmtime || currmtime > prevmtime) {
+      mtimeTable[dependent] = currmtime
+      markedChanges.add(dependent)
+    }
     for (const dependency of depsTree[dependent]) {
       const prevmtime = mtimeTable[dependent]
       const currmtime = Number(statSync(dependency).mtime)
-      if (prevmtime && prevmtime >= currmtime) return
-      mtimeTable[dependent] = currmtime
+      if (prevmtime && prevmtime >= currmtime) continue
+      mtimeTable[dependency] = currmtime
       markedChanges.add(dependent)
     }
   }
