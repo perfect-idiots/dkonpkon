@@ -11,6 +11,7 @@ const rgxmap = require('./build-rules.js')
 const depsTree = require('./get-deps-tree.js')
 const {projdir, src, out, lib, dep, getlib, jreq, tryReadJSON} = require('../lib/common-vars.js')
 const cmpset = require('../lib/compare-set.js')
+const getModifiedDate = require('../lib/get-mtime.js')
 const createdOutputFiles = new Set()
 const mtimeTable = tryReadJSON(join(dep, 'mtime.json'))
 const markedChanges = getChangedFiles()
@@ -30,12 +31,16 @@ function getChangedFiles () {
   const result = new Set()
   let previous
   let current = new Set(getOwnPropertyNames(depsTree))
-  const tryGetModifiedDate = (file, def) =>
-    jtry(() => Number(statSync(file).mtime), () => def)
+  for (const filename in mtimeTable) {
+    if (!existsSync(filename)) {
+      delete mtimeTable[filename]
+      current.delete(filename)
+    }
+  }
   do {
     previous = new Set(current)
     for (const dependent of current) {
-      check(dependent)
+      check(dependent) && mark(dependent)
       for (const dependency of depsTree[dependent] || []) {
         check(dependency) && mark(dependent)
       }
@@ -46,15 +51,9 @@ function getChangedFiles () {
   function check (name) {
     if (result.has(name)) return true
     const prevmtime = mtimeTable[name]
-    if (prevmtime === undefined) {
-      mtimeTable[name] = tryGetModifiedDate(name)
-      mark(name)
-      return true
-    }
-    const currmtime = tryGetModifiedDate(name, -Infinity)
-    if (prevmtime < currmtime) {
+    const currmtime = getModifiedDate(name)
+    if (prevmtime === undefined || prevmtime < currmtime) {
       mtimeTable[name] = currmtime
-      mark(name)
       return true
     }
     return false
