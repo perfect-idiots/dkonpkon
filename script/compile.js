@@ -3,20 +3,21 @@
 
 const {join, parse} = require('path')
 const {readdirSync, readFileSync, statSync, rmdirSync, unlinkSync, existsSync} = require('fs')
+const {getOwnPropertyNames} = Object
 const {info} = global.console
 const jtry = require('just-try')
 const {mkdirSync, writeFileSync} = require('fs-force')
 const rgxmap = require('./build-rules.js')
 const depsTree = require('./get-deps-tree.js')
 const {projdir, src, out, lib, dep, getlib, jreq, tryReadJSON} = require('../lib/common-vars.js')
+const cmpset = require('../lib/compare-set.js')
 const createdOutputFiles = new Set()
-const markedChanges = new Set()
 const mtimeTable = tryReadJSON(join(dep, 'mtime.json'))
+const markedChanges = getChangedFiles()
 const genDepsTree = {}
 
 info('\nINFO')
 info({depsTree, mtimeTable})
-updateMarkedChanges()
 info(`\n${markedChanges.size} files are marked as modified.`)
 info('\nBUILDING...')
 compile(src, out, 0)
@@ -25,20 +26,42 @@ info('\nCLEANING...')
 clean(out)
 info('\ndone.')
 
-function updateMarkedChanges () {
-  for (const dependent in depsTree) {
-    check(dependent) && markedChanges.add(dependent)
-    for (const dependency of depsTree[dependent] || []) {
-      check(dependency) && markedChanges.add(dependent)
+function getChangedFiles () {
+  const result = new Set()
+  let previous
+  let current = new Set(getOwnPropertyNames(depsTree))
+  const tryGetModifiedDate = (file, def) =>
+    jtry(() => Number(statSync(file).mtime), () => def)
+  do {
+    previous = new Set(current)
+    for (const dependent of current) {
+      check(dependent)
+      for (const dependency of depsTree[dependent] || []) {
+        check(dependency) && mark(dependent)
+      }
     }
-  }
+  } while (!cmpset(previous, current))
   writeFileSync(join(dep, 'mtime.json'), JSON.stringify(mtimeTable, undefined, 2))
+  return result
   function check (name) {
+    if (result.has(name)) return true
     const prevmtime = mtimeTable[name]
-    const currmtime = jtry(() => Number(statSync(name).mtime), () => -Infinity)
-    const result = prevmtime === undefined || currmtime > prevmtime
-    if (result) mtimeTable[name] = currmtime
-    return result
+    if (prevmtime === undefined) {
+      mtimeTable[name] = tryGetModifiedDate(name)
+      mark(name)
+      return true
+    }
+    const currmtime = tryGetModifiedDate(name, -Infinity)
+    if (prevmtime < currmtime) {
+      mtimeTable[name] = currmtime
+      mark(name)
+      return true
+    }
+    return false
+  }
+  function mark (name) {
+    result.add(name)
+    current.delete(name)
   }
 }
 
