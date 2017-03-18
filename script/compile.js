@@ -36,9 +36,10 @@ function updateMarkedChanges () {
     for (const dependency of depsTree[dependent]) {
       const prevmtime = mtimeTable[dependent]
       const currmtime = Number(statSync(dependency).mtime)
-      if (prevmtime && prevmtime >= currmtime) continue
-      mtimeTable[dependency] = currmtime
-      markedChanges.add(dependent)
+      if (!prevmtime || currmtime > prevmtime) {
+        mtimeTable[dependency] = currmtime
+        markedChanges.add(dependent)
+      }
     }
   }
   writeFileSync(join(dep, 'mtime.json'), JSON.stringify(mtimeTable, {space: 2}))
