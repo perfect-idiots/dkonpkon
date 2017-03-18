@@ -1,24 +1,42 @@
 #! /usr/bin/env node
 'use strict'
 
-const {dirname, join, parse} = require('path')
-const {readdirSync, readFileSync, statSync, rmdirSync, writeFileSync, unlinkSync} = require('fs')
+const {dirname, join, parse, resolve} = require('path')
+const {readdirSync, readFileSync, statSync, rmdirSync, unlinkSync} = require('fs')
 const {info} = global.console
 const jtry = require('just-try')
-const {mkdirSync} = require('fs-force')
+const {mkdirSync, writeFileSync} = require('fs-force')
 const rgxmap = require('./build-rules.js')
-const dependencies = require('./get-deps-tree.js')
-const {projdir, src, out, lib, getlib, jreq} = require('../lib/common-vars.js')
-const tryGetModifiedDate = file => jtry(() => statSync(file).mtime, () => -Infinity)
+const depsTree = require('./get-deps-tree.js')
+const {projdir, src, out, lib, dep, getlib, jreq, tryReadJSON} = require('../lib/common-vars.js')
 const createdOutputFiles = new Set()
+const markedChanges = new Set()
+const mtimeTable = tryReadJSON(join(dep, 'mtime.json'))
+const genDepsTree = {}
 
-info({dependencies})
-
+info('\nINFO')
+info({depsTree, mtimeTable})
+updateMarkedChanges()
+info(`\t${markedChanges.size} files are marked as modified.`)
 info('\nBUILDING...')
-compile(src, out, 0)
+compile()
+writeFileSync(join(dep, 'generated.json'), JSON.stringify(genDepsTree, {space: 2}))
 info('\nCLEANING...')
 clean(out)
 info('\ndone.')
+
+function updateMarkedChanges () {
+  for (const dependent in depsTree) {
+    for (const dependency of depsTree[dependent]) {
+      const prevmtime = mtimeTable[dependent]
+      const currmtime = Number(statSync(dependency).mtime)
+      if (prevmtime && prevmtime >= currmtime) return
+      mtimeTable[dependent] = currmtime
+      markedChanges.add(dependent)
+    }
+  }
+  writeFileSync(join(dep, 'mtime.json'), JSON.stringify(mtimeTable, {space: 2}))
+}
 
 function compile (source, target, level) {
   const stats = statSync(source)
@@ -30,15 +48,14 @@ function compile (source, target, level) {
     rgxmap.some(([regex, suffix, build]) => {
       if (!regex.test(source)) return false
       const target = join(dir, name + suffix)
-      const sourcemtime = stats.mtime
-      const targetmtime = tryGetModifiedDate(target)
       createdOutputFiles.add(target)
-      if (sourcemtime > targetmtime) {
+      if (markedChanges.has(source)) {
         const sourcecode = readFileSync(source)
-        const locals = {projdir, src, out, lib, source, target, dir, name, sourcecode, require, getlib, jreq, sourcemtime, targetmtime}
+        const locals = {projdir, src, out, lib, source, target, dir, name, sourcecode, require, getlib, jreq, markedChanges}
         info('▸▸ @bd ' + source)
-        const output = build(sourcecode, locals).body
-        writeFileSync(target, output)
+        const {body, dependencies} = build(sourcecode, locals)
+        genDepsTree[source] = dependencies
+        writeFileSync(target, body)
         info(`   ${isFinite(targetmtime) ? '~~~' : '+++'} ` + target + ' (up to date)')
         return true
       } else {
@@ -51,6 +68,7 @@ function compile (source, target, level) {
   }
 }
 
+
 function clean (target) {
   const stats = statSync(target)
   if (stats.isDirectory()) {
@@ -62,10 +80,8 @@ function clean (target) {
 }
 
 function updateVersion (source, target) {
-  const sourcemtime = tryGetModifiedDate(source)
-  const targetmtime = tryGetModifiedDate(target)
   createdOutputFiles.add(target)
-  if (sourcemtime > targetmtime) {
+  if (markedChanges.has(source)) {
     info('▸▸ @cp ' + source)
     writeFileSync(target, readFileSync(source))
     info(`   ${isFinite(targetmtime) ? '~~~' : '+++'} ` + target + ' (up to date)')
