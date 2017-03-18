@@ -5,10 +5,12 @@ const {readFileSync, statSync, readdirSync} = require('fs')
 const merge = require('deepmerge')
 const jsDepTree = require('dependency-tree').toList
 const jtry = require('just-try')
-const {projdir, dep, tryReadJSON} = require('../lib/common-vars.js')
+const {projdir, lib, src, dep, tryReadJSON} = require('../lib/common-vars.js')
 const depYAML = require('./dep-map-yml.js')
 const depJSON = tryReadJSON(join(dep, 'dependencies.json'))
 const depNODE = {}
+
+; [lib, src, join(projdir, 'script')]).forEach(genNodeDeps)
 
 function genNodeDeps (name) {
   const stats = statSync(name)
