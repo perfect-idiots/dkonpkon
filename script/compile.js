@@ -2,7 +2,7 @@
 'use strict'
 
 const {dirname, join, parse, resolve} = require('path')
-const {readdirSync, readFileSync, statSync, rmdirSync, unlinkSync} = require('fs')
+const {readdirSync, readFileSync, statSync, rmdirSync, unlinkSync, existSync} = require('fs')
 const {info} = global.console
 const jtry = require('just-try')
 const {mkdirSync, writeFileSync} = require('fs-force')
@@ -30,6 +30,7 @@ function updateMarkedChanges () {
   for (const dependent in depsTree) {
     check(dependent) && markedChanges.add(dependent)
     for (const dependency of depsTree[dependent] || []) {
+      // console.log({dependent, dependency})
       check(dependency) && markedChanges.add(dependent)
     }
     function check (name) {
@@ -53,6 +54,7 @@ function compile (source, target, level) {
     rgxmap.some(([regex, suffix, build]) => {
       if (!regex.test(source)) return false
       const target = join(dir, name + suffix)
+      const isTargetExists = existSync(target)
       createdOutputFiles.add(target)
       if (markedChanges.has(source)) {
         const sourcecode = readFileSync(source)
@@ -61,7 +63,7 @@ function compile (source, target, level) {
         const {body, dependencies} = build(sourcecode, locals)
         genDepsTree[source] = dependencies
         writeFileSync(target, body)
-        info(`   ${isFinite(targetmtime) ? '~~~' : '+++'} ` + target + ' (up to date)')
+        info(`   ${isTargetExists ? '~~~' : '+++'} ` + target + ' (up to date)')
         return true
       } else {
         info('▸▸ @ig ' + source + ' (already up to date)')
@@ -85,11 +87,12 @@ function clean (target) {
 }
 
 function updateVersion (source, target) {
+  const isTargetExists = existSync(target)
   createdOutputFiles.add(target)
   if (markedChanges.has(source)) {
     info('▸▸ @cp ' + source)
     writeFileSync(target, readFileSync(source))
-    info(`   ${isFinite(targetmtime) ? '~~~' : '+++'} ` + target + ' (up to date)')
+    info(`   ${isTargetExists ? '~~~' : '+++'} ` + target + ' (up to date)')
   } else {
     info('▸▸ @ig ' + source + ' (already up to date)')
   }
