@@ -7,7 +7,7 @@ const {info} = global.console
 const jtry = require('just-try')
 const {mkdirSync} = require('fs-force')
 const rgxmap = require('./build-rules.js')
-const dependencies = require('./dep-map-yml.js')
+const dependencies = require('./get-deps-tree.js')
 const {projdir, src, out, lib, getlib, jreq} = require('../lib/common-vars.js')
 const tryGetModifiedDate = file => jtry(() => statSync(file).mtime, () => -Infinity)
 const createdOutputFiles = new Set()
