@@ -8,7 +8,7 @@ const jtry = require('just-try')
 const {mkdirSync} = require('fs-force')
 const rgxmap = require('./build-rules.js')
 const dependencies = require('./dep-map-yml.js')
-const {projdir, src, out, lib} = require('../lib/common-vars.js')
+const {projdir, src, out, lib, getlib, jreq} = require('../lib/common-vars.js')
 const tryGetModifiedDate = file => jtry(() => statSync(file).mtime, () => -Infinity)
 const createdOutputFiles = new Set()
 
@@ -59,14 +59,6 @@ function clean (target) {
   } else if (stats.isFile()) {
     createdOutputFiles.has(target) || removeFile(target)
   }
-}
-
-function getlib (...name) {
-  return jreq(lib, ...name)
-}
-
-function jreq (...name) {
-  return require(join(...name))
 }
 
 function updateVersion (source, target) {
