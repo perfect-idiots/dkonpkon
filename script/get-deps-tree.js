@@ -3,7 +3,7 @@
 const {dirname, join} = require('path')
 const {readFileSync, statSync, readdirSync} = require('fs')
 const merge = require('deepmerge')
-const jsDepTree = require('dependency-tree').toList
+const jsDepTree = require('dependency-tree')
 const jtry = require('just-try')
 const {projdir, lib, src, dep, tryReadJSON} = require('../lib/common-vars.js')
 const depYAML = require('./dep-map-yml.js')
@@ -17,7 +17,7 @@ function genNodeDeps (name) {
   if (stats.isFile()) {
     if (/\.js$/.test(name)) {
       const filter = string => !/node_modules/.test(string)
-      depNODE[name] = jsDepTree({filename: name, directory: projdir, filter})
+      depNODE[name] = jsDepTree.toList({filename: name, directory: projdir, filter})
     }
   } else if (stats.isDirectory()) {
     readdirSync(name).map(item => join(name, item)).forEach(genNodeDeps)
