@@ -35,7 +35,7 @@ function compile (source, target, level) {
       createdOutputFiles.add(target)
       if (sourcemtime > targetmtime) {
         const sourcecode = readFileSync(source)
-        const locals = {projdir, src, out, source, target, dir, name, sourcecode, require, getlib, jreq, sourcemtime, targetmtime}
+        const locals = {projdir, src, out, lib, source, target, dir, name, sourcecode, require, getlib, jreq, sourcemtime, targetmtime}
         info('▸▸ @bd ' + source)
         const output = build(sourcecode, locals).body
         writeFileSync(target, output)
