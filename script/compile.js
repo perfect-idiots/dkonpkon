@@ -30,7 +30,6 @@ function updateMarkedChanges () {
   for (const dependent in depsTree) {
     check(dependent) && markedChanges.add(dependent)
     for (const dependency of depsTree[dependent] || []) {
-      // console.log({dependent, dependency})
       check(dependency) && markedChanges.add(dependent)
     }
     function check (name) {
