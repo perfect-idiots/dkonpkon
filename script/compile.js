@@ -35,7 +35,7 @@ function updateMarkedChanges () {
     function check (name) {
       const prevmtime = mtimeTable[name]
       const currmtime = jtry(() => Number(statSync(name).mtime), -Infinity)
-      const result = !prevmtime || currmtime > prevmtime
+      const result = prevmtime === undefined || currmtime > prevmtime
       if (result) mtimeTable[name] = currmtime
       return result
     }
