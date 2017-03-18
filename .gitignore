@@ -13,7 +13,7 @@ tmp.*
 temp.*
 *.tmp
 *.temp
-/deps
+/dep
 /src/media/*
 !/src/media/*.md
 
