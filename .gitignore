@@ -1,7 +1,4 @@
 
-# Temporary
-/design
-
 # This project
 .DS_Store
 .out
@@ -17,6 +14,7 @@ tmp.*
 temp.*
 *.tmp
 *.temp
+/dep
 /src/media/*
 !/src/media/*.md
 
