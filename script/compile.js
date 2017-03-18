@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 'use strict'
 
-const {dirname, join, parse, resolve} = require('path')
+const {join, parse} = require('path')
 const {readdirSync, readFileSync, statSync, rmdirSync, unlinkSync, existsSync} = require('fs')
 const {info} = global.console
 const jtry = require('just-try')
@@ -31,15 +31,15 @@ function updateMarkedChanges () {
     for (const dependency of depsTree[dependent] || []) {
       check(dependency) && markedChanges.add(dependent)
     }
-    function check (name) {
-      const prevmtime = mtimeTable[name]
-      const currmtime = jtry(() => Number(statSync(name).mtime), () => -Infinity)
-      const result = prevmtime === undefined || currmtime > prevmtime
-      if (result) mtimeTable[name] = currmtime
-      return result
-    }
   }
   writeFileSync(join(dep, 'mtime.json'), JSON.stringify(mtimeTable, undefined, 2))
+  function check (name) {
+    const prevmtime = mtimeTable[name]
+    const currmtime = jtry(() => Number(statSync(name).mtime), () => -Infinity)
+    const result = prevmtime === undefined || currmtime > prevmtime
+    if (result) mtimeTable[name] = currmtime
+    return result
+  }
 }
 
 function compile (source, target, level) {
@@ -72,7 +72,6 @@ function compile (source, target, level) {
     throw new Error(`Invalid type of fs entry: ${source}`)
   }
 }
-
 
 function clean (target) {
   const stats = statSync(target)

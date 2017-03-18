@@ -1,10 +1,9 @@
 'use strict'
 
-const {dirname, join} = require('path')
-const {readFileSync, statSync, readdirSync} = require('fs')
+const {join} = require('path')
+const {statSync, readdirSync} = require('fs')
 const merge = require('deepmerge')
 const jsDepTree = require('dependency-tree')
-const jtry = require('just-try')
 const {projdir, lib, src, dep, tryReadJSON} = require('../lib/common-vars.js')
 const depYAML = require('./dep-map-yml.js')
 const depJSON = tryReadJSON(join(dep, 'dependencies.json'))
