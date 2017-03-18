@@ -17,7 +17,7 @@ const genDepsTree = {}
 info('\nINFO')
 info({depsTree, mtimeTable})
 updateMarkedChanges()
-info(`\t${markedChanges.size} files are marked as modified.`)
+info(`${markedChanges.size} files are marked as modified.`)
 info('\nBUILDING...')
 compile(src, out, 0)
 writeFileSync(join(dep, 'dependencies.json'), JSON.stringify(genDepsTree, {space: 2}))
