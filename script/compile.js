@@ -2,7 +2,7 @@
 'use strict'
 
 const {dirname, join, parse, resolve} = require('path')
-const {readdirSync, readFileSync, statSync, rmdirSync, unlinkSync, existSync} = require('fs')
+const {readdirSync, readFileSync, statSync, rmdirSync, unlinkSync, existsSync} = require('fs')
 const {info} = global.console
 const jtry = require('just-try')
 const {mkdirSync, writeFileSync} = require('fs-force')
@@ -54,7 +54,7 @@ function compile (source, target, level) {
     rgxmap.some(([regex, suffix, build]) => {
       if (!regex.test(source)) return false
       const target = join(dir, name + suffix)
-      const isTargetExists = existSync(target)
+      const isTargetExists = existsSync(target)
       createdOutputFiles.add(target)
       if (markedChanges.has(source)) {
         const sourcecode = readFileSync(source)
@@ -87,7 +87,7 @@ function clean (target) {
 }
 
 function updateVersion (source, target) {
-  const isTargetExists = existSync(target)
+  const isTargetExists = existsSync(target)
   createdOutputFiles.add(target)
   if (markedChanges.has(source)) {
     info('▸▸ @cp ' + source)
