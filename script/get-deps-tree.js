@@ -10,7 +10,7 @@ const depYAML = require('./dep-map-yml.js')
 const depJSON = tryReadJSON(join(dep, 'dependencies.json'))
 const depNODE = {}
 
-; [lib, src, join(projdir, 'script')]).forEach(genNodeDeps)
+; [lib, src, join(projdir, 'script')].forEach(genNodeDeps)
 
 function genNodeDeps (name) {
   const stats = statSync(name)
