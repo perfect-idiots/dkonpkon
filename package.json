@@ -10,7 +10,8 @@
     "jstransformer-pug": "^0.2.3",
     "jstransformer-stylus": "^1.3.0",
     "jstransformer-markdown-it": "^2.0.0",
-    "dependency-tree": "^5.9.0"
+    "dependency-tree": "^5.9.0",
+    "deepmerge": "^1.3.2"
   },
   "scripts": {
     "compile": "node ./script/compile.js",
