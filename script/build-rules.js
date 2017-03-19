@@ -18,7 +18,7 @@ module.exports = [
     /\.(stylus|styl)$/,
     '.css',
     (sourcecode, locals) =>
-      getJsTrfm('stylus').render(sourcecode.toString('utf8'), {}, locals)
+      getJsTrfm('stylus').render(sourcecode.toString('utf8'), {filename: locals.source}, locals)
   ],
   [
     /\.(markdown-it|markdown|md)$/,
