@@ -227,7 +227,7 @@ golden-gate-drop:
     nhưng tránh các bà già, cảnh sát, hải âu, và pháo nước rednecks nhất định.
     Bạn phải có số lượng tối thiểu của điểm để tiến vào vòng tiếp theo
 hobo:
-  name: 'Hobo - đại ca ra tù'
+  name: 'Hobo - Đại ca ra tù'
   genre:
     - action
     - adventure
@@ -239,13 +239,194 @@ hobo:
     Trong phần này: Hobo rời bỏ căn nhà ổ chuột của bạn để chiến đấu với những kẻ thù trên đường phố.
     Lần lượt hạ gục cảnh sát, găngxtơ, và đám công nhân trong thành phố!
 hobo-2-prison-brawl:
-  name: 'Hobo 2'
+  name: 'Hobo 2: Prison Brawl'
   genre:
     - action
     - adventure
     - arcade
   description: >
-    Ở phần 2: sau khi trốn khỏi nơi giam giữ với lệnh truy nã còn lơ lửng ngay trên đầu đại ca
-    Hobo của chúng ta đã xuất hiện dưới các con phố và bắt đầu hành trình khẳng định quyền lực của bản thân.
-    Liệu lần này những đối thủ nào sẽ xuất hiện và ngáng trở thành đại ca đường phố của anh cảnh sát ,
-    các băng đảng , hay là những kẻ đi đường hãy cùng tham gia game và khám phá điều này nhé
+    Một cuộc vượt ngục đã xảy ra trong nhà tù, vào một ngày Hobo đang ngủ trong tù và đã bị đánh thức bởi các tù nhân khác, cuộc vượt ngục bắt đầu
+hobo-3-wanted:
+  name: 'Hobo 3: Wanted'
+  genre:
+      - action
+      - adventure
+      - arcade
+  description: >
+    Ở phần này: sau khi trốn khỏi nơi giam giữ Hobo của chúng ta đã xuất hiện dưới các con phố và bắt đầu hành trình khẳng định quyền lực của bản thân.
+    Bạn sẽ phải đấm, đá, nôn mửa, thậm chí là tè vào những kẻ thù của mình.
+    Chiến đấu với cảnh sát, dùng mắt bạn làm vũ khí để gây thảm họa!
+    Hãy biến thành phố thành ngôi nhà của bạn và sở hữu toàn bộ vùng đất này. Hãy hạ gục bất kỳ kẻ tội nghiệp nào ngáng đường bạn!
+hobo-4-totalwar:
+  name: 'Hobo 4: Total War'
+  genre:
+      - action
+      - adventure
+      - arcade
+  description: >
+    Bạn sẽ tiếp tục điều khiển đại ca Hobo di chuyển trong những chiến trường đầy khốc liệt.
+    Tuy nhiên, với khả năng của mình, Hobo không sợ bất cứ nguy hiểm nào, đó cũng là một điểm đáng khen của anh ta.
+    Một bối cảnh hết sức thú vị, khi Hobo đang ngủ, thì một tên lính chạy đến và dùng vũ lực để bắt Hobo lại,
+    nhưng anh ta không chịu thua và dùng tay không để đối đầu với những tên lính độc ác và bạo lực kia
+hobo-5-space:
+  name: 'Hobo 5: Space'
+  genre:
+    - action
+    - adventure
+    - arcade
+  description: >
+   Ở phiên bản này, bạn sẽ không phải đánh với người bình thường, mà là những con quái vật người ngoài hành tinh,
+   đã bắt cóc chàng Hobo này lên tàu vũ trụ để thực hiện những thí nghiệm của chúng. Tuy nhiên với sức mạnh của mình,
+   Hobo đã thoát ra khỏi phòng thí nghiệm và bắt đầu chiến đấu với người ngoài hành tinh để có thể thoát ra ngoài.
+hobo-6-hell:
+  name: 'Hobo 6: Hell'
+  genre:
+    - action
+    - adventure
+    - arcade
+  description: >
+    Lần này không còn có cảnh sát truy đuổi, hoặc sự truy sát của những tên tù hung bạo ...
+    Mà lần này là đối mặt là những ác ma hung tợn của địa ngục.
+    Liệu anh có thể tiếp tục vượt qua thử thách lần này.
+    Hãy chiến đấu chống lại lũ quỷ dữ dưới địa ngục!
+hobo-7-heaven:
+  name: 'Hobo 7: Heaven'
+  genre:
+    - action
+    - adventure
+    - arcade
+  description: >
+    Lúc này thì đại ca Hobo không còn ở dưới trần gian nữa mà anh ta đã lên trên thiên đàng.
+    Nhưng bản tình thích gây sự và quậy phá vẫn không bỏ được. Và anh ta đã lao vào những công dân ở thiên đàng để gây sự.
+    Bạn sẽ được điều khiển anh ta để gây sự với những người xung quanh đấy nhé
+kim-cuong-bejeweled-2:
+  name: 'Kim cương 2'
+  genre:
+    - arcade
+    - puzzle
+  description: >
+    **Bejeweled 2** là phiên bản tiếp theo của tựa game xếp kim cương kinh điển. Nối tiếp truyền thống của dòng game này,
+    **Bejeweled 2** sẽ sở hữu lối chơi nhẹ nhàng những cũng không kém phần thách thức,
+    mang đến cho người chơi những giờ phút thư giãn thoải mái nhất
+monster-brawl:
+  name: 'Đội quân quái vật'
+  genre:
+    - strategy
+  description: >
+    Hãy xây dựng một đội quân của bạn để chiến đấu chống lại quân đội khác của quái vật!
+monster-race-3d:
+  name: 'Đua xe quái vật 3d'
+  genre:
+    - racing
+    - arcade
+  description: >
+    Chọn chiếc xe tải cho bạn và đấu với những tay lái khác trong trò chơi 3 chiều!
+    Người đầu tiên về đích sẽ thắng cuộc đua! Đừng quên kích hoạt để tăng tốc!
+mushroom-madness-3:
+  name: 'Bảo vệ bãi nấm 3'
+  genre:
+    - racing
+    - arcade
+  description: >
+    Các loài động vật lại kéo đến phá hoại những cây nấm cuối cùng trong rừng.
+    Với nhiệm vụ bảo vệ những cây nấm cuối cùng trong khu rừng tránh những động vật phá hoại,
+    bạn có thể mua, nâng cấp vuc khí để mạnh hơn. Hãy thể hiện khả năng của bạn nào..
+necronator-II:
+  name: 'Necronator 2'
+  genre:
+    - strategy
+    - arcade
+  description: >
+    Necronator 2 thuộc thể loại Game Chiến thuật.Hãy chọn một chủng tộc mà bạn tin tưởng vào họ,
+    xây dựng quân đội hùng mạnh thiện chiến, chuẩn bị cho các trận đánh ác liệt trên chiến trường.
+penalty-shootout-2012:
+  name: 'Sút penalty 2012'
+  genre:
+    - sport
+    - arcade
+  description: >
+    Hãy đại diện cho quốc gia của mình để giành chiến thắng trong đợt sút phạt tuyệt đỉnh!
+    Tham gia vào 5 lượt sút bóng, vào vai cả cầu thủ và thủ môn. Bay người thật xa để cứu bóng.
+    Sau đó, hãy lựa chọn mục tiêu cẩn thận và tung cú sút để giành chiến thắng!
+rambo:
+  name: 'Rambo lùn'
+  genre:
+    - shooter
+    - arcade
+  description: >
+    Bạn sẽ được hóa thân thành siêu anh hùng, vượt qua mọi khó khăn thử thách hiểm nguy và tiêu diệt các kẻ thù.
+    Nhiệm vụ của bạn trong game Rambo lùn là tiêu diệt toàn bộ quân lính của địch cũng như các
+    vũ khí hạng nặng như xe tăng máy bay. Trò chơi đòi hỏi sự khéo léo và kỹ năng tránh né những viên đạn.
+rambo-lun-tu-chien:
+  name: 'Rambo lùn tử chiến'
+  genre:
+    - shooter
+    - arcade
+  description: >
+     Hãy sử dụng các vũ khí hiện có bắn hạ liên tiếp những mục tiêu sẽ giúp bạn có nhiều điểm và tích lũy năng lượng cho vũ khí hủy diệt.
+shootout-challenge:
+  name: 'Thử thách Penalty '
+  genre:
+    - sport
+    - arcade
+  description: >
+      Tham gia vào lượt sút penalty cân não, vào vai cả cầu thủ và thủ môn. Hãy
+      lựa chọn mục tiêu cẩn thận và tung cú sút để giành chiến thắng!
+      Sau đó, Bay người thật xa để cứu bóng.
+super-mario-flash:
+  name: 'Super mario'
+  genre:
+    - action
+    - adventure
+    - arcade
+  description: >
+    **Mario** thể loại game hành động kinh điển phiên bản Flash,
+    tin rằng chắc tuổi thơ nhiều người đều rất quen thuộc với những giai điệu âm nhạc của game,
+    hãy cùng nhau quay lại ký ức của game kinh điển một thời nào
+ultimate-flash-sonic:
+  name: 'Sonic phiêu lưu kí'
+  genre:
+    - action
+    - adventure
+    - arcade
+  description: >
+    **Sonic Ultimate** một game thuộc thể loại Game hoạt hình xoay quanh nhận vật chính là chú nhím xanh siêu tốc độ Sonic.
+    Trong game bạn sẽ có cơ hội được hóa thân thành chú nhím Sonic trên hành trình phiêu lưu đến những hòn đảo mới lạ,
+    chứa đựng nhiều điều bí ẩn. Trên đường đi bạn hãy sử dụng khả năng cuộn tròn thành cầu gai của Sonic để vượt qua những
+    địa hình khó và thu nhặt thật nhiều vòng tròn vàng quý giá nhé!
+uphill-rush-5:
+  name: 'Uphill 5'
+  genre:
+    - racing
+    - arcade
+  desciption: >
+    Đã đến lúc cho một cuộc đua thú vị. Bạn hãy lướt trên nước, đua qua những đường ray của tàu lượn siêu tốc và bay lượn trong không trung.
+    Liệu bạn có thể giành được số điểm cao nhất bằng những chiêu trò thú vị?
+uphill-rush-6:
+  name: 'Unphill 6'
+  genre:
+    - racing
+    - arcade
+  desciption: >
+    Hãy lao đi và lướt về đích trong cuộc đua trên mặt nước tuyệt đỉnh! Phiên bản mới của trò chơi
+    Uphill Rush sẽ cho bạn lựa chọn mọi kiểu dáng và đặc điểm mới cho tay đua và xe của bạn.
+    Chọn bộ đồ yêu thích và chiếc canô nổi để trông thật phong cách khi thi đấu.
+    Hãy tăng tốc, lao vào không trung và biểu diễn những màn mạo hiểm ấn tượng để giành thật nhiều tiền!
+yanloong-fighting:
+  name: 'Yanloong chiến đấu'
+  genre:
+    - action
+    - arcade
+  desciption: >
+    Là trò chơi đối kháng rất hay. Bạn sẽ điều khiển nhân vật để chiến đấu với người chơi khác.Sử dụng kĩ năng và tích năng lượng
+    ra đòn quyết định để hạ gục đối phương. game cho phép 2 người chơi
+yanloong-lengend-3.2:
+  name: 'Yanloong huyền thoại'
+  genre:
+    - action
+    - adventure
+    - arcade
+  desciption: >
+    Yan loong là một môn sinh của các nổi tiếng Loong Đạo võ thuật, mà là rất nổi tiếng ở giới võ thuật Trung Quốc dưới môn võ "Rồng Qigong".
+    Các bạn hãy thử đi con đường mà anh đã đi qua trò chơi này!  Game cho phép 2 người chơi .
+    Nhiệm vụ của bạn là Đánh bại đối thủ càng nhiều càng tốt
