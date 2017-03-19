@@ -11,11 +11,16 @@ html(lang = 'vi')
     title: block title
       | Trò chơi giải trí
 
+    block stylesheet
+      +style('style/basic.css')
+      +style('style/scrollbar.css')
+      +style('style/master.css')
+
   body
     header#main-header
-      label(for = 'menu-visibility-checkbox'): button#menu-button
+      label#menu-button-container(for = 'menu-visibility-checkbox'): button#menu-button
       #logo
-      label(for = 'search-visibility-checkbox'): button#search-button
+      label#search-button-container(for = 'search-visibility-checkbox'): button#search-button
 
     section#main-section
       block main-section
