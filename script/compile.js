@@ -1,60 +1,132 @@
 #! /usr/bin/env node
 'use strict'
 
-const {dirname, extname, join, parse} = require('path')
-const {readdirSync, readFileSync, statSync, mkdirSync, writeFileSync} = require('fs')
+const {join, parse} = require('path')
+const {readdirSync, readFileSync, statSync, rmdirSync, unlinkSync, existsSync} = require('fs')
+const {assign, getOwnPropertyNames} = Object
 const {info} = global.console
-const pug = require('pug')
-const stylus = require('stylus')
-const less = require('less')
 const jtry = require('just-try')
-const projdir = dirname(__dirname)
-const src = join(projdir, 'src')
-const out = join(projdir, 'out')
-const lib = join(projdir, 'lib')
+const {mkdirSync, writeFileSync} = require('fs-force')
+const rgxmap = require('./build-rules.js')
+const depsTree = require('./get-deps-tree.js')
+const {projdir, src, out, lib, dep, getlib, jreq, tryReadJSON} = require('../lib/common-vars.js')
+const cmpset = require('../lib/compare-set.js')
+const getModifiedDate = require('../lib/get-mtime.js')
+const createdOutputFiles = new Set()
+const mtimeTable = tryReadJSON(join(dep, 'mtime.json'))
+const markedChanges = getChangedFiles()
+const genDepsTree = assign({}, require('./dep-map-json.js'))
 
+info('\nINFO')
+info({depsTree, mtimeTable})
+info(`\n${markedChanges.size} files are marked as modified.`)
+info('\nBUILDING...')
 compile(src, out, 0)
-info('done.')
+writeFileSync(join(dep, 'dependencies.json'), JSON.stringify(genDepsTree, undefined, 2))
+info('\nCLEANING...')
+clean(out)
+info('\ndone.')
+
+function getChangedFiles () {
+  const result = new Set()
+  let previous
+  let current = new Set(getOwnPropertyNames(depsTree))
+  for (const filename in mtimeTable) {
+    if (!existsSync(filename)) {
+      delete mtimeTable[filename]
+      current.delete(filename)
+    }
+  }
+  do {
+    previous = new Set(current)
+    for (const dependent of current) {
+      check(dependent) && mark(dependent)
+      for (const dependency of depsTree[dependent] || []) {
+        check(dependency) && mark(dependent)
+      }
+    }
+  } while (!cmpset(previous, current))
+  writeFileSync(join(dep, 'mtime.json'), JSON.stringify(mtimeTable, undefined, 2))
+  return result
+  function check (name) {
+    if (result.has(name)) return true
+    const prevmtime = mtimeTable[name]
+    const currmtime = getModifiedDate(name)
+    if (prevmtime === undefined || prevmtime < currmtime) {
+      mtimeTable[name] = currmtime
+      return true
+    }
+    return false
+  }
+  function mark (name) {
+    result.add(name)
+    current.delete(name)
+  }
+}
 
 function compile (source, target, level) {
   const stats = statSync(source)
   if (stats.isDirectory()) {
-    jtry(() => statSync(target).isDirectory(), () => false) || mkdirSync(target)
+    mkdirSync(target)
     readdirSync(source).forEach(item => compile(join(source, item), join(target, item), level + 1))
   } else if (stats.isFile()) {
-    const sourcecode = readFileSync(source)
     const {dir, name} = parse(target)
-    switch (extname(source).toLowerCase()) {
-      case '.pug': case '.jade': {
-        const fn = pug.compile(sourcecode.toString('utf8'), {doctype: 'html', pretty: true, filename: source})
-        const html = fn({projdir, src, out, source, target, dir, name, sourcecode, require, getlib, jreq})
-        writeFileSync(join(dir, name + '.html'), html, {encoding: 'utf8'})
-        break
+    rgxmap.some(([regex, suffix, build]) => {
+      if (!regex.test(source)) return false
+      const target = join(dir, name + suffix)
+      const isTargetExists = existsSync(target)
+      createdOutputFiles.add(target)
+      if (markedChanges.has(source)) {
+        const sourcecode = readFileSync(source)
+        const locals = {projdir, src, out, lib, source, target, dir, name, sourcecode, require, getlib, jreq, markedChanges}
+        info('▸▸ @bd ' + source)
+        const {body, dependencies} = build(sourcecode, locals)
+        genDepsTree[source] = dependencies
+        writeFileSync(target, body)
+        info(`   ${isTargetExists ? '~~~' : '+++'} ` + target + ' (up to date)')
+        return true
+      } else {
+        info('▸▸ @ig ' + source + ' (already up to date)')
+        return true
       }
-      case '.stylus': case '.styl': {
-        const css = stylus.render(sourcecode.toString('utf8'))
-        writeFileSync(join(dir, name + '.css'), css, {encoding: 'utf8'})
-        break
-      }
-      case '.less': {
-        less.render(sourcecode.toString('utf8')).then(
-          ({css}) => writeFileSync(join(dir, name + '.css'), css, {encoding: 'utf8'})
-        )
-        break
-      }
-      default: {
-        writeFileSync(target, sourcecode, {encoding: 'utf8'})
-      }
-    }
+    }) || updateVersion(source, target)
   } else {
     throw new Error(`Invalid type of fs entry: ${source}`)
   }
 }
 
-function getlib (...name) {
-  return jreq(lib, ...name)
+function clean (target) {
+  const stats = statSync(target)
+  if (stats.isDirectory()) {
+    readdirSync(target).forEach(item => clean(join(target, item)))
+    removeEmptyDirectory(target)
+  } else if (stats.isFile()) {
+    createdOutputFiles.has(target) || removeFile(target)
+  }
 }
 
-function jreq (...name) {
-  return require(join(...name))
+function updateVersion (source, target) {
+  const isTargetExists = existsSync(target)
+  createdOutputFiles.add(target)
+  if (markedChanges.has(source)) {
+    info('▸▸ @cp ' + source)
+    writeFileSync(target, readFileSync(source))
+    info(`   ${isTargetExists ? '~~~' : '+++'} ` + target + ' (up to date)')
+  } else {
+    info('▸▸ @ig ' + source + ' (already up to date)')
+  }
+}
+
+function removeEmptyDirectory (dirname) {
+  readdirSync(dirname).length || jtry(() => {
+    info('▸▸ @rm ' + dirname)
+    rmdirSync(dirname)
+    info('   --- ' + dirname + ' (empty directory)')
+  })
+}
+
+function removeFile (filename) {
+  info('▸▸ @rm ' + filename)
+  unlinkSync(filename)
+  info('   --- ' + filename + ' (redundant file)')
 }
