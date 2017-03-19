@@ -1,5 +1,24 @@
 
-page-width = 100%
-unit-size = (100% / 960)
-column-width = (60 * unit-size)
-common-margin = (20 * unit-size)
+get-size(count)
+  (count * size-60 + (count - 1) * size-20)
+
+main(page-width)
+  unit-size = (page-width / 960)
+  size-60 = (60 * unit-size)
+  size-20 = (20 * unit-size)
+
+  @media (min-width: page-width)
+    #main-header, #main-section, #main-footer
+      display block
+
+    #main-header
+      height size-60
+
+    #main-footer
+      height (2 * size-60 + 1 * size-20)
+
+    #menu-button-container, #logo, #search-button-container
+      margin size-20
+
+for factor in (8..38)
+  main(factor * 60px)
