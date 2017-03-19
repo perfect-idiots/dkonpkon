@@ -107,8 +107,6 @@ function updateVersion (source, target) {
     info('▸▸ @cp ' + source)
     writeFileSync(target, readFileSync(source))
     info(`   ${isTargetExists ? '~~~' : '+++'} ` + target + ' (up to date)')
-  } else {
-    info('▸▸ @ig ' + source + ' (already up to date)')
   }
 }
 
