@@ -33,8 +33,7 @@ define-size(page-width)
       margin size-20
 
     #menu-button
-      background-image url(../image/menu.svg)
-      background-size unit-size
+      background-size size-60
       std-square(1)
 
 for factor in (8..38)
@@ -42,3 +41,8 @@ for factor in (8..38)
 
 body
   background black
+
+#menu-button
+  background-color transparent
+  background-image url(../image/menu.svg)
+  border 0px solid white
