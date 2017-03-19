@@ -16,6 +16,7 @@
   "scripts": {
     "compile": "node ./script/compile.js",
     "preview": "zsh -c 'sensible-browser ./out/index.html &; exit'",
+    "clean": "zsh -c 'rm -rvf out dep **/*.log'",
     "test": "npm run compile"
   },
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
