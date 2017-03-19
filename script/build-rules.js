@@ -1,6 +1,8 @@
 'use strict'
 
-const {assign, getOwnPropertyNames} = Object
+const jstransformer = require('jstransformer')
+const getJsTrfm = name => jstransformer(require(`jstransformer-${name}`))
+const {assign} = Object
 
 module.exports = [
   [
@@ -9,26 +11,20 @@ module.exports = [
     (sourcecode, locals) => {
       const filters = {md: renderMarkdownIt}
       const options = {doctype: 'html', pretty: true, filename: locals.source, filters}
-      const fn = require('pug').compile(sourcecode.toString('utf8'), options)
-      return fn(assign({options, fn}, locals))
+      return getJsTrfm('pug').render(sourcecode.toString('utf8'), options, locals)
     }
   ],
   [
     /\.(stylus|styl)$/,
     '.css',
     (sourcecode, locals) =>
-      getOwnPropertyNames(locals)
-        .reduce(
-          (object, name) => object.define(name, locals[name]),
-          require('stylus')(sourcecode.toString('utf8'))
-        )
-        .render()
+      getJsTrfm('stylus').render(sourcecode.toString('utf8'), {}, locals)
   ],
   [
     /\.(markdown-it|markdown|md)$/,
     '.html',
     sourcecode =>
-      require('jstransformer-markdown-it').render(sourcecode.toString('utf8'))
+      getJsTrfm('markdown-it').render(sourcecode.toString('utf8'))
   ]
 ]
 
