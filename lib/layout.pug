@@ -13,9 +13,9 @@ html(lang = 'vi')
 
   body
     header#main-header
-      label(for = 'menu-visibility-checkbox'): button#menu-button
+      label#menu-button-container(for = 'menu-visibility-checkbox'): button#menu-button
       #logo
-      label(for = 'search-visibility-checkbox'): button#search-button
+      label#search-button-container(for = 'search-visibility-checkbox'): button#search-button
       block stylesheet
         +style('style/basic.css')
         +style('style/scrollbar.css')
