@@ -84,7 +84,6 @@ function compile (source, target, level) {
         info(`   ${isTargetExists ? '~~~' : '+++'} ` + target + ' (up to date)')
         return true
       } else {
-        info('▸▸ @ig ' + source + ' (already up to date)')
         return true
       }
     }) || updateVersion(source, target)
