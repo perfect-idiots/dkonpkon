@@ -4,3 +4,30 @@ include components.pug
 doctype html
 
 | !{'\n\n<!--\n' + license + '\n-->\n\n'}
+
+html(lang = 'vi')
+  head
+    meta(charset = 'utf-8')
+    title: block title
+      | Trò chơi giải trí
+
+  body
+    header#main-header
+      label(for = 'menu-visibility-checkbox'): button#menu-button
+      #logo
+      label(for = 'search-visibility-checkbox'): button#search-button
+
+    section#main-section
+      block main-section
+
+    footer#main-footer
+      .copyright-claim
+        :md(breaks)
+          Copyright © 2017 [Hoàng Văn Khải](https://github.com/KSXGitHub)
+          Copyright © 2017 [Nguyễn Mạnh Cường](https://github.com/cuong8321)
+          Copyright © 2017 [Y Nhơn Niê](https://github.com/Nhany14)
+          Under [MIT License](https://github.com/perfect-idiots/dkonpkon/blob/master/LICENSE.md)
+          All rights reserved
+
+          Source code is available at
+          [GitHub/perfect-idiots/dkonpkon](https://github.com/perfect-idiots/dkonpkon)
