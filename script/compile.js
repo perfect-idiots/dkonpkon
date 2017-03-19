@@ -3,7 +3,7 @@
 
 const {join, parse} = require('path')
 const {readdirSync, readFileSync, statSync, rmdirSync, unlinkSync, existsSync} = require('fs')
-const {getOwnPropertyNames} = Object
+const {assign, getOwnPropertyNames} = Object
 const {info} = global.console
 const jtry = require('just-try')
 const {mkdirSync, writeFileSync} = require('fs-force')
@@ -15,7 +15,7 @@ const getModifiedDate = require('../lib/get-mtime.js')
 const createdOutputFiles = new Set()
 const mtimeTable = tryReadJSON(join(dep, 'mtime.json'))
 const markedChanges = getChangedFiles()
-const genDepsTree = {}
+const genDepsTree = assign({}, require('./dep-map-json.js'))
 
 info('\nINFO')
 info({depsTree, mtimeTable})
