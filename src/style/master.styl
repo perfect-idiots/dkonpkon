@@ -32,9 +32,11 @@ define-size(page-width)
     #menu-button-container, #logo, #search-button-container
       margin size-20
 
+    #menu-button, #search-button
+      std-square(1)
+
     #menu-button
       background-size size-60
-      std-square(1)
 
 for factor in (8..38)
   define-size(factor * 60px)
