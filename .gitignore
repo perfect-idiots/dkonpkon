@@ -14,8 +14,7 @@ tmp.*
 temp.*
 *.tmp
 *.temp
-/src/media/*
-!/src/media/*.md
+/dep
 
 # Logs
 logs
