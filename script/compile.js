@@ -82,10 +82,8 @@ function compile (source, target, level) {
         genDepsTree[source] = dependencies
         writeFileSync(target, body)
         info(`   ${isTargetExists ? '~~~' : '+++'} ` + target + ' (up to date)')
-        return true
-      } else {
-        return true
       }
+      return true
     }) || updateVersion(source, target)
   } else {
     throw new Error(`Invalid type of fs entry: ${source}`)
