@@ -1,0 +1,251 @@
+# genre: racing, action, strategy, arcade, girl, adventure, shooter, sport, puzzle
+
+american-racing:
+  name: 'Đua xe Mỹ'
+  genre:
+    - racing
+  description: >
+    Là game đua xe 3d cho những tay lái thực thụ.
+    Hãy thi đấu với những tay đua xe phân khối lớn của Mỹ!
+    Mục tiêu chính của bạn là phải về đích đầu tiên trong mỗi vòng đua.
+    Sử dụng động cơ tăng tốc để vượt mặt đối thủ.
+    Hãy dành tiền thưởng để nâng cấp chiếc xe của mình và trở thành tay đua bất khả chiến bại!
+american-racing-2:
+  name: 'Đua xe Mỹ 2'
+  genre:
+    - racing
+  description: >
+    Trong game bạn sẽ tiếp tục tham gia các cuộc đua và nhiều sự kiện đua xe khác nữa trên đất Mỹ để giành được món tiền thưởng lớn.
+angry-birds-hallowen:
+  name: 'Những chú chim nổi giận - Hallowen'
+  genre:
+    - shooter
+    - arcade
+  description: >
+    Game Angry Birds phiên bản Halloween là thể loại game flash mới rất nổi tiếng của game Angry Birds .
+    Bạn hãy giúp chú chim giận dữ của chúng ta bắn đổ các quả bí ngô Halloween.
+    Thể loại game bắn súng nhưng rất vui và thú vị, bạn hãy kéo chuột để định hướng và thả chuột để bắn.
+    Cố gắng bắn thật chính xác nhé.
+    Hãy nhanh tay thử ngay nào !
+angry-birds-rio:
+  name: 'Những chú chim nổi giận- Rio'
+  genre:
+    - shooter
+    - arcade
+  description: >
+    *Angry Bird* được mở đầu bằng đoạn kể về việc những con heo màu lục độc ác đã ăn cắp những quả trứng của các con chim nhiều màu,
+    và vì vậy những con chim angry birds quyết định tấn công để lấy lại trứng.
+    Người chơi sẽ dùng sungs cao su để bắn từng con chim vào những con heo hoặc bắn vào công trình.
+    Mục tiêu là tiêu diệt các con heo bằng cách bắn trực tiếp hay phá vỡ các công trình, gây ra các va chạm cho chúng.
+    <br>
+    Nhiệm vụ của bạn là phá vỡ hệ thống phòng thủ ,tiêu diệt những con lợn để giải cứu bầy chim khỏi những kẻ xấu xa
+apple-shooter:
+  name: 'Bắn táo'
+  genre:
+    - shooter
+    - arcade
+  description: >
+    Nhiệm vụ rất đơn giản là hãy cố gắng bắn vào quả táo trên đầu của người khác. Đừng bắn trúng người nhé, nguy hiểm đấy !
+battle-shooter:
+  name: 'Bắn xe tăng'
+  genre:
+    - shooter
+    - action
+  description: >
+    Trò chơi bắn xe tăng cổ điển đây, bạn điều khiển xe tăng chống lại các xe tăng khác, nhớ đừng để bị bắn vào lô cốt nhé!
+    Game cho phép bạn tuỳ chỉnh 1 hoặc 2 người chơi,
+    gồm nhiều cấp độ tương ứng với những địa hình khác nhau,
+    khi chơi đến cấp độ cao bạn sẽ phải chiến đấu với nhiều loại xe tăng khác nhau,
+    nhưng tất cả chúng đều có điểm yếu hãy tận dụng chúng để hoàn thành mục tiêu,
+    trong quá trình chiến đấu sẽ có những trợ giúp có ích giành cho bạn hãy tiếp cận để nhận lấy chúng.
+    Hãy sẵn sàng cho một cuộc chiến khốc liệt, tiêu diệt những chiếc xe tăng đang có ý định phá huỷ biểu tượng của bạn.
+blow-up:
+  name: 'Bắn bóng'
+  genre:
+    - shooter
+    - arcade
+  description: >
+    Một trong những trò chơ bắn bi phá khối nổi tiếng.
+    Nhiệm vụ của bạn là dùng chuôt click bắn viên bi cùng màu với từ 2 bi cùng màu trở lên để phá hủy khối bi đang tràn xuống dưới.
+    Cố gắng phá hủy hết những viên bi trong thời gian sớm nhất nhé !
+bomb-destroyer:
+  name: 'Bom hủy diệt'
+  genre:
+    - puzzle
+    - arcade
+  description: >
+    Nhiệm vụ của bạn là tiêu diệt các trở ngại khác nhau trong thời gian giới hạn mà không để cho quả bom rơi xuống mặt đất.
+    Sử dụng sự cân bằng để giữ cho nó lên. Một trò chơi đố dựa trên nền tảng vật lý!
+bomb-expert:
+  name: 'Chuyên gia bom'
+  genre:
+    - puzzle
+    - arcade
+  description: >
+   Nhiệm vụ của bạn là tiêu diệt các trở ngại khác nhau trong thời gian giới hạn mà không để cho quả bom rơi xuống mặt đất.
+   Sử dụng sự cân bằng để giữ cho nó lên. Một trò chơi đố dựa trên nền tảng vật lý!
+bomb-it-1:
+  name: 'Đặt Bom 1'
+  genre:
+    - action
+    - arcade
+  description: >
+    Giây phút thư giãn sẽ đến với bạn trong trò chơi Bom IT,
+    một loại trò chơi cổ điển với nhiệm vụ là đặt Bom kiếm điểm và tiêu diệt kẻ địch.
+    Bạn có thể chơi 1 mình và lưu điểm để lên Bảng vàng, hoặc rủ thêm 1 bạn cùng chơi,
+    các bạn chơi 2 người sẽ thú vị hơn nhiều vì tăng tính tranh đua.
+bomb-it-2:
+  name: 'Đặt Bom 2'
+  genre:
+    - action
+    - arcade
+  description: >
+    Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game Bom IT 2 là đặt bom để tiêu diệt đối thủ.
+    Trong quá trình sẽ có những vật ngăn cản người chơi và bạn phải đánh bom để phá hủy nó.
+    Các bạn chơi 2 người sẽ thú vị hơn nhiều vì tăng tính tranh đua.
+    Với những hình ảnh đẹp và nhiều đồ vật trong phiên bản này sẽ giúp người chơi có những giây phút thoải mải.
+bomb-it-3:
+  name: 'Đặt Bom 3'
+  genre:
+    - action
+    - arcade
+  description: >
+    Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game Bom IT 3 là đặt bom để tiêu diệt đối thủ.
+    Trong quá trình sẽ có những vật ngăn cản người chơi và bạn phải đánh bom để phá hủy nó.
+    Các bạn chơi 2 người sẽ thú vị hơn nhiều vì tăng tính tranh đua.
+    Với những hình ảnh đẹp và nhiều đồ vật trong phiên bản này sẽ giúp người chơi có những giây phút thoải mải.
+bomb-it-4:
+    name: 'Đặt Bom 4'
+    genre:
+      - action
+      - arcade
+    description: >
+    Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game Bom IT 4 là đặt bom để tiêu diệt đối thủ.
+    Trong quá trình sẽ có những vật ngăn cản người chơi và bạn phải đánh bom để phá hủy nó.
+    Các bạn chơi 2 người sẽ thú vị hơn nhiều vì tăng tính tranh đua.
+    Với những hình ảnh đẹp và nhiều đồ vật trong phiên bản này sẽ giúp người chơi có những giây phút thoải mải.
+bomb-it-5:
+  name: 'Đặt Bom 5'
+  genre:
+    - action
+    - arcade
+  description: >
+    Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game Bom IT 4 là đặt bom để tiêu diệt đối thủ.
+    Trong quá trình sẽ có những vật ngăn cản người chơi và bạn phải đánh bom để phá hủy nó.
+    Các bạn chơi 2 người sẽ thú vị hơn nhiều vì tăng tính tranh đua.
+    Với những hình ảnh đẹp và nhiều đồ vật trong phiên bản này sẽ giúp người chơi có những giây phút thoải mải.
+bomb-it-6:
+  name: 'Đặt Bom 6'
+  genre:
+    - action
+    - arcade
+  description: >
+    Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game Bom IT 5 là đặt bom để tiêu diệt đối thủ.
+    Trong quá trình sẽ có những vật ngăn cản người chơi và bạn phải đánh bom để phá hủy nó.
+    Các bạn chơi 2 người sẽ thú vị hơn nhiều vì tăng tính tranh đua.
+    Với những hình ảnh đẹp và nhiều đồ vật trong phiên bản này sẽ giúp người chơi có những giây phút thoải mải.
+bomb-it-7:
+  name: 'Bom IT 7'
+  genre:
+    - action
+    - arcade
+  description: >
+    Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game Bom IT 7 là đặt bom để tiêu diệt đối thủ.
+    Trong quá trình sẽ có những vật ngăn cản người chơi và bạn phải đánh bom để phá hủy nó.
+    Các bạn chơi 2 người sẽ thú vị hơn nhiều vì tăng tính tranh đua.
+    Với những hình ảnh đẹp và nhiều đồ vật trong phiên bản này sẽ giúp người chơi có những giây phút thoải mải
+cave-run:
+  name: 'Cave run'
+  genre:
+    - arcade
+  description: >
+    Nhiệm vụ của người chơi là chạy càng xa càng tốt, vượt qua các chướng ngại vật để giành điểm số cao nhất
+crazy-arcade:
+  name: 'Crazy arcade'
+  genre:
+    - arcade
+  description: >
+    Game đặt bom rất phổ biến và thú vị, sử dụng mũi tên để di chuyển, space để đặt bom và phím 1,2,3 để sử dụng vật phẩm
+cursed-treasure-2:
+  name: 'Kho báu nguyền rủa 2'
+  genre:
+    - strategy
+  description: >
+    **Cursed Treasure 2** là một game phòng thủ tháp khá là thú vị mà có thể bạn đã từng thử qua đâu đó trên trình duyệt web của mình.
+    Game với một sự thay đổi nho nhỏ so với những tựa game cùng loại,
+    người chơi sẽ đóng vai Ác Quỷ cố gắng nỗ lực bảo vệ kho báu của mình trước những tên anh hùng tự cho mình là người tốt
+    đến cướp bóc. Mỗi cấp độ trong game cung cấp một loạt các vị trí khác nhau để bạn đặt những tòa tháp sao cho hợp lý nhất và
+    cố gắng để tiêu diệt các đám "người" ngày một đông đang tiến tới lâu đài.
+dai-nao-long-cung:
+  name: 'Đại náo Long Cung'
+  genre:
+    - shooter
+    - arcade
+  description: >
+    Nhập vai vào một trong những người bảo vệ Long Cung hãy tiêu diệt lũ thủy quái đang hoành hành đại náo
+    Long Cung để làm cho làn nước trong xanh và sạch sẽ trở lại nhé!
+    Nhiệm vụ của bạn trong trò chơi đại náo Long Cung là sử dụng súng, tiêu diệt lũ thủy quái đáng ghét
+dao-vang:
+  name: 'Đào vàng'
+  genre:
+    - strategy
+    - arcade
+  description: >
+    **Game đào vàng** là trò chơi đã quá quen thuộc với nhiều người,
+    đặc biệt là giới văn phòng. Với cách chơi ngộ nghĩnh, đồ họa đơn giản,
+    trò chơi đào vàng sẽ mang lại cho bạn những giây phút thư giãn sảng khoái nhất
+demons-vs-fairyland:
+  name: 'Quỷ và xứ sở thần tiên'
+  genre:
+    - strategy
+  description: >
+    Xây dựng tòa tháp , phép thuật sử dụng , nâng cao một đội quân của bộ xương ,
+    lệnh con thú mạnh mẽ , triệu tập zombies , thao tác kẻ thù của bạn ,mở khóa kỹ năng ,
+    nâng cấp tháp của bạn với khả năng đặc biệt và đánh bại những kẻ săn đuổi của bạn .
+    Cố gắng không cho những kẻ thù đưa những đứa trẻ ra khỏi trại của bạn !
+drago-adventure:
+  name: 'Cuộc phiêu lưu của chú Rồng'
+  genre:
+    - adventure
+  description: >
+    Game Cuộc Phiêu Lưu Của Rồng kể về cuộc phiêu lưu của chú rồng con trên con đường làm quen với cuộc sống.
+    Phía sau luôn là sợ dõi theo của Rồng cha
+fury-officer-2:
+  name: 'Cơn giận của nhân viên'
+  genre:
+    - adventure
+  description: >
+    Trong trò chơi chiến đấu **Fury officer** là một nhân viên nổi giận vì ông không bao giờ được trả tiền.
+    Ông bán linh hồn mình cho quỷ cho các quyền hạn đặc biệt để tấn công khách hàng của mình.
+    Bạn có thể thực hiện nhiều combo và nâng cấp số liệu thống kê của bạn hoặc mua những động tác mới sau mỗi vòng.
+golden-gate-drop:
+  name: 'Thợ ném bóng'
+  genre:
+    - arcade
+  description: >
+    Trong khi ở phía trên cùng của cây cầu Golden Gate, đạt các mục tiêu với bóng nước của bạn,
+    nhưng tránh các bà già, cảnh sát, hải âu, và pháo nước rednecks nhất định.
+    Bạn phải có số lượng tối thiểu của điểm để tiến vào vòng tiếp theo
+hobo:
+  name: 'Hobo - đại ca ra tù'
+  genre:
+    - action
+    - adventure
+    - arcade
+  description: >
+    Hàng đầu với hàng loạt các series đang được yêu thích. Đại ca ra tù sẽ mang đến cho các bạn những màn đánh đấm đầy thú vị và vui nhộn.
+    Những chiêu thức có một không hai mà chỉ có Đại ca Hobo mới có thể thi triển.
+    <br>
+    Trong phần này: Hobo rời bỏ căn nhà ổ chuột của bạn để chiến đấu với những kẻ thù trên đường phố.
+    Lần lượt hạ gục cảnh sát, găngxtơ, và đám công nhân trong thành phố!
+hobo-2-prison-brawl:
+  name: 'Hobo 2'
+  genre:
+    - action
+    - adventure
+    - arcade
+  description: >
+    Ở phần 2: sau khi trốn khỏi nơi giam giữ với lệnh truy nã còn lơ lửng ngay trên đầu đại ca
+    Hobo của chúng ta đã xuất hiện dưới các con phố và bắt đầu hành trình khẳng định quyền lực của bản thân.
+    Liệu lần này những đối thủ nào sẽ xuất hiện và ngáng trở thành đại ca đường phố của anh cảnh sát ,
+    các băng đảng , hay là những kẻ đi đường hãy cùng tham gia game và khám phá điều này nhé
