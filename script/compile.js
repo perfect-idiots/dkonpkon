@@ -17,8 +17,6 @@ const mtimeTable = tryReadJSON(join(dep, 'mtime.json'))
 const markedChanges = getChangedFiles()
 const genDepsTree = assign({}, require('./dep-map-json.js'))
 
-info('\nINFO')
-info({depsTree, mtimeTable})
 info(`\n${markedChanges.size} files are marked as modified.`)
 info('\nBUILDING...')
 compile(src, out, 0)
