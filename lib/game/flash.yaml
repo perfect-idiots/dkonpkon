@@ -1,4 +1,4 @@
-# genre: racing, action, strategy, arcade, girl, adventure, shooter, sport, puzzle
+# genre: racing, action, strategy, arcade, girl, adventure, shooter, sport, puzzle, board, combat
 
 american-racing:
   name: 'Đua xe Mỹ'
@@ -62,7 +62,7 @@ battle-shooter:
 blow-up:
   name: 'Bắn bóng'
   genre:
-    - shooter
+    - puzzle
     - arcade
   description: >
     Một trong những trò chơ bắn bi phá khối nổi tiếng.
