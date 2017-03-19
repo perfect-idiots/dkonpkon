@@ -16,6 +16,9 @@ html(lang = 'vi')
       label(for = 'menu-visibility-checkbox'): button#menu-button
       #logo
       label(for = 'search-visibility-checkbox'): button#search-button
+      block stylesheet
+        +style('style/basic.css')
+        +style('style/scrollbar.css')
 
     section#main-section
       block main-section
