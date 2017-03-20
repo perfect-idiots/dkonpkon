@@ -1,9 +1,158 @@
 # genre: arcade, adventure,arcade, board, combat, girl, open-world, role-play, puzzle, shooter, sport, racing, trategy
 
 bully:
-  name: 'Côn đồ'
+  name: 'Bully'
   genre:
+    - action
     - open-world
     - role-play
   description: >
-    Đây là phiên bản Trung Quốc của GTA 5
+    Với những ai đam mê thế giới Grand Theft Auto, hẳn đã một lần nghe tới cái tên ****Bully**** - tựa game cực độc phát triển
+    bởi chính Rockstar
+    Vancouver. Đứng chung mái nhà với **GTA**, dòng game bị ảnh hưởng mạnh mẽ bởi lối chơi hành động thế giới mở và phong cách
+    cực kỳ ngổ
+    ngáo. Duy chỉ có điều **Bully** không xoay quanh bối cảnh thế giới ngầm, mà thay vào đó xoáy thẳng vào... giới học sinh.
+    Nay sau 10 năm kể từ ngày đầu tiên đặt chân lên Playstation 2, **Bully** đã chính thức trở lại với phiên bản Anniversary
+    Edition trên
+    cả Android và iOS. Với danh tiếng lẫy lừng trước đây, tựa game sẽ mang tới trải nghiệm tuyệt vời cho game thủ, đặc biệt với
+    những ai
+    còn ngồi trong ghế nhà trường.
+    <br>
+    Câu chuyện của **Bully** đưa chúng ta nhập vai vào James Hopkins (Jimmy), một học sinh khét tiếng với thành tích đuổi học khỏi 7
+    trường liên tiếp. Với bản tính nghịch ngợm và hổ báo, Jimmy sớm thấy mình trở thành tâm điểm tại Học viện Bullworth - vốn cũng
+    nằm trong thế giới Grand Theft Auto. Với những hội nhóm đang kiểm soát giới học sinh tại đây, Jimmy bắt đầu hành trình thâu tóm
+    quyền lực và trả thù kẻ phản bội mình Gary Smith.
+    <br>
+    Lối chơi của **Bully** mang đúng chất hành động thế giới mở, cho game thủ tự do tham gia vào các nhiệm vụ xuyên suốt thế giới game.
+    Mang đúng phong cách của một GTA phiên bản học đường, tựa game cho người chơi thoải mái nghịch ngợm với vô vàn hoạt động khác nhau.
+    Nhưng cũng giống như các tựa GTA, **Bully** có hệ thống kiểm soát hành vi của game thủ. Nếu thực hiện những hành động sai quy định
+    hay bạo lực không cần thiết, các nhân viên bảo vệ sẽ sớm tóm gáy bạn trong tích tắc.
+    Thời học sinh mang tới nhiều kỷ niệm khó quên trong mỗi chúng ta, nơi sinh ra những trò nghịch ngợm điên cuồng mà các bậc phụ
+    huynh có lẽ không bao giờ tưởng tượng được. Chính vì thế nếu muốn quay trở lại những năm tháng vui vẻ ấy, chắc chắn
+    ****Bully**** sẽ là tựa game dành cho bạn
+grand-theft-auto-3-10:
+  name: 'Grand threft auto 3'
+  genre:
+    - action
+    - open-world
+    - role-play
+  description: >
+    **Rockstar** kỷ niệm 10 năm ngày phát hành của game hành động lừng danh **Grand Theft Auto III** - một trong những trò chơi
+    có ảnh hưởng nhất mọi thời đại - đã cho ra đời game này trên điện thoại di động của bạn. Phiên bản này được phát hành cho các
+    hệ điện thoại và máy tính bảng sử dụng hệ điều hành Android và iOS.
+    <br>
+    Đến với thế giới ngầm đen tối của thành phố Liberty - một phiên bản giả tưởng của thành phố New York thời hiện đại. Game thủ
+    sẽ theo chân Claude, một thành viên của thế giới ngầm tại thành phố này. Bị phản bội bởi chính cô bạn gái của mình trong khi
+    thực hiện một vụ cướp nhà băng, Claude phải bắt đầu lại từ đầu với 2 bàn tay trắng và tìm kiếm cô bạn gái cũ xảo quyệt với
+    hy vọng trả thù.Với một thế giới rộng lớn và đa dạng, một dàn nhân vật "hoang dã", bạn sẽ được khám phá từng bước đi của cuộc
+    sống, sự hấp dẫn và tàn nhẫn của thế giới tội phạm mà chúng ta có thể chưa từng tiếp xúc.
+    <br>
+    Với cốt truyện hấp dẫn, nhạc phim sống động, cảnh quan tuyệt đẹp cộng thêm sự cải tiến về các loại vũ khí xuất hiện mới như
+    gậy bong chày, lựu đạn, dao găm, sung lục, sung bắn tỉa và sung tiểu liên.. **Grand Theft Auto III** rất xứng đáng có mặt
+    trong dế yêu của bạn.
+    <br>
+    Một vài đặc điểm: <br>
+      • Trực quan đồ họa, nhân vật và các mô hình xe tuyệt đẹp <br>
+      • Độ phân giải HD <br>
+      • Bảng điều khiển tùy chỉnh trên điện thoại <br>
+      • Không giới hạn giờ chơi <br>
+      • Tích hợp với chế độ rung Immersion Haptic
+grand-theft-auto-san-andreas:
+  name: 'Grand theft auto: San Andreas '
+  genre:
+    - action
+    - open-world
+    - role-play
+  description: >
+    **Grand Theft Auto: San Andreas** lấy bối cảnh ở tiểu bang San Andreas (dựa trên California và Nevada), bao gồm 3 thành phố
+    Los Santos (dựa trên Los Angeles), San Fierro (dựa trên San Francisco) và Las Venturas (dựa trênLas Vegas), vào năm 1992,
+    Trò chơi xoay việc quanh thành viên băng đảng Carl "CJ" Johnson từ Liberty City trở về quê nhà ở Los Santos,
+    San Andreas sau khi biết tin mẹ mình bị ám sát. Bạn bè cũ và gia đình của CJ lâm vào cảnh hỗn loạn. Trong suốt trò chơi,
+    CJ dần khám phá ra âm mưu đằng sau cái chết của mẹ mình.
+    <br>
+    Cốt truyện của trò chơi được dựa trên những sự kiện có thật ở Los Angeles như mối thù địch giữa hai băng đảng Bloods và Crips,
+    nạn ma túy, vụ bê bối Rampart và thậm chí là cả những vụ bạo động năm 1992 tại Los Angeles.
+    **Grand Theft Auto: San Andreas** được cấu trúc tương tự như hai tựa game tiền nhiệm. Lối chơi cốt lõi bao gồm các yếu tố của các
+    trò chơi bắn súng góc nhìn thứ ba và đua xe, đồng thơi mang đến cho người chơi một môi trường thế giới mở rộng lớn để khám phá.
+    Đây cũng là lần đầu tiên nhân vật có thể bơi lội và leo trèo. Người chơi có thể điều khiển nhiều phương tiện, bao gồm xe hơi,
+    xe buýt, xe bán tải, xuồng máy, máy bay, trực thăng, tàu hỏa, xe tăng, xe gắn máy và xe đạp.
+    Người chơi có thể tự do đi lại và ngắm cảnh xung quanh thành phố hoặc gây hỗn loạn bằng cách tấn công người khác và phá hoại,
+    việc này có thể gây sự chú ý chết người
+    ngoài ý muốn từ chính quyền. Cảnh sát sẽ xử lý những vi phạm nhỏ, còn các đội đặc nhiệm,FBI và quân đội sẽ giải quyết những mức
+    truy nã cao hơn.
+    <br>
+    Người chơi có thể nhận nhiều nhiệm vụ phụ để tăng các thuộc tính và kiếm thêm thu nhập cho nhân vật, bao gồm cả những nhiệm vụ
+    phụ truyền thống có từ các tựa game trước như đưa đón khách đi taxi, dập các đám cháy, chở người bị thương đến bệnh viện và chiến
+    đấu chống tội phạm. Một số nhiệm vụ mới bao gồm trộm cắp, môi giới gái mại dâm, giao hàng bằng xe tải hoặc tàu hỏa và học lái
+    xe,máy bay,xuồng,xe máy.
+heroes-of-incredible-tales:
+  name: 'Heroes Of Incredible Tales '
+  genre:
+    - action
+    - role-play
+  description: >
+    Được phát triển bởi studio Nat Games và tích hợp công nghệ Unreal Engine 4 tối tân,**Heroes Of Incredible Tales** rõ ràng
+    là bước đột phá đầu tiên của Nexon vào thị trường game di động cao cấp về mặt đồ họa. Game có 4 lớp nhân vật chính cho bạn
+    lựa chọn tùy theo sở thích riêng, bên cạnh đó là việc phô diễn kỹ năng một cách hoành tráng đến mức khó tin. Loạt skill được
+    tung ra liên tục tạo thành chuỗi combo kéo dài, đi kèm với các hiệu ứng có mãnh lực điên cuồng rút máu nhanh chóng làm đối
+    phương không kịp trở tay.
+    <br>
+    Như các bạn đã biết, **Heroes Of Incredible Tales** là một game mobile nhập vai chặt chém sử dụng công nghệ đồ họa Unreal
+    Engine 4 đẹp mê hồn. Chính vì vậy, người xem có thể phần nào tin tưởng vào một thế giới huyền ảo cực "chất lượng" về mặt
+    đồ họa mà game sẽ mang lại. Cảnh quang trong game được xây dựng rất tỉ mỉ, có sự đầu tư từ những chi tiết nhỏ như cành cây
+    ngọn cỏ, sương khói...Hiệu ứng từ kỹ năng sắc xảo, nhẹ nhàng không lòe loẹt mang lại cảm giác trải nghiệm chân thật không
+    hề thua kém các game ARPG mang tầm cỡ PC/ Console
+    <br>
+    Ngoài ra, hệ thống điều khiển nhân vật cũng như cách tấn công vào kẻ thù trong HIT cũng được Nexon làm khác đi so với những
+    game thuần nhập vai khác. Cụ thể, người chơi chỉ cần bấm trên màn hình cảm ứng về những nơi mình muốn di chuyển và chỉ vào
+    những đối tượng mà mình muốn tiêu diệt để kích hoạt tấn công thay vì sử dụng các phím ảo như trước.
+    Hiện tại, người chơi có thể trải nghiệm chế độ cốt truyện với hơn 180 thử thách, chế độ đấu trường thách thức 1vs1,
+    Raid cũng như là thách đấu 6vs6, HIT hứa hẹn có chiều sâu gameplay thuộc hàng khủng chưa từng có từ trước đến nay. Đây
+    hẳn là một game ARPG sở hữu lối chơi cuốn hút không thể bỏ qua.
+max-payne-3:
+  name: 'Max Payne 3 '
+  genre:
+    - shooter
+  description: >
+    **Max Payne 3** là trò chơi điện tử bắn súng góc nhìn người thứ ba được phát triển bởi Rockstar Vancouver và phát hành
+    bởi Rockstar Games. Đây là phiên bản thứ ba của dòng trò chơi **Max Payne**, được phát hành trên hệ máy XBox 360 và
+    PlayStation 3 vào tháng 5 năm 2012, và cho Microsoft Windows vào tháng 6 2012. Ngoài phần sản xuất chính được đảm nhiệm
+    bởi Rockstar Vancouver, trò chơi còn được các studio khác thuộc biên chế của Rockstar Games trợ giúp sản xuất như studio
+    New England, Luân Đôn và Toronto. Về phần studio Vancouver, sau khi hoàn thành trò chơi, đã bị đóng cửa và sáp nhập vào
+    Rockstar Toronto
+    <br>
+    Đây là phần đầu tiên trong loạt trò chơi cùng tên không được phát triển bởi hãng game Phần Lan Remedy Entertainment và
+    không được viết bởi người sáng lập của sê-ri là Sam Lake.Người viết kịch bản chính cho trò chơi là Dan Houser, cũng là
+    người viết kịch bản chính cho Red Dead Redemption, Grand Theft Auto IV và **Bully**.
+    <br>
+    **Max Payne 3** nhận được phản hồi tích cực của các nhà phê bình, với những lời khen ngợi dành cho gameplay được cải
+    tiến vượt bậc so với hai đàn anh trước. Theo bài phê bình tổng hợp từ Metacritic và Game Rankings đánh giá phiên bản
+    cho XBox 360 là 87/100 và 84,75%; phiên bản cho PlayStation 3 là 87/100 và 86,08%; phiên bản cho PC là 87/100 và 85,67%
+    Chỉ trong tuần đầu tiên bán ra, **Max Payne 3** đã bán được 3 triệu bản trên toàn cầu.Game này giành được hàng loạt
+    các danh hiệu của các tạp chí game trong năm 2012.
+torchlight:
+  name: 'Torchlight'
+  genre:
+    - action
+    - role-play
+  description: >
+    **Torchlight** là tựa game ARPG đã từng đoạt những giải thưởng cao quý kể từ khi được Runic Games phát triển và ra mắt
+    trên PC từ hồi tháng 10 năm 2009. Bị coi là bản sao của Diablo nhưng ngay từ khi ra mắt nhưng **Torchlight** lại được
+    chào đón khá nồng nhiệt, ngay cả các fan ruột của Diablo cũng sẵn sàng chơi và đưa ra không ít lời ngợi khen.
+    <br>
+    Không hoành tráng như tựa game của Blizzard nhưng ****Torchlight**** vẫn có những nét độc đáo riêng như cốt truyện phi
+    tuyến tính, khả năng mod game rất đa dạng. Chính nhờ những thành công vốn có này ở phiên bản trên PC mà Perfect World
+    đã quyết định bắt tay Runic Games để tạo ra phiên bản di động mang tên **Torchlight** Mobile.
+    <br>
+    Tương tự như người tiền nhiệm của mình, **Torchlight** Mobile vẫn là một game hành động nhập vai chặt chém quen thuộc
+    mang đậm phong cách nghệ thuật độc đáo của mình như cốt truyện phi tuyến tính, khả năng mod game rất đa dạng. Khác với
+    Diablo III với sự màu mè trong phần hình ảnh thì **Torchlight** Mobile vẫn có đủ chất tăm tối, u ám vốn là đặc trưng
+    của dòng game này.
+    <br>
+    Nội dung của game vẫn tập trung vào những pha hành động tốc độ cao, yêu cầu người chơi phải khéo léo sử dụng những kĩ
+    năng ngoạn mục để đẩy lui hàng đàn quái vật. Game sẽ được thiết kế để các game thủ có thể chơi một mình mà vẫn có cả
+    những kĩ năng khiến họ hữu dụng khi hoạt động trong một nhóm.
+    <br>
+    Cũng giống như phiên bản PC, **Torchlight** Mobile chú trọng vào việc khám phá và chinh phục các dungeon khác nhau.
+    Mỗi màn chơi đều thực sự khó khăn và thử thách khi luôn xuất hiện những con Boss khó nhằn. Để hạ gục được chúng, người
+    chơi cần phải lập nhóm với các lớp nhân vật khác nhau và đưa ra những phương án chiến đấu.
