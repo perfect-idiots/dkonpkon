@@ -1,12 +1,14 @@
 -
   const {join, resolve} = require('path')
-  const {readFileSync} = require('fs')
+  const {readFileSync, readdirSync} = require('fs')
   const getyamlobj = getlib('getyamlobj')
   const {toPairObjectList} = getlib('object-list')
   const repeat = getlib('repeater').array.value
+  const gamedir = join(lib, 'game')
   const license = readFileSync(join(projdir, 'LICENSE.md'), {encoding: 'utf8'})
   const sitemapyaml = getyamlobj('site-map.yaml')
   const sitemap = toPairObjectList(sitemapyaml)
+  const categories = readdirSync(gamedir)
   const parentDirectory = level => level ? repeat('..', level).join('/') : '.'
   const siteroot = parentDirectory(level - 1)
 
@@ -32,6 +34,7 @@ html(lang = 'vi')
     block data
       +json-script(getyamlobj('genre.yaml'))#data-genre
       +json-script(getyamlobj('site-map.yaml'))#data-site-map
+      +json-script(categories)#data-categories
 
   body: .page
     header#main-header
