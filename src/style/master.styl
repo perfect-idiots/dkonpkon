@@ -5,6 +5,9 @@ responsive-split = 480px
 std-square-size = 60px
 std-square-margin = 10px
 std-square-container-size = (std-square-size + 2 * std-square-margin)
+std-theme-background = #0e1112
+std-hover-background = #7e3114
+std-active-background = #b44014
 
 /* FUNCTIONS */
 
@@ -101,9 +104,9 @@ for i in (1..6)
   position absolute
   top 0px
   :hover
-    background-color #7e3114
+    background-color std-hover-background
   :active
-    background-color #b44014
+    background-color std-active-background
 
 #menu-button-container
   left 0px
@@ -169,7 +172,7 @@ for i in (1..6)
 
 @media screen
   body
-    background #0e1112
+    background std-theme-background
     color white
 
   .no-screen, .print-only
