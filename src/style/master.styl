@@ -1,5 +1,5 @@
 
-/* CONSTANTS */
+// CONSTANTS
 
 adaptive-split = 480px
 std-square-size = 60px
@@ -13,7 +13,7 @@ std-onview-active-background = #f0a722
 std-hover-background = #7e3114
 std-active-background = #b44014
 
-/* FUNCTIONS */
+// FUNCTIONS
 
 fun-std-inner-size(count)
   (count * std-square-size + (count - 1) * std-square-margin)
@@ -21,7 +21,7 @@ fun-std-inner-size(count)
 fun-std-outer-size(count)
   (count * std-square-size + (count + 1) * std-square-margin)
 
-/* MIXINS */
+// MIXINS
 
 mix-rectange(width, height)
   width width
@@ -57,7 +57,7 @@ mix-deep-transition()
   &, & *
     mix-transition()
 
-/* GLOBAL RULES */
+// GLOBAL RULES
 
 .ready-for-transition
   mix-deep-transition()
@@ -223,7 +223,7 @@ for i in (1..6)
       opacity 1.0
       z-index 250
 
-/* ADAPTIVE RULES */
+// ADAPTIVE RULES
 
 @media (min-width: adaptive-split)
   #main-footer > .copyright-claim > p
