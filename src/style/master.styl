@@ -1,7 +1,7 @@
 
 /* CONSTANTS */
 
-responsive-split = 480px
+adaptive-split = 480px
 std-square-size = 60px
 std-square-margin = 10px
 std-square-container-size = (std-square-size + 2 * std-square-margin)
@@ -225,15 +225,15 @@ for i in (1..6)
 
 /* ADAPTIVE RULES */
 
-@media (min-width: responsive-split)
+@media (min-width: adaptive-split)
   #main-footer > .copyright-claim > p
     display inline-block
-    width (responsive-split / 2)
+    width (adaptive-split / 2)
     vertical-align middle
     margin 0px
     padding 0px
 
-@media (max-width: responsive-split)
+@media (max-width: adaptive-split)
   #main-footer > .copyright-claim > p
     display block
     margin-top std-square-margin
