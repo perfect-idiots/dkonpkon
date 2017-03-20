@@ -1,0 +1,9 @@
+# genre: arcade, adventure,arcade, board, combat, girl, open-world, role-play, puzzle, shooter, sport, racing, trategy
+
+bully:
+  name: 'Côn đồ'
+  genre:
+    - open-world
+    - role-play
+  description: >
+    Đây là phiên bản Trung Quốc của GTA 5
