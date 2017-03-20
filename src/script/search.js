@@ -4,9 +4,6 @@
   const {body} = document
   const input = document.getElementById('search-input')
 
-  const toggleSearchBox = () =>
-    isSearchBoxShown() ? hideSearchBox() : showSearchBox()
-
   const isSearchBoxShown = () =>
     body.classList.contains('show-search-box')
 
@@ -20,7 +17,12 @@
     .getElementById('search-button')
     .addEventListener('click', event => {
       event.stopPropagation()
-      toggleSearchBox()
+      if (isSearchBoxShown()) {
+        const {value} = input
+        if (!value) return hideSearchBox()
+      } else {
+        showSearchBox()
+      }
     }, false)
 
   document.addEventListener('click', hideSearchBox, false)
