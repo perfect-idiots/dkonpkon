@@ -97,13 +97,16 @@ for i in (1..6)
   height fun-std-outer-size(2)
   text-align center
   font-size 0.75em
+
   a[href]
     color #1fcdde
     text-decoration none
     cursor pointer
+
     &:hover
       color #56dce9
       text-decoration underline
+
   .copyright-claim
     margin-left auto
     margin-right auto
@@ -119,8 +122,10 @@ for i in (1..6)
   mix-std-outer-square(1)
   top 0px
   position absolute
+
   &:hover
     background-color std-hover-background
+
   &:active
     background-color std-active-background
 
@@ -163,14 +168,18 @@ for i in (1..6)
 #menu-container
   position fixed
   width fun-std-outer-size(3)
+
   & > *
     display block
+
   #menu-button-container
     z-index 200
+
     & > *
       display inline-block
       overflow hidden
       vertical-align middle
+
   #main-menu
     position fixed
     top std-square-size
@@ -179,16 +188,21 @@ for i in (1..6)
     overflow-y auto
     margin-left 0px
     padding-left 0px
+
     li
       width 100%
       height fun-std-outer-size(1)
       text-align center
+
       &[on-view]
         background std-onview-background
+
         &:hover
           std-onview-hover-background
+
         &:active
           std-onview-active-background
+
       a, a[href]
         text-decoration none
         color white
@@ -201,10 +215,12 @@ for i in (1..6)
 #menu-visibility-checkbox
   &:not(:checked) + #menu-container
     width fun-std-outer-size(1)
+
     #menu-title
       width 0px
       opacity 0.0
       font-size 0px
+
     #main-menu
       width fun-std-outer-size(1)
       opacity 0.0
@@ -214,10 +230,13 @@ for i in (1..6)
     z-index 200
     height 100%
     background std-sidepane-background
+
     &, & #menu-button-container
       width fun-std-outer-size(3)
+
     #menu-title
       opacity 1.0
+
     #main-menu
       width fun-std-outer-size(3)
       opacity 1.0
