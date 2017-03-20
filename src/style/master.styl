@@ -45,11 +45,15 @@ mix-bgimg-size(size)
   background-repeat no-repeat
   background-position center
 
-/* GLOBAL RULES */
-
-*
+mix-transition()
   transition-duration 500ms
-  transition-timing-function ease-out
+  transition-timing-function ease
+
+mix-deep-transition()
+  &, & *
+    mix-transition()
+
+/* GLOBAL RULES */
 
 body
   margin 0px
@@ -102,6 +106,7 @@ for i in (1..6)
   mix-std-outer-square(1)
   position absolute
   top 0px
+  mix-transition()
   :hover
     background-color std-hover-background
   :active
