@@ -37,13 +37,16 @@ html(lang = 'vi')
         label#menu-button-container.no-print(for = 'menu-visibility-checkbox')
           #menu-button
           h2#menu-title menu
+
         ul#main-menu: for pair in sitemap
           -
             const href = [siteroot, pair.name].join('/')
             const isOnView = resolve(dir, name + '.html') === target
           li(on-view = isOnView): a(href = href)= pair.body
+
       #logo-container: #logo: block logo
         h1#content-title Trò chơi giải trí
+
       label#search-button-container.no-print: #search-button
 
     section#main-section
