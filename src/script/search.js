@@ -14,16 +14,16 @@
     body.classList.add('show-search-box')
 
   const hideSearchBox = () =>
-    input.value || body.classList.remove('show-search-box')
+    body.classList.remove('show-search-box')
 
   document
     .getElementById('search-button')
     .addEventListener('click', event => {
       event.stopPropagation()
-      toggleSearchBox()
+      input.value ? showSearchResult() : toggleSearchBox()
     }, false)
 
-  document.addEventListener('click', hideSearchBox, false)
+  document.addEventListener('click', () => input.value || hideSearchBox(), false)
   input.addEventListener('keydown', onkeydown, false)
   input.addEventListener('click', event => event.stopPropagation(), false)
 
