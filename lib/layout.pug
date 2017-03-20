@@ -47,7 +47,12 @@ html(lang = 'vi')
       #logo-container: #logo: block logo
         h1#content-title Trò chơi giải trí
 
-      label#search-button-container.no-print: #search-button
+      #search-container.no-print
+        #search-button-container
+          input#search-input(type = 'text')
+          #search-button
+
+        #search-suggestion
 
     section#main-section
       block main-section
@@ -65,4 +70,4 @@ html(lang = 'vi')
           Under [MIT License](https://github.com/perfect-idiots/dkonpkon/blob/master/LICENSE.md)
 
     block body-script
-      +script-list(siteroot, 'onload')
+      +script-list(siteroot, 'onload', 'search')

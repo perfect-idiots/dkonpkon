@@ -140,7 +140,6 @@ for i in (1..6)
   top 0px
   height fun-std-outer-size(1)
   left fun-std-outer-size(1)
-  right fun-std-outer-size(1)
 
 #menu-button, #search-button
   background-color transparent
@@ -241,6 +240,27 @@ for i in (1..6)
       width fun-std-outer-size(3)
       opacity 1.0
       z-index 250
+
+#search-input
+  position absolute
+  height fun-std-outer-size(1)
+  right fun-std-outer-size(1)
+
+body:not(.show-search-box)
+  #logo-container
+    right fun-std-outer-size(1)
+
+  #search-input
+    width 0px
+    opacity 0.0
+
+body.show-search-box
+  #logo-container
+    right fun-std-outer-size(6 + 1)
+
+  #search-input
+    width fun-std-outer-size(6)
+    opacity 1.0
 
 // ADAPTIVE RULES
 
