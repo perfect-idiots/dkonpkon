@@ -27,7 +27,7 @@ html(lang = 'vi')
 
   body: .page
     header#main-header
-      +checkbox('menu-visibility-checkbox')
+      +checkbox('menu-visibility-checkbox')(hidden)
       label#menu-button-container.no-print(for = 'menu-visibility-checkbox'): button#menu-button
       #menu-container
       #logo-container: #logo: block logo
