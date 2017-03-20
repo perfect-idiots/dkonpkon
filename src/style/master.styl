@@ -13,6 +13,8 @@ std-onview-active-background = #f0a722
 std-textbox-background = #3d0714
 std-hover-background = #7e3114
 std-active-background = #b44014
+std-brighter-hover-background = #8c3b1c
+std-brighter-active-background = #bd481b
 
 // FUNCTIONS
 
@@ -201,7 +203,7 @@ for i in (1..6)
       text-align center
 
       &[on-view]
-        background std-onview-background
+        background-color std-onview-background
 
         &:hover
           std-onview-hover-background
@@ -235,7 +237,7 @@ for i in (1..6)
   &:checked + #menu-container
     z-index 200
     height 100%
-    background std-sidepane-background
+    background-color std-sidepane-background
 
     &, & #menu-button-container
       width fun-std-outer-size(3)
@@ -254,7 +256,7 @@ for i in (1..6)
   right fun-std-outer-size(1)
   padding std-square-margin
   border 0px
-  background std-textbox-background
+  background-color std-textbox-background
   color white
   font-size 1.75em
 
@@ -274,6 +276,15 @@ body.show-search-box
     width fun-std-inner-size(6)
     opacity 1.0
 
+  #search-button-container
+    background-color std-hover-background
+
+    &:hover
+      background-color std-brighter-hover-background
+
+    &:active
+      background-color std-brighter-active-background
+
 // ADAPTIVE RULES
 
 @media (min-width: adaptive-split)
@@ -292,7 +303,7 @@ body.show-search-box
 
 @media screen
   body
-    background std-theme-background
+    background-color std-theme-background
     color white
 
   .no-screen, .print-only
