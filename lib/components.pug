@@ -4,6 +4,13 @@ mixin style(href)
 mixin checkbox(name, checked)
   input(type = 'checkbox' id = name name = name checked = checked || false)&attributes(attributes)
 
+mixin data-script(type, content)
+  script(type = type hidden).data&attributes(attributes)!= `\n${content}\n`
+
+mixin json-script(...args)
+  - const json = JSON.stringify(...args)
+  +data-script('application/json', json).json&attributes(attributes)
+
 mixin script-list(siteroot, ...list)
   for name in list
     - const src = [siteroot, 'script', name + '.js'].join('/')
