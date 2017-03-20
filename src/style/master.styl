@@ -6,7 +6,10 @@ std-square-size = 60px
 std-square-margin = 10px
 std-square-container-size = (std-square-size + 2 * std-square-margin)
 std-theme-background = #0e1112
-std-brighter-background = #121617
+std-sidepane-background = #121617
+std-onview-background = #ffa500
+std-onview-hover-background = #faae23
+std-onview-active-background = #f0a722
 std-hover-background = #7e3114
 std-active-background = #b44014
 
@@ -180,9 +183,19 @@ for i in (1..6)
       width 100%
       height fun-std-outer-size(1)
       text-align center
+      &[on-view]
+        background std-onview-background
+        &:hover
+          std-onview-hover-background
+        &:active
+          std-onview-active-background
       a, a[href]
         text-decoration none
         color white
+        display inline-block
+        width 100%
+        padding-top (2.5 * std-square-margin)
+        padding-bottom (2.5 * std-square-margin)
 
 #menu-visibility-checkbox
   &:not(:checked) + #menu-container
@@ -199,7 +212,7 @@ for i in (1..6)
   &:checked + #menu-container
     z-index 200
     height 100%
-    background std-brighter-background
+    background std-sidepane-background
     &, & #menu-button-container
       width fun-std-outer-size(3)
     #menu-title
