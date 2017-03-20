@@ -153,11 +153,11 @@ for i in (1..6)
   left 0px
 
 #menu-visibility-checkbox
-  &:not(checked) + * + #menu-container
+  &:not(:checked) + * + #menu-container
     bottom 100%
 
   &:checked + * + #menu-container
-    top 0px
+    top fun-std-outer-size(1)
 
 /* RESPONSIVE RULES */
 
