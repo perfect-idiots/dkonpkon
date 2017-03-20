@@ -11,6 +11,9 @@ mixin json-script(...args)
   - const json = JSON.stringify(...args)
   +data-script('application/json', json).json&attributes(attributes)
 
+mixin pretty-json-script(object)
+  +json-script(object, undefined, 2)
+
 mixin script-list(siteroot, ...list)
   for name in list
     - const src = [siteroot, 'script', name + '.js'].join('/')
