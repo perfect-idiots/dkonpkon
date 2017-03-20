@@ -32,7 +32,7 @@ html(lang = 'vi')
       +checkbox('menu-visibility-checkbox')(hidden)
       label#menu-button-container.no-print(for = 'menu-visibility-checkbox'): #menu-button
       nav#menu-container
-        h1#menu-title MENU
+        h1#menu-title menu
         ul#main-menu: for pair in sitemap
           li: a(href = join(parentDirectory(level - 1), pair.name))= pair.body
       #logo-container: #logo: block logo
