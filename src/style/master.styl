@@ -57,6 +57,11 @@ body, .page
   padding-left 0px
   padding-right 0px
 
+for i in (1..6)
+  h{i}
+    font-weight normal
+    font-size ((std-square-size - std-square-margin) / i)
+
 :focus
   outline none !important
 
@@ -108,6 +113,11 @@ body, .page
 #logo
   background-color transparent
   height fun-std-outer-size(1)
+  h1
+    text-transform uppercase
+    vertical-align middle
+    margin std-square-margin
+    padding 0px
 
 /* RESPONSIVE RULES */
 
