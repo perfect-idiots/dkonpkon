@@ -32,9 +32,9 @@ html(lang = 'vi')
     block head-script
 
     block data
-      +json-script(getyamlobj('genre.yaml'))#data-genre
-      +json-script(sitemap)#data-site-map
-      +json-script(categories)#data-categories
+      +pretty-json-script(getyamlobj('genre.yaml'))#data-genre
+      +pretty-json-script(sitemap)#data-site-map
+      +pretty-json-script(categories)#data-categories
 
   body: .page
     header#main-header
