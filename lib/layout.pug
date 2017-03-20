@@ -1,5 +1,5 @@
 -
-  const {join} = require('path')
+  const {join, resolve} = require('path')
   const {readFileSync} = require('fs')
   const yaml = require('js-yaml')
   const getlibfile = getlib('getlibfile')
@@ -38,8 +38,10 @@ html(lang = 'vi')
           #menu-button
           h2#menu-title menu
         ul#main-menu: for pair in sitemap
-          - const href = [siteroot, pair.name].join('/')
-          li: a(href = href)= pair.body
+          -
+            const href = [siteroot, pair.name].join('/')
+            const isOnView = resolve(dir, name + '.html') === target
+          li(on-view = isOnView): a(href = href)= pair.body
       #logo-container: #logo: block logo
         h1#content-title Trò chơi giải trí
       label#search-button-container.no-print(for = 'search-visibility-checkbox'): #search-button
