@@ -7,9 +7,13 @@ battle-city:
     - trategy
     - arcade
   description: >
-    Nói đến Game NES chúng ta không thể bỏ qua game bắn tank cổ điển  **Battle City**. Được phát hành năm 1990 trên hệ máy chơi game Nintendo 4 nút. Cách điều khiển và lối chơi đơn giản, nhưng để đạt đến level cao thì người điều khiển cần phải có một chiến thuật hết sức tinh tế và hợp lý!
+    Nói đến Game NES chúng ta không thể bỏ qua game bắn tank cổ điển  **Battle City**. Được phát hành năm 1990 trên hệ máy chơi
+    game Nintendo 4 nút. Cách điều khiển và lối chơi đơn giản, nhưng để đạt đến level cao thì người điều khiển cần phải có một
+    chiến thuật hết sức tinh tế và hợp lý!
     <br>
-    Người chơi sẽ phải lái những cỗ xe tank của mình thật khéo léo, chọn những vị trí chủ chốt để dễ bề tiêu diệt xe tăng địch, bảo vệ thành trì. Trong bài, người chơi dễ dàng nhận được những sao combo như: giáp chống đạn, mìn nổ, khóa, đạn phá bê tông… khi đó chiến tank của chúng ta sẽ như là những chiếc tiger tank  đã từng làm mưa làm gió trong đại chiến thế giới thứ 2…
+    Người chơi sẽ phải lái những cỗ xe tank của mình thật khéo léo, chọn những vị trí chủ chốt để dễ bề tiêu diệt xe tăng địch,
+    bảo vệ thành trì. Trong bài, người chơi dễ dàng nhận được những sao combo như: giáp chống đạn, mìn nổ, khóa, đạn phá bê tông…
+    khi đó chiến tank của chúng ta sẽ như là những chiếc tiger tank  đã từng làm mưa làm gió trong đại chiến thế giới thứ 2…
 bomberman:
   name: 'Bomberman'
   genre:
@@ -18,45 +22,56 @@ bomberman:
   description: >
     **Bomberman** được hãng Hudson Soft phát triển từ đầu thập niên 1980 và ra mắt bản dành cho điện tử 4 nút vào năm 1987
     <br>
-    Trong trò này người chơi sẽ điều khiển nhân vật Bomberman đặt bom để tiêu diệt hết quái vật trong một mê cung. **Bomberman** ngày nay vẫn còn được ưa thích.
+    Trong trò này người chơi sẽ điều khiển nhân vật Bomberman đặt bom để tiêu diệt hết quái vật trong một mê cung. **Bomberman**
+    ngày nay vẫn còn được ưa thích.
 contra:
   name: 'Contra'
   genre:
     - shooter
     - arcade
   description: >
-    **Contra** của hãng Konami ra mắt vào tháng 2/1988 là một trong những trò chơi "điện tử 4 nút" được yêu thích nhất ở Việt Nam. Người chơi sẽ điều khiến hai nhân vật có tên là Bill Rizer "Chó điên" và Lance Bean "Bọ cạp" thực hiện nhiệm vụ vô hiệu hóa một nhóm khủng bố có kế hoạch đánh chiếm cả thế giới.
-    **Contra** là trò chơi bắn súng đã quá quen thuộc trên hệ máy Nitendo “bốn nút” chắc không thể nào quên được sự hấp dẫn đến kỳ lạ với thể loại hành động trong những năm đầu của thập niên 80
+    **Contra** của hãng Konami ra mắt vào tháng 2/1988 là một trong những trò chơi "điện tử 4 nút" được yêu thích nhất ở Việt
+    Nam. Người chơi sẽ điều khiến hai nhân vật có tên là Bill Rizer "Chó điên" và Lance Bean "Bọ cạp" thực hiện nhiệm vụ vô hiệu
+    hóa một nhóm khủng bố có kế hoạch đánh chiếm cả thế giới.
+    **Contra** là trò chơi bắn súng đã quá quen thuộc trên hệ máy Nitendo “bốn nút” chắc không thể nào quên được sự hấp dẫn đến
+    kỳ lạ với thể loại hành động trong những năm đầu của thập niên 80
 dig-dug:
   name: 'Dig dug'
   genre:
     - arcade
   description: >
-    "Dig Dug" do hãng Namco phát hành năm 1989 là trò chơi đòi hỏi khả năng tư duy tốt. Nhiệm vụ của người chơi là bơm cho những con quái vật trong lòng đất nổ tung, hoặc làm chúng bị đè bẹp bằng những tảng đá.
+    "Dig Dug" do hãng Namco phát hành năm 1989 là trò chơi đòi hỏi khả năng tư duy tốt. Nhiệm vụ của người chơi là bơm cho những
+    con quái vật trong lòng đất nổ tung, hoặc làm chúng bị đè bẹp bằng những tảng đá.
 dr-mario:
   name: 'Dr.Mario'
   genre:
     - shooter
     - arcade
   description: >
-    **Dr. Mario** do hãng Nintendo phát hành năm 1990, ở Việt Nam gọi là "xếp thuốc", là một trò chơi dạng xếp hình rất hay, trong đó người chơi phải xếp những viên thuốc theo màu sắc để tiêu diệt được những con virus có cùng màu.
+    **Dr. Mario** do hãng Nintendo phát hành năm 1990, ở Việt Nam gọi là "xếp thuốc", là một trò chơi dạng xếp hình rất hay,
+    trong đó người chơi phải xếp những viên thuốc theo màu sắc để tiêu diệt được những con virus có cùng màu.
 galaga:
   name: 'Galaga'
   genre:
     - shooter
     - arcade
   description: >
-    Quen thuộc với tên Bắn ruồi, **Galaga** là cuộc chiến chống các sinh vật ngoài tinh để bảo vệ Trái Đất. Với số lượng mạng có hạng, việc tiêu diệt càng nhiều "ruồi" sẽ giúp người chơi tránh được nhiều rủi ro trên chiếc tàu vũ trụ. Ngoài NES, Galaga còn làm mưa làm gió trên rất nhiều dòng máy cổ như Atari 7800, Game Boy, GameTap, MSX,...
+    Quen thuộc với tên Bắn ruồi, **Galaga** là cuộc chiến chống các sinh vật ngoài tinh để bảo vệ Trái Đất. Với số lượng mạng
+    có hạng, việc tiêu diệt càng nhiều "ruồi" sẽ giúp người chơi tránh được nhiều rủi ro trên chiếc tàu vũ trụ. Ngoài NES,
+    Galaga còn làm mưa làm gió trên rất nhiều dòng máy cổ như Atari 7800, Game Boy, GameTap, MSX,...
 mappy:
   name: 'Galaga'
   genre:
     - arcade
   description: >
-    **Galaga** của hãng Namco ra mắt vào năm 1983 là một trong những trò chơi "điện tử 4 nút" được yêu thích. Nhiệm vụ là điều khiển chú chuột nhặt thật nhiều đồ trước mặt bọn Mèo gian ác
+    **Galaga** của hãng Namco ra mắt vào năm 1983 là một trong những trò chơi "điện tử 4 nút" được yêu thích. Nhiệm vụ là
+    điều khiển chú chuột nhặt thật nhiều đồ trước mặt bọn Mèo gian ác
 super-mario-bros:
   name: 'Super Mario Bros'
   genre:
     - adventure
     - arcade
   description: >
-    **Super Mario Bros** (thường gọi tắt là Mario) là trò chơi được hãng Nintendo phát hành năm 1985. Trong trò này, người chơi điều khiển hai nhân vật Mario và Luigi (anh của Mario) xâm nhập vào Vương quốc Nấm để giải cứu công chúa Peach từ nhân vật phản diện Bowser
+    **Super Mario Bros** (thường gọi tắt là Mario) là trò chơi được hãng Nintendo phát hành năm 1985. Trong trò này, người chơi
+    điều khiển hai nhân vật Mario và Luigi (anh của Mario) xâm nhập vào Vương quốc Nấm để giải cứu công chúa Peach từ nhân vật
+    phản diện Bowser
