@@ -13,7 +13,7 @@ html(lang = 'vi')
   head
     meta(charset = 'utf-8')
     title: block title
-      | Trò chơi giải trí
+      | Trò chơi giải trí — Trang chủ
 
     block stylesheet
       +style('style/basic.css')
@@ -23,7 +23,8 @@ html(lang = 'vi')
   body: .page
     header#main-header.no-print
       label#menu-button-container(for = 'menu-visibility-checkbox'): button#menu-button
-      #logo-container: #logo
+      #logo-container: #logo: block logo
+        h1 Trò chơi giải trí
       label#search-button-container(for = 'search-visibility-checkbox'): button#search-button
 
     section#main-section
