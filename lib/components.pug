@@ -3,3 +3,8 @@ mixin style(href)
 
 mixin checkbox(name, checked)
   input(type = 'checkbox' id = name name = name checked = checked || false)&attributes(attributes)
+
+mixin script-list(siteroot, ...list)
+  for name in list
+    - const src = [siteroot, 'script', name + '.js'].join('/')
+    script(type = 'text/javascript' src = src)&attributes(attributes)

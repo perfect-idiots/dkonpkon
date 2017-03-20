@@ -8,7 +8,8 @@
   const license = readFileSync(join(projdir, 'LICENSE.md'), {encoding: 'utf8'})
   const sitemapyaml = yaml.load(getlibfile('site-map.yaml'))
   const sitemap = toPairObjectList(sitemapyaml)
-  const parentDirectory = level => join(...repeat('..', level))
+  const parentDirectory = level => level ? repeat('..', level).join('/') : '.'
+  const siteroot = parentDirectory(level - 1)
 
 include components.pug
 
@@ -27,14 +28,18 @@ html(lang = 'vi')
       +style('style/scrollbar.css')
       +style('style/master.css')
 
+    block head-script
+
   body: .page
     header#main-header
       +checkbox('menu-visibility-checkbox')(hidden)
-      label#menu-button-container.no-print(for = 'menu-visibility-checkbox'): #menu-button
       nav#menu-container
-        h1#menu-title menu
+        label#menu-button-container.no-print(for = 'menu-visibility-checkbox')
+          #menu-button
+          h2#menu-title menu
         ul#main-menu: for pair in sitemap
-          li: a(href = join(parentDirectory(level - 1), pair.name))= pair.body
+          - const href = [siteroot, pair.name].join('/')
+          li: a(href = href)= pair.body
       #logo-container: #logo: block logo
         h1#content-title Trò chơi giải trí
       label#search-button-container.no-print(for = 'search-visibility-checkbox'): #search-button
@@ -53,3 +58,6 @@ html(lang = 'vi')
           Source code is available at
           [GitHub/perfect-idiots/dkonpkon](https://github.com/perfect-idiots/dkonpkon)
           Under [MIT License](https://github.com/perfect-idiots/dkonpkon/blob/master/LICENSE.md)
+
+    block body-script
+      +script-list(siteroot, 'onload')
