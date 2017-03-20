@@ -14,8 +14,8 @@ const cmpset = require('../lib/compare-set.js')
 const getModifiedDate = require('../lib/get-mtime.js')
 const createdOutputFiles = new Set()
 const mtimeTable = tryReadJSON(join(dep, 'mtime.json'))
-const markedChanges = getChangedFiles()
 const genDepsTree = assign({}, require('./dep-map-json.js'))
+const markedChanges = getChangedFiles()
 
 info(`\n${markedChanges.size} files are marked as modified.`)
 info('\nBUILDING...')
@@ -32,6 +32,7 @@ function getChangedFiles () {
   for (const filename in mtimeTable) {
     if (!existsSync(filename)) {
       delete mtimeTable[filename]
+      delete genDepsTree[filename]
       current.delete(filename)
     }
   }
