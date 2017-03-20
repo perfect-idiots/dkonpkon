@@ -150,14 +150,14 @@ for i in (1..6)
 
 #menu-container
   position fixed
-  left 0px
+  top 0px
 
 #menu-visibility-checkbox
   &:not(:checked) + * + #menu-container
-    bottom 100%
+    right 100%
 
   &:checked + * + #menu-container
-    top fun-std-outer-size(1)
+    left 0px
 
 /* RESPONSIVE RULES */
 
