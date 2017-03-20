@@ -1,4 +1,6 @@
 lib/layout.pug:
   - lib/dash-to-camel-and-spaces.js
   - lib/getlibfile.js
+  - lib/object-list.js
+  - lib/site-map.yaml
   - LICENSE.md
