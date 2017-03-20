@@ -1,6 +1,6 @@
 lib/layout.pug:
   - lib/dash-to-camel-and-spaces.js
-  - lib/getlibfile.js
+  - lib/getyamlobj.js
   - lib/object-list.js
   - lib/site-map.yaml
   - lib/repeater.js
