@@ -24,5 +24,24 @@
     }, false)
 
   document.addEventListener('click', hideSearchBox, false)
+  input.addEventListener('keydown', onkeydown, false)
   input.addEventListener('click', event => event.stopPropagation(), false)
+
+  function onkeydown ({keyCode}) {
+    if (keyCode === 27) {
+      if (input.value) {
+        input.value = ''
+      } else {
+        hideSearchBox()
+      }
+    } else if (keyCode === 13) {
+      showSearchResult()
+    } else {
+      showSuggestionList()
+    }
+  }
+
+  function showSuggestionList () {}
+
+  function showSearchResult () {}
 }).call(window, window)
