@@ -1,0 +1,139 @@
+
+/* CONSTANTS */
+
+responsive-split = 480px
+std-square-size = 60px
+std-square-margin = 10px
+std-square-container-size = (std-square-size + 2 * std-square-margin)
+
+/* FUNCTIONS */
+
+fun-std-inner-size(count)
+  (count * std-square-size + (count - 1) * std-square-margin)
+
+fun-std-outer-size(count)
+  (count * std-square-size + (count + 1) * std-square-margin)
+
+/* MIXINS */
+
+mix-rectange(width, height)
+  width width
+  height height
+
+mix-square(size)
+  mix-rectange(size, size)
+
+mix-std-inner-rectangle(width, height)
+  width fun-std-inner-size(width)
+  height fun-std-inner-size(height)
+
+mix-std-inner-square(count)
+  mix-std-inner-rectangle(count, count)
+
+mix-std-outer-rectangle(width, height)
+  width fun-std-outer-size(width)
+  height fun-std-outer-size(height)
+
+mix-std-outer-square(count)
+  mix-std-outer-rectangle(count, count)
+
+mix-bgimg-size(size)
+  background-size size
+  background-repeat no-repeat
+  background-position center
+
+/* GLOBAL RULES */
+
+body
+  margin 0px
+  padding 0px
+  font-family 'Roboto', 'Product Sans', 'Cantarell', 'Segoe UI', 'Helvatica', 'arial', sans-serif
+  font-size 0.75em
+
+body, .page
+  width 100%
+  margin-left 0px
+  margin-right 0px
+  padding-left 0px
+  padding-right 0px
+
+:focus
+  outline none !important
+
+#main-header, #main-section, #main-footer
+  width 100%
+  display block
+
+#main-header
+  height fun-std-outer-size(1)
+
+#main-footer
+  height fun-std-outer-size(2)
+  text-align center
+  .copyright-claim
+    margin-left auto
+    margin-right auto
+
+#menu-button-container, #logo-container, #search-button-container
+  display inline-block
+
+#menu-button-container, #search-button-container
+  mix-std-outer-square(1)
+  position absolute
+  top 0px
+
+#menu-button-container
+  left 0px
+
+#search-button-container
+  right 0px
+
+#logo-container
+  position absolute
+  top 0px
+  height fun-std-outer-size(1)
+  left fun-std-outer-size(1)
+  right fun-std-outer-size(1)
+
+#menu-button, #search-button
+  background-color transparent
+  border 0px solid white
+  mix-std-inner-square(1)
+  margin std-square-margin
+  mix-bgimg-size(std-square-size - std-square-margin)
+
+#menu-button
+  background-image url(../image/menu.svg)
+
+#logo
+  background-color transparent
+  height fun-std-outer-size(1)
+
+/* RESPONSIVE RULES */
+
+@media (min-width: responsive-split)
+  #main-footer > .copyright-claim > p
+    display inline-block
+    width (responsive-split / 2)
+    vertical-align middle
+    margin 0px
+    padding 0px
+
+@media (max-width: responsive-split)
+  #main-footer > .copyright-claim > p
+    display block
+    margin-top std-square-margin
+    margin-bottom std-square-margin
+
+@media screen
+  body
+    background black
+    color white
+
+@media print
+  body
+    background-color white
+    color black
+
+  #main-header, .no-print
+    display none
