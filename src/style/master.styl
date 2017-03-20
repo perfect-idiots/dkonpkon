@@ -10,6 +10,7 @@ std-sidepane-background = #121617
 std-onview-background = #ffa500
 std-onview-hover-background = #faae23
 std-onview-active-background = #f0a722
+std-textbox-background = #3d0714
 std-hover-background = #7e3114
 std-active-background = #b44014
 
@@ -20,6 +21,12 @@ fun-std-inner-size(count)
 
 fun-std-outer-size(count)
   (count * std-square-size + (count + 1) * std-square-margin)
+
+fun-std-inner-limit(count)
+  (fun-std-outer-size(count) + std-square-margin)
+
+fun-std-outer-limit(count)
+  (fun-std-inner-size(count) - std-square-margin)
 
 // MIXINS
 
@@ -139,7 +146,7 @@ for i in (1..6)
   position absolute
   top 0px
   height fun-std-outer-size(1)
-  left fun-std-outer-size(1)
+  left fun-std-inner-limit(1)
 
 #menu-button, #search-button
   background-color transparent
@@ -245,10 +252,14 @@ for i in (1..6)
   position absolute
   height fun-std-outer-size(1)
   right fun-std-outer-size(1)
+  border 0px
+  background std-textbox-background
+  color white
+  font-size 1.5em
 
 body:not(.show-search-box)
   #logo-container
-    right fun-std-outer-size(1)
+    right fun-std-inner-limit(1)
 
   #search-input
     width 0px
@@ -256,10 +267,10 @@ body:not(.show-search-box)
 
 body.show-search-box
   #logo-container
-    right fun-std-outer-size(6 + 1)
+    right fun-std-inner-limit(6 + 1)
 
   #search-input
-    width fun-std-outer-size(6)
+    width fun-std-inner-size(6)
     opacity 1.0
 
 // ADAPTIVE RULES
