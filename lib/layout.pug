@@ -33,7 +33,7 @@ html(lang = 'vi')
 
     block data
       +json-script(getyamlobj('genre.yaml'))#data-genre
-      +json-script(getyamlobj('site-map.yaml'))#data-site-map
+      +json-script(sitemap)#data-site-map
       +json-script(categories)#data-categories
 
   body: .page
