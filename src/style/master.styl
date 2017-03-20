@@ -53,6 +53,8 @@ body
   padding 0px
   font-family 'Roboto', 'Product Sans', 'Cantarell', 'Segoe UI', 'Helvatica', 'arial', sans-serif
   font-size 0.75em
+  user-select none
+  cursor default
 
 body, .page
   width 100%
@@ -60,6 +62,14 @@ body, .page
   margin-right 0px
   padding-left 0px
   padding-right 0px
+
+a[href]
+  color #1fcdde
+  text-decoration none
+  cursor pointer
+  &:hover
+    color #56dce9
+    text-decoration underline
 
 for i in (1..6)
   h{i}
@@ -132,6 +142,14 @@ for i in (1..6)
 
 #menu-container
   position fixed
+  left 0px
+
+#menu-visibility-checkbox
+  &:not(checked) + * + #menu-container
+    bottom 100%
+
+  &:checked + * + #menu-container
+    top 0px
 
 /* RESPONSIVE RULES */
 

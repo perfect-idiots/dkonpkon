@@ -29,9 +29,12 @@ html(lang = 'vi')
     header#main-header
       +checkbox('menu-visibility-checkbox')(hidden)
       label#menu-button-container.no-print(for = 'menu-visibility-checkbox'): button#menu-button
-      #menu-container
+      nav#menu-container
+        h1#menu-title MENU
+        ul#main-menu: for pair in sitemap
+          li
       #logo-container: #logo: block logo
-        h1 Trò chơi giải trí
+        h1#content-title Trò chơi giải trí
       label#search-button-container.no-print(for = 'search-visibility-checkbox'): button#search-button
 
     section#main-section
