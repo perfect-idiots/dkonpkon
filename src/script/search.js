@@ -2,7 +2,7 @@
   'use strict'
   const {document} = window
   const {body} = document
-  // const input = document.getElementById('search-input')
+  const input = document.getElementById('search-input')
 
   const toggleSearchBox = () =>
     isSearchBoxShown() ? hideSearchBox() : showSearchBox()
@@ -24,4 +24,5 @@
     }, false)
 
   document.addEventListener('click', hideSearchBox, false)
+  input.addEventListener('click', event => event.stopPropagation(), false)
 }).call(window, window)
