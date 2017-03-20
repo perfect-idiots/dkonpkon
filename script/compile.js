@@ -77,7 +77,7 @@ function compile (source, target, level) {
       createdOutputFiles.add(target)
       if (markedChanges.has(source)) {
         const sourcecode = readFileSync(source)
-        const locals = {projdir, src, out, lib, source, target, dir, name, sourcecode, require, getlib, jreq, markedChanges}
+        const locals = {projdir, src, out, lib, source, target, dir, name, sourcecode, require, getlib, jreq, markedChanges, level}
         info('▸▸ @bd ' + source)
         const {body, dependencies} = build(sourcecode, locals)
         genDepsTree[source] = dependencies
