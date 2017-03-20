@@ -4,9 +4,11 @@
   const yaml = require('js-yaml')
   const getlibfile = getlib('getlibfile')
   const {toPairObjectList} = getlib('object-list')
+  const repeat = getlib('repeater').array.value
   const license = readFileSync(join(projdir, 'LICENSE.md'), {encoding: 'utf8'})
   const sitemapyaml = yaml.load(getlibfile('site-map.yaml'))
   const sitemap = toPairObjectList(sitemapyaml)
+  const parentDirectory = level => join(...repeat('..', level))
 
 include components.pug
 
@@ -32,7 +34,7 @@ html(lang = 'vi')
       nav#menu-container
         h1#menu-title MENU
         ul#main-menu: for pair in sitemap
-          li
+          li: a(href = join(parentDirectory(level - 1), pair.name))= pair.body
       #logo-container: #logo: block logo
         h1#content-title Trò chơi giải trí
       label#search-button-container.no-print(for = 'search-visibility-checkbox'): button#search-button
