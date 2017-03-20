@@ -1,2 +1,5 @@
 mixin style(href)
   link(rel = 'stylesheet' type = 'text/css' href = href)&attributes(attributes)
+
+mixin checkbox(name, checked)
+  input(type = 'checkbox' id = 'checkbox-' + name name = name checked = checked || false)&attributes(attributes)
