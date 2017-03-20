@@ -23,5 +23,5 @@
       toggleSearchBox()
     }, false)
 
-  body.addEventListener('click', hideSearchBox, false)
+  document.addEventListener('click', hideSearchBox, false)
 }).call(window, window)
