@@ -6,6 +6,7 @@ std-square-size = 60px
 std-square-margin = 10px
 std-square-container-size = (std-square-size + 2 * std-square-margin)
 std-theme-background = #0e1112
+std-brighter-background = #121617
 std-hover-background = #7e3114
 std-active-background = #b44014
 
@@ -198,7 +199,7 @@ for i in (1..6)
   &:checked + #menu-container
     z-index 200
     height 100%
-    background #57240e
+    background std-brighter-background
     &, & #menu-button-container
       width fun-std-outer-size(3)
     #menu-title
