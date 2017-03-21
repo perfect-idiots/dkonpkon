@@ -47,7 +47,7 @@ html(lang = 'vi')
         ul#main-menu: for pair in sitemap
           -
             const href = [siteroot, pair.name].join('/')
-            const isOnView = resolve(dir, name + '.html') === target
+            const isOnView = resolve(dir, href) === target
           li(on-view = isOnView): a(href = href)= pair.body
 
       #logo-container: #logo: block logo
