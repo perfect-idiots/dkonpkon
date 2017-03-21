@@ -29,7 +29,7 @@ html(lang = 'vi' home-page = isHomePage)
       -
         const href = name =>
           [siteroot, 'style', name + '.css'].join('/')
-      for name in ['basic', 'scrollbar', 'master']
+      each name in ['basic', 'scrollbar', 'master']
         +style(href(name))
 
     block head-script
@@ -47,7 +47,7 @@ html(lang = 'vi' home-page = isHomePage)
           #menu-button
           h2#menu-title menu
 
-        ul#main-menu: for pair in sitemap
+        ul#main-menu: each pair in sitemap
           -
             const href = [siteroot, pair.name].join('/')
             const isOnView = resolve(dir, href) === target
