@@ -1,20 +1,30 @@
-flash: >
-  **Game flash** có phần mở rộng là `.swf` (Shockwave Flash) và có thể được hiển thị bởi các trình
-  duyệt Web như (Chrome, Mozilla Firefox, Internet Explorer, Cốc Cốc...) hay ứng dụng Flash Player
+flash:
+  title: Flash Games
+  description: >
+    **Game flash** có phần mở rộng là `.swf` (Shockwave Flash) và có thể được hiển thị bởi các trình
+    duyệt Web như (Chrome, Mozilla Firefox, Internet Explorer, Cốc Cốc...) hay ứng dụng Flash Player
 
-aaa: >
-  **Game AAA** thường được đọc là triple A game: là danh từ thường dùng để chỉ những tựa game “bom tấn”, Với công nghệ ngày
-  nay thì gần như tựa game nào sắp ra mắt cũng đều là **game AAA** cả
+aaa:
+  title: AAA Games
+  description: >
+    **Game AAA** thường được đọc là triple A game: là danh từ thường dùng để chỉ những tựa game “bom tấn”, Với công nghệ ngày
+    nay thì gần như tựa game nào sắp ra mắt cũng đều là **game AAA** cả
 
-j2me: >
-  **Java** là một nền tảng phát triển các ứng dụng phần mềm có vị trí rất lớn trong những năm cuối thế kỉ 20, đầu thế kỉ 21. Đánh dấu
-  sự trưởng thành của mô hình lập trình hướng đối tượng, nó được coi là một nền tảng mang tính cách mạng trong ngành phần mềm. Mô
-  hình máy ảo Virtual Machine đã cho phép các ứng dụng viết bằng Java có thể chạy trên nhiều hệ điều hành khác nhau.
-  **J2ME** là 1 trong các phần của java: Gồm các đặc tả, công cụ, API mở rộng để phát triển các ứng dụng Java chạy trên điện thoại di động, thẻ thông minh, thiết bị
-  điện tử cầm tay, robo và những ứng dụng điện tử khác
+j2me:
+  title: Java Games
+  description: >
+    **Java** là một nền tảng phát triển các ứng dụng phần mềm có vị trí rất lớn trong những năm cuối thế kỉ 20, đầu thế kỉ 21. Đánh dấu
+    sự trưởng thành của mô hình lập trình hướng đối tượng, nó được coi là một nền tảng mang tính cách mạng trong ngành phần mềm. Mô
+    hình máy ảo Virtual Machine đã cho phép các ứng dụng viết bằng Java có thể chạy trên nhiều hệ điều hành khác nhau.
+    **J2ME** là 1 trong các phần của java: Gồm các đặc tả, công cụ, API mở rộng để phát triển các ứng dụng Java chạy trên điện thoại di động, thẻ thông minh, thiết bị
+    điện tử cầm tay, robo và những ứng dụng điện tử khác
 
-mobile: >
-  **Game mobile** được hiểu là các trò chơi điện tử được chơi trên các thiết bị di động như điện thoại thông minh, máy tính bảng, PDA …
+mobile:
+  title: Mobile Games
+  description: >
+    **Game mobile** được hiểu là các trò chơi điện tử được chơi trên các thiết bị di động như điện thoại thông minh, máy tính bảng, PDA …
 
-retro: >
-  **Retro Game** là game xưa cũ kỹ. Điển hình là những game NES chơi trên hệ thống Nindento
+retro:
+  title: Retro Games
+  description: >
+    **Retro Game** là game xưa cũ kỹ. Điển hình là những game NES chơi trên hệ thống Nindento
