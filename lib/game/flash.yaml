@@ -237,11 +237,9 @@ dao-vang:
     - strategy
     - arcade
   description: >
-    **Game đào vàng** là trò chơi đã quá quen thuộc với nhiều người,
-    đặc biệt là giới văn phòng.
-    <br>
-    Với cách chơi ngộ nghĩnh, đồ họa đơn giản,
-    trò chơi đào vàng sẽ mang lại cho bạn những giây phút thư giãn sảng khoái nhất!
+    **Đào vàng** là trò chơi đã quá quen thuộc với nhiều người,
+    đặc biệt là giới văn phòng. Với cách chơi ngộ nghĩnh, đồ họa đơn giản,
+    trò chơi đào vàng sẽ mang lại cho bạn những giây phút thư giãn sảng khoái nhất
 demons-vs-fairyland:
   name: 'Quỷ và xứ sở Thần Tiên'
   genre:
@@ -296,7 +294,7 @@ hobo:
     có một không hai mà chỉ có đại ca Hobo mới có thể thi triển.
     <br>
     Trong phần này: Hobo rời bỏ căn nhà ổ chuột của bạn để chiến đấu với những kẻ thù trên đường phố.
-    Lần lượt hạ gục cảnh sát, găngxtơ, và đám công nhân trong thành phố!
+    Lần lượt hạ gục cảnh sát, gangster, và đám công nhân trong thành phố!
 hobo-2-prison-brawl:
   name: 'Hobo đại ca ra tù 2: Prison Brawl'
   genre:
@@ -350,6 +348,7 @@ hobo-6-hell:
     - adventure
     - arcade
   description: >
+<<<<<<< HEAD
     Lần này không còn có cảnh sát truy đuổi, hoặc sự truy sát của những tên tù hung bạo ...
     Mà lần này là đối mặt là những ác ma hung tợn của địa ngục.
     <br>
