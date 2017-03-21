@@ -1,6 +1,7 @@
 -
   const {join, resolve} = require('path')
   const {readFileSync, readdirSync} = require('fs')
+  const markdown = require('jstransformer-markdown-it')
   const getyamlobj = getlib('getyamlobj')
   const {toPairObjectList} = getlib('object-list')
   const repeat = getlib('repeater').array.value
@@ -12,6 +13,18 @@
   const siteroot = parentDirectory(level - 1)
   const actualHomePage = join(out, 'index.html')
   const isHomePage = actualHomePage === target
+  
+  function renderMarkdownIt (text) {
+    const options = {
+      linkify: true,
+      typographer: true,
+      html: true,
+      breaks: false,
+      highlight: true,
+      langPrefix: 'markdown-language-'
+    }
+    return markdown.render(text, actualOptions)
+  }
 
 include components.pug
 
