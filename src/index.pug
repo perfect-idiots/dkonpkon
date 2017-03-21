@@ -2,7 +2,7 @@ extends ../lib/layout.pug
 
 block main-section
   main#main
-    for category in categories
+    for description, category in categories
       -
         const checkbox = 'show-' + category + '-checkbox'
       +checkbox(checkbox)(hidden)
