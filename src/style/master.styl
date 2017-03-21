@@ -124,13 +124,13 @@ for i in (1..6)
   display inline-block
 
 #menu-container
-  position absolute
+  position fixed
   top 0px
 
 #menu-button-container, #search-button-container
   mix-std-outer-square(1)
   top 0px
-  position absolute
+  position fixed
 
   &:hover
     background-color std-hover-background
@@ -255,7 +255,7 @@ for i in (1..6)
       z-index 250
 
 #search-input
-  position absolute
+  position fixed
   height std-square-size
   right fun-std-outer-size(1)
   padding std-square-margin
