@@ -15,6 +15,7 @@ std-hover-background = #7e3114
 std-active-background = #b44014
 std-brighter-hover-background = #8c3b1c
 std-brighter-active-background = #bd481b
+std-zoomed-article-background = #300b06
 
 // FUNCTIONS
 
@@ -74,16 +75,12 @@ mix-deep-transition()
 body
   margin 0px
   padding 0px
-  font-family 'Roboto', 'Product Sans', 'Cantarell', 'Segoe UI', 'Helvatica', 'arial', sans-serif
+  font-family 'Roboto', 'Product Sans', 'Cantarell', 'Segoe UI', 'Verdana', 'Helvatica', 'arial', sans-serif
   user-select none
   cursor default
-
-body, .page
   width 100%
-  margin-left 0px
-  margin-right 0px
-  padding-left 0px
-  padding-right 0px
+  margin 0px
+  padding 0px
 
 for i in (1..6)
   h{i}
@@ -132,6 +129,9 @@ for i in (1..6)
   top 0px
   position fixed
 
+  &:not(:hover):not(:active)
+    background-color std-theme-background
+
   &:hover
     background-color std-hover-background
 
@@ -169,10 +169,10 @@ for i in (1..6)
   height fun-std-outer-size(1)
 
 #menu-container h2, #logo h1
-    text-transform uppercase
-    vertical-align middle
-    margin std-square-margin
-    padding 0px
+  text-transform uppercase
+  vertical-align middle
+  margin std-square-margin
+  padding 0px
 
 #menu-container
   position fixed
@@ -299,6 +299,80 @@ body.show-search-box
 
     &:active
       background-color std-brighter-active-background
+
+#main-section
+  vertical-align top
+
+  *
+    display inline-block
+
+  #main
+    left 0px
+    right fun-std-inner-limit(2)
+
+    .zoom-in-radio:not(:checked) + .article-container
+      &:hover
+        background-color std-hover-background
+
+      &:active
+        background-color std-active-background
+
+      img
+        mix-std-inner-square(3)
+
+      .content
+        width fun-std-inner-size(4)
+        height fun-std-inner-size(3)
+        vertical-align top
+        overflow hidden
+        &.wide
+          width fun-std-inner-size(7)
+
+      .zoom-out-button-container
+        display none
+
+    .zoom-in-radio:checked + .article-container
+      display block
+      background-color std-zoomed-article-background
+      position fixed
+      left 0px
+      top 0px
+      right 0px
+      bottom 0px
+      overflow-y auto
+      z-index 1000
+
+      .zoom-out-button-container
+        position fixed
+        right 0px
+        bottom 0px
+        margin std-square-margin
+        background-color std-theme-background
+        mix-std-inner-rectangle(4, 1)
+
+        .zoom-out-button
+          text-transform uppercase
+          text-align center
+          vertical-align middle
+          font-size 1.5em
+          mix-square(100%)
+
+        &:hover .zoom-out-button
+          background-color std-hover-background
+
+        &:active .zoom-out-button
+          background-color std-active-background
+
+  #aside
+    position absolute
+    top fun-std-inner-limit(1)
+    right 0px
+    width fun-std-inner-size(3)
+    float right
+    margin std-square-margin
+
+    article
+      mix-std-inner-rectangle(3, 6)
 
 // ADAPTIVE RULES
 

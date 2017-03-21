@@ -4,13 +4,14 @@
   const getyamlobj = getlib('getyamlobj')
   const {toPairObjectList} = getlib('object-list')
   const repeat = getlib('repeater').array.value
-  const gamedir = join(lib, 'game')
   const license = readFileSync(join(projdir, 'LICENSE.md'), {encoding: 'utf8'})
   const sitemapyaml = getyamlobj('site-map.yaml')
+  const categories = getyamlobj('categories.yaml')
   const sitemap = toPairObjectList(sitemapyaml)
-  const categories = readdirSync(gamedir)
   const parentDirectory = level => level ? repeat('..', level).join('/') : '.'
   const siteroot = parentDirectory(level - 1)
+  const actualHomePage = join(out, 'index.html')
+  const isHomePage = actualHomePage === target
 
 include components.pug
 
@@ -18,7 +19,7 @@ doctype html
 
 | !{'\n\n<!--\n' + license + '\n-->\n\n'}
 
-html(lang = 'vi')
+html(lang = 'vi' home-page = isHomePage)
   head
     meta(charset = 'utf-8')
     title: block title
@@ -28,17 +29,17 @@ html(lang = 'vi')
       -
         const href = name =>
           [siteroot, 'style', name + '.css'].join('/')
-      for name in ['basic', 'scrollbar', 'master']
+      each name in ['basic', 'scrollbar', 'master']
         +style(href(name))
 
     block head-script
 
     block data
       +pretty-json-script(getyamlobj('genre.yaml'))#data-genre
-      +pretty-json-script(sitemap)#data-site-map
-      +pretty-json-script(categories)#data-categories
+      +pretty-json-script(sitemap)#data-sitemap
+      +pretty-json-script(Object.getOwnPropertyNames(categories))#data-categories
 
-  body: .page
+  body
     header#main-header
       +checkbox('menu-visibility-checkbox')(hidden)
       nav#menu-container
@@ -46,7 +47,7 @@ html(lang = 'vi')
           #menu-button
           h2#menu-title menu
 
-        ul#main-menu: for pair in sitemap
+        ul#main-menu: each pair in sitemap
           -
             const href = [siteroot, pair.name].join('/')
             const isOnView = resolve(dir, href) === target

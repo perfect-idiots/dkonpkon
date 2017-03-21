@@ -1,7 +1,37 @@
 extends ../lib/layout.pug
 
-block append data
-  -
-    const test = 'Hello, World!!'
+block main-section
+  main#main
+    input.zoom-out-radio#no-zoomed-article(type = 'radio' name = 'zoom-article' checked hidden)
+    each content, category in categories
+      -
+        const radio = 'show-' + category + '-radio'
+      input.zoom-in-radio(type = 'radio' id = radio name = 'zoom-article' hidden)
+      label.article-container(for = radio id = 'article-' + category + '-container')
+        article.article(id = category + '-article')
+          -
+            const markdown = require('jstransformer-markdown-it')
+            const imageurl = [siteroot, 'image', 'category', category].join('/')
 
-  +json-script({test})
+            function render (text) {
+              const options = {
+                linkify: true,
+                typographer: true,
+                html: true,
+                breaks: false,
+                highlight: true,
+                langPrefix: 'markdown-language-'
+              }
+              return markdown.render(text, actualOptions)
+            }
+
+          img.article-figure(src = imageurl)
+          .text.content
+            h2= content.title
+            p.paragraph!= render(content.description)
+
+          label.zoom-out-button-container(for = 'no-zoomed-article'): .zoom-out-button close
+
+  aside#aside
+    - for (let i = 0; i !== 1; ++i)
+      a.recommendation(id = 'recommendation-' + i): article
