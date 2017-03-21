@@ -206,14 +206,20 @@ for i in (1..6)
       height fun-std-outer-size(1)
       text-align center
 
+      &:hover
+        background-color std-hover-background
+
+      &:active
+        background-color std-active-background
+
       &[on-view]
         background-color std-onview-background
 
         &:hover
-          std-onview-hover-background
+          background-color std-onview-hover-background
 
         &:active
-          std-onview-active-background
+          background-color std-onview-active-background
 
       a, a[href]
         text-decoration none
