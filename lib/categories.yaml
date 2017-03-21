@@ -1,0 +1,58 @@
+flash: >
+  **Adobe Flash Player** là sản phẩm của tập đoàn phần mềm máy tính của Mỹ - Adobe Systems. Vào thời điểm đầu tiên, Flash có tên là
+  FutureSplash và sau này, khi Adobe Systems thực hiện quyết định mua lại Macromedia, chương trình được đổi tên thành Macromedia
+  Flash (hay còn gọi tắt là Flash).
+  Hiểu nôm na, Flash là chương trình hỗ trợ các trình duyệt web cũng như sự tương tác giữa các trình duyệt này với máy tính để người
+  dùng có thể xem trực tiếp các video, hay nghe được âm thanh trực tiếp từ web mà không cần phần mềm
+  <br>
+  Trong các trình duyệt web được sử dụng phổ biến hiện nay, chỉ có Google Chrome là tích hợp **Adobe Flash Player** và được mở sẵn
+  theo mặc định. Các phiên bản cập nhập của **Adobe Flash Player** được gộp chung với bản cập nhận hệ thống của Google Chrome. Còn
+  những trình duyệt khác như Firefox, Opera, Safari, Internet Explorer ... đều phải cài **Adobe Flash Player** để xem video, hình
+  ảnh một cách tốt nhất.
+  <br>
+  Dễ nhận thấy là các tập tin Flash hầu như đều có phần mở rộng là .swf (Shockwave Flash) và có thể được hiển thị bởi các trình
+  duyệt Web như (Chrome, Mozilla Firefox, Internet Explorer, Cốc Cốc...) hay ứng dụng Flash Player.
+  Các tập tin Flash cũng thường là hoạt cảnh, quảng cáo hay các thành phần trang trí khác của một trang Web. Gần đây Flash còn
+  được sử dụng để tạo ra các ứng dụng Internet phong phú hơn. Nếu phải so sánh về kích thước và các tính năng, thì ở cùng một kích
+  thước, một tập tin Flash có thể chứa nhiều thông tin hơn một tập tin hình ảnh với định dạng GIF hay dạng JPEG.
+  <br>
+  **Tác dụng của Flash Player** <br>
+  - Video được phát với chất lượng tốt nhất nhờ Flash <br>
+  - Tăng tốc độ lướt web trên di động <br>
+  - Tăng độ nét cho các file văn bản <br>
+  - Tăng tốc độ hoạt động phần cứng <br>
+  - Hiệu ứng tích hợp với thời gian thực <br>
+  - Hỗ trợ chơi game online <br>
+aaa: >
+  **Game AAA** thường được đọc là triple A game : là danh từ thường dùng để chỉ những tựa game “bom tấn”, Với công nghệ ngày
+  nay thì gần như tựa game nào sắp ra mắt cũng đều là **game AAA** cả.
+j2me: >
+  Java là một nền tảng phát triển các ứng dụng phần mềm có vị trí rất lớn trong những năm cuối thế kỉ 20, đầu thế kỉ 21. Đánh dấu
+  sự trưởng thành của mô hình lập trình hướng đối tượng, nó được coi là một nền tảng mang tính cách mạng trong ngành phần mềm. Mô
+  hình máy ảo Virtual Machine đã cho phép các ứng dụng viết bằng Java có thể chạy trên nhiều hệ điều hành khác nhau.
+  <br>
+  Lần đầu tiên xuất hiện vào năm 1992 như là một ngôn ngữ dùng trong nội bộ tập đoàn Sun Microsystems để xây dựng ứng dụng điều
+   khiển các bộ xử lý bên trong máy điện thoại cầm tay, lò vi sóng, các thiết bị điện tử dân dụng khác. Không chỉ là một ngôn ngữ, Java còn là một nền tảng phát triển và triển khai ứng dụng trong đó máy ảo Java, bộ thông dịch có vai trò trung tâm.
+  <br>
+  Sun, công ty đã phát minh ra ngôn ngữ Java, chính thức ban hành bản Java Development Kit 1.0 vào năm 1996 hoàn toàn miễn phí để
+  các nhà phát triển có thể tải về, học Java, xây dựng các ứng dụng Java và triển khai chúng trên các hệ điều hành có hỗ trợ Java.
+  Ban đầu, Java chủ yếu dùng để phát triển các applet, các ứng dụng nhúng vào trình duyệt, góp phần làm sinh động các trang web tĩnh vốn hết sức tẻ nhạt hồi dó. Tuy nhiên, cùng với sự phát triển của công nghệ thông tin và nhu cầu của xã hội, Java applet đã dần mất đi vị trí của nó và thay vào đó, các công ty, cộng đồng ủng hộ Java đã phát triển nó theo một hướng khác. Hiện nay, công nghệ Java được chia làm ba bộ phận:
+  <br>
+  J2SE <br>
+  - Gồm các đặc tả, công cụ, API của nhân Java giúp phát triển các ứng dụng trên desktop và định nghĩa các phần thuộc nhân của Java.
+  <br>
+  J2EE <br>
+  - Gồm các đặc tả, công cụ, API mở rộng J2SE để phát triển các ứng dụng quy mô xí nghiệp, chủ yếu để chạy trên máy chủ (server). Bộ phận hay được nhắc đến nhất của công nghệ này là công nghệ Servlet/JSP: sử dụng Java để làm các ứng dụng web.
+  <br>
+  J2ME <br>
+  - Gồm các đặc tả, công cụ, API mở rộng để phát triển các ứng dụng Java chạy trên điện thoại di động, thẻ thông minh, thiết bị
+  điện tử cầm tay, robo và những ứng dụng điện tử khác
+mobile: >
+  **Game mobile** được hiểu là các trò chơi điện tử được chơi trên các thiết bị di động như điện thoại thông minh, máy tính bảng, PDA …
+  <br>
+  Các ưu điểm của game mobile: không rườm rà về số lượng và thiết bị, dễ dàng mang theo, giải trí ở bất cứ đâu, chi phí thấp,
+  chất lượng cao về mặt đồ họa, phù hợp với đối tượng nữ giới, các thao tác cài đặt và tháo gỡ tương đối dễ dàng. Từ những ưu điểm
+   này mà game mobile đang dần phát triển và khẳng định vị trí của mình trên thị trường game.
+  <br>
+retro: >
+  **game retro** là game xưa cũ kỹ. Điển hình là những game NES chơi trên hệ thống Nindento
