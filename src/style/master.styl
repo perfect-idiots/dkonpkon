@@ -297,30 +297,35 @@ body.show-search-box
       background-color std-brighter-active-background
 
 #main-section
+  vertical-align top
+
   *
     display inline-block
 
   #main
-    // ....
+    left 0px
+    right fun-std-inner-limit(2)
 
     .article
       img
-        mix-std-inner-square(2)
+        mix-std-inner-square(3)
 
       .content
-        width fun-std-inner-size(3)
-        height fun-std-inner-size(2)
+        width fun-std-inner-size(4)
+        height fun-std-inner-size(3)
         &.wide
-          width fun-std-inner-size(5)
+          width fun-std-inner-size(7)
 
   #aside
     position absolute
     top fun-std-inner-limit(1)
-    width fun-std-inner-size(2)
+    right 0px
+    width fun-std-inner-size(3)
+    float right
     margin std-square-margin
 
     article
-      mix-std-inner-rectangle(2, 4)
+      mix-std-inner-rectangle(3, 6)
 
 // ADAPTIVE RULES
 
