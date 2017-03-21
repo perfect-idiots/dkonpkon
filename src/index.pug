@@ -31,7 +31,8 @@ block main-section
             h2= content.title
             p.paragraph!= render(content.description)
 
-          a.main-link(href = siteurl) Go to #{content.title}
+          p.main-link-container
+            a.main-link.link.pointer-cursor.underline(href = siteurl) Go to #{content.title}
           label.zoom-out-button-container(for = 'no-zoomed-article'): .zoom-out-button close
 
   aside#aside
