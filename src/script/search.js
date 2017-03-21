@@ -3,6 +3,7 @@
   const {document} = window
   const {body} = document
   const input = document.getElementById('search-input')
+  const menuVisibilityCheckbox = document.getElementById('menu-visibility-checkbox')
 
   const toggleSearchBox = () =>
     isSearchBoxShown() ? hideSearchBox() : showSearchBox()
@@ -20,6 +21,7 @@
     .getElementById('search-button')
     .addEventListener('click', event => {
       event.stopPropagation()
+      menuVisibilityCheckbox.checked = false
       input.value ? showSearchResult() : toggleSearchBox()
     }, false)
 
