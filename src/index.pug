@@ -12,6 +12,7 @@ block main-section
           -
             const markdown = require('jstransformer-markdown-it')
             const imageurl = [siteroot, 'image', 'category', category].join('/')
+            const siteurl = [siteroot, 'page', category].join('/')
 
             function render (text) {
               const options = {
@@ -30,6 +31,7 @@ block main-section
             h2= content.title
             p.paragraph!= render(content.description)
 
+          a.main-link(href = siteurl) Go to #{content.title}
           label.zoom-out-button-container(for = 'no-zoomed-article'): .zoom-out-button close
 
   aside#aside
