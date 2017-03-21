@@ -12,7 +12,7 @@ block main-section
           -
             const markdown = require('jstransformer-markdown-it')
             const imageurl = [siteroot, 'image', 'category', category].join('/')
-            const siteurl = [siteroot, 'page', category].join('/')
+            const siteurl = [siteroot, 'page', category + '.html'].join('/')
 
             function render (text) {
               const options = {
