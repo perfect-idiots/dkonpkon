@@ -2,11 +2,12 @@ extends ../lib/layout.pug
 
 block main-section
   main#main
-    for content, category in categories
+    input#no-zoomed-article(type = 'radio' name = 'zoom-article' checked hidden)
+    each content, category in categories
       -
-        const checkbox = 'show-' + category + '-checkbox'
-      +checkbox(checkbox)(hidden)
-      label.article-container(for = checkbox id = 'article-' + category + '-container')
+        const radio = 'show-' + category + '-radio'
+      input(type = 'radio' id = radio name = 'zoom-article' hidden)
+      label.article-container(for = radio id = 'article-' + category + '-container')
         article.article(id = category + '-article')
           -
             const markdown = require('jstransformer-markdown-it')
@@ -25,7 +26,11 @@ block main-section
             }
 
           img.article-figure(src = imageurl)
-          .text.content!= render(content)
+          .text.content
+            h2= content.title
+            p.paragraph!= render(content.description)
+
+          label.zoom-out-button-container(for = 'no-zoomed-article'): #zoom-out-button close
 
   aside#aside
     - for (let i = 0; i !== 1; ++i)
