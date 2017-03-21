@@ -5,6 +5,7 @@
   const getyamlobj = getlib('getyamlobj')
   const {toPairObjectList} = getlib('object-list')
   const repeat = getlib('repeater').array.value
+  const dash2spc = getlib('dash-to-camel-and-spaces')
   const license = readFileSync(join(projdir, 'LICENSE.md'), {encoding: 'utf8'})
   const sitemapyaml = getyamlobj('site-map.yaml')
   const categories = getyamlobj('categories.yaml')
