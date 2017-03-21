@@ -15,6 +15,7 @@ std-hover-background = #7e3114
 std-active-background = #b44014
 std-brighter-hover-background = #8c3b1c
 std-brighter-active-background = #bd481b
+std-zoomed-article-background = #300b06
 
 // FUNCTIONS
 
@@ -309,7 +310,13 @@ body.show-search-box
     left 0px
     right fun-std-inner-limit(2)
 
-    .article
+    .zoom-in-radio:not(:checked) + .article-container
+      &:hover
+        background-color std-hover-background
+
+      &:active
+        background-color std-active-background
+
       img
         mix-std-inner-square(3)
 
@@ -320,6 +327,41 @@ body.show-search-box
         overflow hidden
         &.wide
           width fun-std-inner-size(7)
+
+      .zoom-out-button-container
+        display none
+
+    .zoom-in-radio:checked + .article-container
+      display block
+      background-color std-zoomed-article-background
+      position fixed
+      left 0px
+      top 0px
+      right 0px
+      bottom 0px
+      overflow-y auto
+      z-index 1000
+
+      .zoom-out-button-container
+        position fixed
+        right 0px
+        bottom 0px
+        margin std-square-margin
+        background-color std-theme-background
+        mix-std-inner-rectangle(4, 1)
+
+        .zoom-out-button
+          text-transform uppercase
+          text-align center
+          vertical-align middle
+          font-size 1.5em
+          mix-square(100%)
+
+        &:hover .zoom-out-button
+          background-color std-hover-background
+
+        &:active .zoom-out-button
+          background-color std-active-background
 
   #aside
     position absolute

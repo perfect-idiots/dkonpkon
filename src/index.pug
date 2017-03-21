@@ -2,11 +2,11 @@ extends ../lib/layout.pug
 
 block main-section
   main#main
-    input#no-zoomed-article(type = 'radio' name = 'zoom-article' checked hidden)
+    input.zoom-out-radio#no-zoomed-article(type = 'radio' name = 'zoom-article' checked hidden)
     each content, category in categories
       -
         const radio = 'show-' + category + '-radio'
-      input(type = 'radio' id = radio name = 'zoom-article' hidden)
+      input.zoom-in-radio(type = 'radio' id = radio name = 'zoom-article' hidden)
       label.article-container(for = radio id = 'article-' + category + '-container')
         article.article(id = category + '-article')
           -
@@ -30,7 +30,7 @@ block main-section
             h2= content.title
             p.paragraph!= render(content.description)
 
-          label.zoom-out-button-container(for = 'no-zoomed-article'): #zoom-out-button close
+          label.zoom-out-button-container(for = 'no-zoomed-article'): .zoom-out-button close
 
   aside#aside
     - for (let i = 0; i !== 1; ++i)
