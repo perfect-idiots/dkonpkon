@@ -23,7 +23,6 @@ compile(src, out, 0)
 writeFileSync(join(dep, 'dependencies.json'), JSON.stringify(genDepsTree, undefined, 2))
 info('\nCLEANING...')
 clean(out)
-info('\ndone.')
 
 function getChangedFiles () {
   const result = new Set()

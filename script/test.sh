@@ -2,12 +2,12 @@
 
 (
   echo 'CHECKING CODE STYLE...'
-  standard
+  standard && echo '\npassed\n' >&2
 ) && (
   echo 'COMPILING...'
-  npm run compile
+  npm run compile && echo '\npassed\n' >&2
 ) || (
   code=$?
-  echo 'TEST FAILED.'
+  echo '\nfailed\n' >&2
   exit $code
 )
