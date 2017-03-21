@@ -8,7 +8,9 @@ block main-section
       +checkbox(checkbox)(hidden)
       label.article-container(for = checkbox id = 'article-' + category + '-container')
         article.article(id = category + '-article')
-          img.article-figure
+          -
+            const imageurl = [siteroot, 'image', 'category', category].join('/')
+          img.article-figure(src = imageurl)
           .text.content
 
   aside#aside
