@@ -1,11 +1,12 @@
 extends ../lib/layout.pug
 
 block main-section
-  for category in categories
-    -
-      const checkbox = 'show-' + category + '-checkbox'
-    +checkbox(checkbox)(hidden)
-    label.article-container(for = checkbox id = 'article-' + category + '-container')
-      article.article(id = category + '-article')
-        img.article-figure
-        .text.content
+  main
+    for category in categories
+      -
+        const checkbox = 'show-' + category + '-checkbox'
+      +checkbox(checkbox)(hidden)
+      label.article-container(for = checkbox id = 'article-' + category + '-container')
+        article.article(id = category + '-article')
+          img.article-figure
+          .text.content
