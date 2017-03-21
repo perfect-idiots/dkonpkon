@@ -1,5 +1,5 @@
 -
-  const {join, resolve} = require('path')
+  const {join, resolve, parse} = require('path')
   const {readFileSync, readdirSync} = require('fs')
   const getyamlobj = getlib('getyamlobj')
   const {toPairObjectList} = getlib('object-list')
@@ -8,9 +8,11 @@
   const license = readFileSync(join(projdir, 'LICENSE.md'), {encoding: 'utf8'})
   const sitemapyaml = getyamlobj('site-map.yaml')
   const sitemap = toPairObjectList(sitemapyaml)
-  const categories = readdirSync(gamedir)
+  const categories = readdirSync(gamedir).map(filename => parse(filename).name)
   const parentDirectory = level => level ? repeat('..', level).join('/') : '.'
   const siteroot = parentDirectory(level - 1)
+  const actualHomePage = join(out, 'index.html')
+  const isHomePage = actualHomePage === target
 
 include components.pug
 
@@ -18,7 +20,7 @@ doctype html
 
 | !{'\n\n<!--\n' + license + '\n-->\n\n'}
 
-html(lang = 'vi')
+html(lang = 'vi' home-page = isHomePage)
   head
     meta(charset = 'utf-8')
     title: block title

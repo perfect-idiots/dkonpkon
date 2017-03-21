@@ -1,7 +1,18 @@
 extends ../lib/layout.pug
 
-block append data
-  -
-    const test = 'Hello, World!!'
+block main-section
+  main#main
+    for category in categories
+      -
+        const checkbox = 'show-' + category + '-checkbox'
+      +checkbox(checkbox)(hidden)
+      label.article-container(for = checkbox id = 'article-' + category + '-container')
+        article.article(id = category + '-article')
+          -
+            const imageurl = [siteroot, 'image', 'category', category].join('/')
+          img.article-figure(src = imageurl)
+          .text.content
 
-  +json-script({test})
+  aside#aside
+    - for (let i = 0; i !== 2; ++i)
+      a.recommendation(id = 'recommendation-' + i): article
