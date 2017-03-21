@@ -52,7 +52,7 @@ apple-shooter:
   description: >
     Nhiệm vụ rất đơn giản là hãy cố gắng bắn vào quả táo trên đầu của người khác.
     Đừng bắn trúng người nhé, nguy hiểm đấy!
-battle-shooter:
+battle-city:
   name: 'Bắn xe tăng'
   genre:
     - shooter
