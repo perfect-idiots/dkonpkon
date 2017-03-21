@@ -25,9 +25,11 @@ html(lang = 'vi')
       | Trò chơi điện tử — Trang chủ
 
     block stylesheet
-      +style('style/basic.css')
-      +style('style/scrollbar.css')
-      +style('style/master.css')
+      -
+        const href = name =>
+          [siteroot, 'style', name + '.css'].join('/')
+      for name in ['basic', 'scrollbar', 'master']
+        +style(href(name))
 
     block head-script
 
