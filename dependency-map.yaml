@@ -5,3 +5,18 @@ lib/layout.pug:
   - lib/site-map.yaml
   - lib/repeater.js
   - LICENSE.md
+
+src/page/flash.pug:
+  - lib/game/flash.yaml
+
+src/page/retro.pug:
+  - lib/game/retro.yaml
+
+src/page/aaa.pug:
+  - lib/game/aaa.yaml
+
+src/page/mobile.pug:
+  - lib/game/mobile.yaml
+
+src/page/j2me.pug:
+  - lib/game/j2me.yaml

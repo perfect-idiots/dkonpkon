@@ -328,7 +328,7 @@ body.show-search-box
         &.wide
           width fun-std-inner-size(7)
 
-      .zoom-out-button-container
+      .zoom-out-button-container, .main-link-container
         display none
 
     .zoom-in-radio:checked + .article-container
@@ -341,6 +341,12 @@ body.show-search-box
       bottom 0px
       overflow-y auto
       z-index 1000
+
+      img, p, h1, h2, h3
+        display block
+
+      img
+        mix-std-inner-rectangle(4, 3)
 
       .zoom-out-button-container
         position fixed
@@ -355,6 +361,7 @@ body.show-search-box
           text-align center
           vertical-align middle
           font-size 1.5em
+          padding std-square-margin
           mix-square(100%)
 
         &:hover .zoom-out-button

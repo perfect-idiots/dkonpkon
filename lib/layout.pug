@@ -1,9 +1,11 @@
 -
   const {join, resolve} = require('path')
   const {readFileSync, readdirSync} = require('fs')
+  const markdown = require('jstransformer-markdown-it')
   const getyamlobj = getlib('getyamlobj')
   const {toPairObjectList} = getlib('object-list')
   const repeat = getlib('repeater').array.value
+  const dash2spc = getlib('dash-to-camel-and-spaces')
   const license = readFileSync(join(projdir, 'LICENSE.md'), {encoding: 'utf8'})
   const sitemapyaml = getyamlobj('site-map.yaml')
   const categories = getyamlobj('categories.yaml')
@@ -12,6 +14,18 @@
   const siteroot = parentDirectory(level - 1)
   const actualHomePage = join(out, 'index.html')
   const isHomePage = actualHomePage === target
+  
+  function renderMarkdownIt (text) {
+    const options = {
+      linkify: true,
+      typographer: true,
+      html: true,
+      breaks: false,
+      highlight: true,
+      langPrefix: 'markdown-language-'
+    }
+    return markdown.render(text, actualOptions)
+  }
 
 include components.pug
 

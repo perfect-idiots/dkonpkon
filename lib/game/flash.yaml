@@ -52,7 +52,7 @@ apple-shooter:
   description: >
     Nhiệm vụ rất đơn giản là hãy cố gắng bắn vào quả táo trên đầu của người khác.
     Đừng bắn trúng người nhé, nguy hiểm đấy!
-battle-shooter:
+battle-city:
   name: 'Bắn xe tăng'
   genre:
     - shooter
@@ -348,7 +348,6 @@ hobo-6-hell:
     - adventure
     - arcade
   description: >
-<<<<<<< HEAD
     Lần này không còn có cảnh sát truy đuổi, hoặc sự truy sát của những tên tù hung bạo ...
     Mà lần này là đối mặt là những ác ma hung tợn của địa ngục.
     <br>

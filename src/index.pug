@@ -10,27 +10,17 @@ block main-section
       label.article-container(for = radio id = 'article-' + category + '-container')
         article.article(id = category + '-article')
           -
-            const markdown = require('jstransformer-markdown-it')
             const imageurl = [siteroot, 'image', 'category', category].join('/')
-
-            function render (text) {
-              const options = {
-                linkify: true,
-                typographer: true,
-                html: true,
-                breaks: false,
-                highlight: true,
-                langPrefix: 'markdown-language-'
-              }
-              return markdown.render(text, actualOptions)
-            }
+            const siteurl = [siteroot, 'page', category + '.html'].join('/')
 
           img.article-figure(src = imageurl)
           .text.content
             h2= content.title
-            p.paragraph!= render(content.description)
+            p.paragraph!= renderMarkdownIt(content.description)
 
-          label.zoom-out-button-container(for = 'no-zoomed-article'): .zoom-out-button close
+          p.main-link-container
+            a.main-link.link.pointer-cursor.underline(href = siteurl) Go to #{content.title}
+          label.zoom-out-button-container(for = 'no-zoomed-article'): .zoom-out-button đóng
 
   aside#aside
     - for (let i = 0; i !== 1; ++i)
