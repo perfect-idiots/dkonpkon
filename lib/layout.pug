@@ -11,6 +11,8 @@
   const categories = readdirSync(gamedir)
   const parentDirectory = level => level ? repeat('..', level).join('/') : '.'
   const siteroot = parentDirectory(level - 1)
+  const actualHomePage = join(out, 'index.html')
+  const isHomePage = actualHomePage === target
 
 include components.pug
 
@@ -18,7 +20,7 @@ doctype html
 
 | !{'\n\n<!--\n' + license + '\n-->\n\n'}
 
-html(lang = 'vi')
+html(lang = 'vi' home-page = isHomePage)
   head
     meta(charset = 'utf-8')
     title: block title
