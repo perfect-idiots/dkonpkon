@@ -1,1 +1,7 @@
 extends ../lib/layout.pug
+
+block append data
+  -
+    const test = 'Hello, World!!'
+
+  +json-script({test})

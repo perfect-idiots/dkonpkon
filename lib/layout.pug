@@ -1,3 +1,16 @@
+-
+  const {join, resolve} = require('path')
+  const {readFileSync, readdirSync} = require('fs')
+  const getyamlobj = getlib('getyamlobj')
+  const {toPairObjectList} = getlib('object-list')
+  const repeat = getlib('repeater').array.value
+  const gamedir = join(lib, 'game')
+  const license = readFileSync(join(projdir, 'LICENSE.md'), {encoding: 'utf8'})
+  const sitemapyaml = getyamlobj('site-map.yaml')
+  const sitemap = toPairObjectList(sitemapyaml)
+  const categories = readdirSync(gamedir)
+  const parentDirectory = level => level ? repeat('..', level).join('/') : '.'
+  const siteroot = parentDirectory(level - 1)
 
 include components.pug
 
@@ -9,18 +22,45 @@ html(lang = 'vi')
   head
     meta(charset = 'utf-8')
     title: block title
-      | Trò chơi giải trí
+      | Trò chơi điện tử — Trang chủ
 
     block stylesheet
-      +style('style/basic.css')
-      +style('style/scrollbar.css')
-      +style('style/master.css')
+      -
+        const href = name =>
+          [siteroot, 'style', name + '.css'].join('/')
+      for name in ['basic', 'scrollbar', 'master']
+        +style(href(name))
 
-  body
+    block head-script
+
+    block data
+      +pretty-json-script(getyamlobj('genre.yaml'))#data-genre
+      +pretty-json-script(sitemap)#data-site-map
+      +pretty-json-script(categories)#data-categories
+
+  body: .page
     header#main-header
-      label#menu-button-container(for = 'menu-visibility-checkbox'): button#menu-button
-      #logo
-      label#search-button-container(for = 'search-visibility-checkbox'): button#search-button
+      +checkbox('menu-visibility-checkbox')(hidden)
+      nav#menu-container
+        label#menu-button-container.no-print(for = 'menu-visibility-checkbox')
+          #menu-button
+          h2#menu-title menu
+
+        ul#main-menu: for pair in sitemap
+          -
+            const href = [siteroot, pair.name].join('/')
+            const isOnView = resolve(dir, href) === target
+          li(on-view = isOnView): a(href = href)= pair.body
+
+      #logo-container: #logo: block logo
+        h1#content-title Trò chơi điện tử
+
+      #search-container.no-print
+        #search-button-container
+          input#search-input.text-cursor(type = 'text' placeholder = 'Search')
+          #search-button
+
+        #search-suggestion
 
     section#main-section
       block main-section
@@ -31,8 +71,11 @@ html(lang = 'vi')
           Copyright © 2017 [Hoàng Văn Khải](https://github.com/KSXGitHub)
           Copyright © 2017 [Nguyễn Mạnh Cường](https://github.com/cuong8321)
           Copyright © 2017 [Y Nhơn Niê](https://github.com/Nhany14)
-          Under [MIT License](https://github.com/perfect-idiots/dkonpkon/blob/master/LICENSE.md)
           All rights reserved
 
           Source code is available at
           [GitHub/perfect-idiots/dkonpkon](https://github.com/perfect-idiots/dkonpkon)
+          Under [MIT License](https://github.com/perfect-idiots/dkonpkon/blob/master/LICENSE.md)
+
+    block body-script
+      +script-list(siteroot, 'onload', 'search')

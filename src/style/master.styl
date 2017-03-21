@@ -1,48 +1,333 @@
-rectange(width, height)
+
+// CONSTANTS
+
+adaptive-split = 480px
+std-square-size = 60px
+std-square-margin = 10px
+std-square-container-size = (std-square-size + 2 * std-square-margin)
+std-theme-background = #0e1112
+std-sidepane-background = #121617
+std-onview-background = #ffa500
+std-onview-hover-background = #faae23
+std-onview-active-background = #f0a722
+std-textbox-background = #3d0714
+std-hover-background = #7e3114
+std-active-background = #b44014
+std-brighter-hover-background = #8c3b1c
+std-brighter-active-background = #bd481b
+
+// FUNCTIONS
+
+fun-std-inner-size(count)
+  (count * std-square-size + (count - 1) * std-square-margin)
+
+fun-std-outer-size(count)
+  (count * std-square-size + (count + 1) * std-square-margin)
+
+fun-std-inner-limit(count)
+  (fun-std-outer-size(count) + std-square-margin)
+
+fun-std-outer-limit(count)
+  (fun-std-inner-size(count) - std-square-margin)
+
+// MIXINS
+
+mix-rectange(width, height)
   width width
   height height
 
-square(size)
-  rectange(size, size)
+mix-square(size)
+  mix-rectange(size, size)
 
-define-size(page-width)
-  unit-size = (page-width / 960)
-  size-60 = (60 * unit-size)
-  size-20 = (20 * unit-size)
+mix-std-inner-rectangle(width, height)
+  width fun-std-inner-size(width)
+  height fun-std-inner-size(height)
 
-  std-size(count)
-    (count * size-60 + (count - 1) * size-20)
+mix-std-inner-square(count)
+  mix-std-inner-rectangle(count, count)
 
-  std-rectangle(width, height)
-    rectange(std-size(width), std-size(height))
+mix-std-outer-rectangle(width, height)
+  width fun-std-outer-size(width)
+  height fun-std-outer-size(height)
 
-  std-square(count)
-    square(std-size(count))
+mix-std-outer-square(count)
+  mix-std-outer-rectangle(count, count)
 
-  @media (min-width: page-width)
-    #main-header, #main-section, #main-footer
-      display block
+mix-bgimg-size(size)
+  background-size size
+  background-repeat no-repeat
+  background-position center
 
-    #main-header
-      height size-60
+mix-transition()
+  transition-duration 500ms
+  transition-timing-function ease
 
-    #main-footer
-      height (2 * size-60 + 1 * size-20)
+mix-deep-transition()
+  &, & *
+    mix-transition()
 
-    #menu-button-container, #logo, #search-button-container
-      margin size-20
+// GLOBAL RULES
 
-    #menu-button
-      background-size size-60
-      std-square(1)
-
-for factor in (8..38)
-  define-size(factor * 60px)
+.ready-for-transition
+  mix-deep-transition()
 
 body
-  background black
+  margin 0px
+  padding 0px
+  font-family 'Roboto', 'Product Sans', 'Cantarell', 'Segoe UI', 'Helvatica', 'arial', sans-serif
+  user-select none
+  cursor default
+
+body, .page
+  width 100%
+  margin-left 0px
+  margin-right 0px
+  padding-left 0px
+  padding-right 0px
+
+for i in (1..6)
+  h{i}
+    font-weight normal
+    font-size ((std-square-size - std-square-margin) / i)
+
+:focus
+  outline none !important
+
+#main-header, #main-section, #main-footer
+  width 100%
+  display block
+
+#main-header
+  height fun-std-outer-size(1)
+  *
+    display inline-block
+
+#main-footer
+  height fun-std-outer-size(2)
+  text-align center
+  font-size 0.75em
+
+  a[href]
+    color #1fcdde
+    text-decoration none
+    cursor pointer
+
+    &:hover
+      color #56dce9
+      text-decoration underline
+
+  .copyright-claim
+    margin-left auto
+    margin-right auto
+
+#menu-container, #logo-container, #search-button-container
+  display inline-block
+
+#menu-container
+  position fixed
+  top 0px
+
+#menu-button-container, #search-button-container
+  mix-std-outer-square(1)
+  top 0px
+  position fixed
+
+  &:hover
+    background-color std-hover-background
+
+  &:active
+    background-color std-active-background
+
+#menu-container, #menu-button-container
+  left 0px
+
+#search-container, #search-button-container
+  right 0px
+
+#logo-container
+  position absolute
+  top 0px
+  height fun-std-outer-size(1)
+  left fun-std-inner-limit(1)
+  overflow hidden
+
+#menu-button, #search-button
+  background-color transparent
+  border 0px solid white
+  mix-std-inner-square(1)
+  margin std-square-margin
+  mix-bgimg-size(std-square-size - std-square-margin)
 
 #menu-button
-  background-color transparent
   background-image url(../image/menu.svg)
-  border 0px solid white
+
+#search-button
+  background-image url(../image/search.svg)
+
+#logo
+  background-color transparent
+  height fun-std-outer-size(1)
+
+#menu-container h2, #logo h1
+    text-transform uppercase
+    vertical-align middle
+    margin std-square-margin
+    padding 0px
+
+#menu-container
+  position fixed
+  width fun-std-outer-size(3)
+
+  & > *
+    display block
+
+  #menu-button-container
+    z-index 200
+
+    & > *
+      display inline-block
+      overflow hidden
+      vertical-align middle
+
+  #main-menu
+    position fixed
+    top fun-std-outer-size(1)
+    margin 0px
+    z-index -1
+    overflow-x hidden
+    overflow-y auto
+    margin-left 0px
+    padding-left 0px
+    display inline-block
+    mix-square(100%)
+
+    li
+      width 100%
+      height fun-std-outer-size(1)
+      text-align center
+
+      &:hover
+        background-color std-hover-background
+
+      &:active
+        background-color std-active-background
+
+      &[on-view]
+        background-color std-onview-background
+
+        &:hover
+          background-color std-onview-hover-background
+
+        &:active
+          background-color std-onview-active-background
+
+      a, a[href]
+        text-decoration none
+        color white
+        display inline-block
+        width 100%
+        padding-top (2.5 * std-square-margin)
+        padding-bottom (2.5 * std-square-margin)
+        font-size 1.5em
+
+#menu-visibility-checkbox
+  &:not(:checked) + #menu-container
+    width fun-std-outer-size(1)
+
+    #menu-title
+      width 0px
+      opacity 0.0
+      font-size 0px
+
+    #main-menu
+      left fun-std-outer-size(1)
+      width 0px
+      opacity 0.0
+      z-index -1
+
+      a
+        font-size 0em
+
+  &:checked + #menu-container
+    z-index 200
+    height 100%
+    background-color std-sidepane-background
+
+    &, & #menu-button-container
+      width fun-std-outer-size(3)
+
+    #menu-title
+      opacity 1.0
+
+    #main-menu
+      left 0px
+      width fun-std-outer-size(3)
+      opacity 1.0
+      z-index 250
+
+#search-input
+  position fixed
+  height std-square-size
+  right fun-std-outer-size(1)
+  padding std-square-margin
+  border 0px
+  background-color std-textbox-background
+  color white
+  font-size 1.75em
+
+body:not(.show-search-box)
+  #logo-container
+    right fun-std-inner-limit(1)
+
+  #search-input
+    width 0px
+    opacity 0.0
+
+body.show-search-box
+  #logo-container
+    right fun-std-inner-limit(6 + 1)
+
+  #search-input
+    width fun-std-inner-size(6)
+    opacity 1.0
+
+  #search-button-container
+    background-color std-hover-background
+
+    &:hover
+      background-color std-brighter-hover-background
+
+    &:active
+      background-color std-brighter-active-background
+
+// ADAPTIVE RULES
+
+@media (min-width: adaptive-split)
+  #main-footer > .copyright-claim > p
+    display inline-block
+    width (adaptive-split / 2)
+    vertical-align middle
+    margin 0px
+    padding 0px
+
+@media (max-width: adaptive-split)
+  #main-footer > .copyright-claim > p
+    display block
+    margin-top std-square-margin
+    margin-bottom std-square-margin
+
+@media screen
+  body
+    background-color std-theme-background
+    color white
+
+  .no-screen, .print-only
+    display none
+
+@media print
+  body
+    background-color white
+    color black
+
+  .no-print, .screen-only
+    display none
