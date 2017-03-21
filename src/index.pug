@@ -2,16 +2,30 @@ extends ../lib/layout.pug
 
 block main-section
   main#main
-    for description, category in categories
+    for content, category in categories
       -
         const checkbox = 'show-' + category + '-checkbox'
       +checkbox(checkbox)(hidden)
       label.article-container(for = checkbox id = 'article-' + category + '-container')
         article.article(id = category + '-article')
           -
+            const markdown = require('jstransformer-markdown-it')
             const imageurl = [siteroot, 'image', 'category', category].join('/')
+
+            function render (text) {
+              const options = {
+                linkify: true,
+                typographer: true,
+                html: true,
+                breaks: false,
+                highlight: true,
+                langPrefix: 'markdown-language-'
+              }
+              return markdown.render(text, actualOptions)
+            }
+
           img.article-figure(src = imageurl)
-          .text.content
+          .text.content!= render(content)
 
   aside#aside
     - for (let i = 0; i !== 1; ++i)
