@@ -74,7 +74,7 @@ mix-deep-transition()
 body
   margin 0px
   padding 0px
-  font-family 'Roboto', 'Product Sans', 'Cantarell', 'Segoe UI', 'Helvatica', 'arial', sans-serif
+  font-family 'Roboto', 'Product Sans', 'Cantarell', 'Segoe UI', 'Verdana', 'Helvatica', 'arial', sans-serif
   user-select none
   cursor default
   width 100%
@@ -297,7 +297,30 @@ body.show-search-box
       background-color std-brighter-active-background
 
 #main-section
-  column-count 2
+  *
+    display inline-block
+
+  #main
+    // ....
+
+    .article
+      img
+        mix-std-inner-square(2)
+
+      .content
+        width fun-std-inner-size(3)
+        height fun-std-inner-size(2)
+        &.wide
+          width fun-std-inner-size(5)
+
+  #aside
+    position absolute
+    top fun-std-inner-limit(1)
+    width fun-std-inner-size(2)
+    margin std-square-margin
+
+    article
+      mix-std-inner-rectangle(2, 4)
 
 // ADAPTIVE RULES
 
