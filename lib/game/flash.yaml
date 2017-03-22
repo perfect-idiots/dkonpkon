@@ -1,4 +1,4 @@
-# genre: arcade, adventure,arcade, board, combat, girl, open-world, role-play, puzzle, shooter, sport, racing, trategy
+# genre: arcade, adventure,arcade, board, combat, girl, open-world, role-play, puzzle, shooter, sport, racing, strategy
 
 american-racing:
   name: 'Đua xe Mỹ'
@@ -23,7 +23,7 @@ american-racing-2:
 angry-birds-hallowen:
   name: 'Angry Birds - Hallowen'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     Game Angry Birds phiên bản Halloween là thể loại game Flash mới rất nổi tiếng
@@ -35,7 +35,7 @@ angry-birds-hallowen:
 angry-birds-rio:
   name: 'Angry Birds - Rio'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     **Angry Bird** được mở đầu bằng đoạn kể về việc những con heo màu lục độc ác
@@ -102,7 +102,7 @@ bomb-expert:
 bomb-it-1:
   name: 'Đặt Bom 1'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     Một loại trò chơi cổ điển giải trí hấp dẫn.
@@ -116,7 +116,7 @@ bomb-it-1:
 bomb-it-2:
   name: 'Đặt Bom 2'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game **Đặt Bom 2**
@@ -129,7 +129,7 @@ bomb-it-2:
 bomb-it-3:
   name: 'Đặt Bom 3'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game **Đặt Bom 3**
@@ -142,7 +142,7 @@ bomb-it-3:
 bomb-it-4:
   name: 'Đặt Bom 4'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game **Đặt Bom 4**
@@ -155,7 +155,7 @@ bomb-it-4:
 bomb-it-5:
   name: 'Đặt Bom 5'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game **Đặt Bom 5**
@@ -168,7 +168,7 @@ bomb-it-5:
 bomb-it-6:
   name: 'Đặt Bom 6'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game **Đặt Bom 6**
@@ -181,7 +181,7 @@ bomb-it-6:
 bomb-it-7:
   name: 'Đặt Bom 7'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game **Đặt Bom 7**
@@ -205,7 +205,7 @@ cave-run:
 crazy-arcade:
   name: 'Đặt Bom 2.0'
   genre:
-    - strategy
+    - sstrategy
     - arcade
   description: >
     Game đặt bom rất phổ biến và thú vị, sử dụng mũi tên để di chuyển, space để đặt bom và phím 1,2,3 để sử dụng vật phẩm
@@ -214,7 +214,7 @@ crazy-arcade:
 cursed-treasure-2:
   name: 'Kho báu nguyền rủa 2'
   genre:
-    - strategy
+    - sstrategy
   description: >
     **Kho báu nguyền rủa 2** là một game phòng thủ tháp khá là thú vị mà có thể
     bạn đã từng thử qua đâu đó trên trình duyệt web của mình. Game với một sự thay đổi nho nhỏ so với những tựa game cùng loại.
@@ -234,7 +234,7 @@ dai-nao-long-cung:
 dao-vang:
   name: 'Đào vàng'
   genre:
-    - strategy
+    - sstrategy
     - arcade
   description: >
     **Đào vàng** là trò chơi đã quá quen thuộc với nhiều người,
@@ -243,7 +243,7 @@ dao-vang:
 demons-vs-fairyland:
   name: 'Quỷ và xứ sở Thần Tiên'
   genre:
-    - strategy
+    - sstrategy
   description: >
     Cố gắng không cho những kẻ thù bắt những đứa trẻ ra khỏi trại của bạn!
     <br>
@@ -376,7 +376,7 @@ kim-cuong-bejeweled-2:
 monster-brawl:
   name: 'Đội quân quái vật'
   genre:
-    - strategy
+    - sstrategy
   description: >
     Hãy xây dựng một đội quân của bạn để chiến đấu chống lại quân đội khác của quái vật.
     Chúc bạn chơi game vui vẻ!
@@ -402,7 +402,7 @@ mushroom-madness-3:
 necronator-II:
   name: 'Necronator 2'
   genre:
-    - strategy
+    - sstrategy
   description: >
     **Necronator 2** thuộc thể loại Game chiến thuật. Hãy chọn một chủng tộc mà bạn tin tưởng vào họ,
     xây dựng quân đội hùng mạnh thiện chiến, chuẩn bị cho các trận đánh ác liệt trên chiến trường.
