@@ -14,6 +14,7 @@ block main-section
       const gameinfo = getyamlobj('game/flash.yaml')
       const genremap = getyamlobj('genre.yaml')
     input.zoom-out-radio#no-zoomed-article(type = 'radio' name = 'zoom-article' checked hidden)
+
     each gameitem in gamelist
       -
         const radio = 'show-' + gameitem + '-radio'
