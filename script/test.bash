@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+alias echo='/usr/bin/env echo'
+
 (
   echo 'CHECKING CODE STYLE...'
   standard && echo -e '\npassed\n' >&2
