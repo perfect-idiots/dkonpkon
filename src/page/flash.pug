@@ -8,7 +8,7 @@ block main-section
   #main-embed-container.embed-container.flash
     embed(type = 'application/x-shockwave-flash')#main-embed
 
-  main#main.flash
+  main#main.flash.no-side-pane
     -
       const gamelist = readdirSync(join(src, 'media', 'swf'))
       const gameinfo = getyamlobj('game/flash.yaml')
@@ -29,5 +29,7 @@ block main-section
             p.genre
               span.title.genre-title Thể loại:
               span.content.genre-list= genre.map(x => genremap[x]).join(', ')
+            p.description.paragraph
+              != renderMarkdownIt(description)
 
           label.zoom-out-button-container(for = 'no-zoomed-article'): .zoom-out-button close
