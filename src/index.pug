@@ -16,7 +16,7 @@ block main-section
           img.article-figure(src = imageurl)
           .text.content
             h2= content.title
-            .description.paragraph-container
+            p.description.paragraph
               != renderMarkdownIt(content.description)
 
           p.main-link-container
