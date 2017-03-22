@@ -1,4 +1,4 @@
-# genre: arcade, adventure,arcade, board, combat, girl, open-world, role-play, puzzle, shooter, sport, racing, trategy
+# genre: arcade, adventure,arcade, board, combat, girl, open-world, role-play, puzzle, shooter, sport, racing, strategy
 
 american-racing:
   name: 'Đua xe Mỹ'
@@ -23,7 +23,7 @@ american-racing-2:
 angry-birds-hallowen:
   name: 'Angry Birds - Hallowen'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     Game Angry Birds phiên bản Halloween là thể loại game Flash mới rất nổi tiếng
@@ -35,7 +35,7 @@ angry-birds-hallowen:
 angry-birds-rio:
   name: 'Angry Birds - Rio'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     **Angry Bird** được mở đầu bằng đoạn kể về việc những con heo màu lục độc ác
@@ -102,7 +102,7 @@ bomb-expert:
 bomb-it-1:
   name: 'Đặt Bom 1'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     Một loại trò chơi cổ điển giải trí hấp dẫn.
@@ -116,7 +116,7 @@ bomb-it-1:
 bomb-it-2:
   name: 'Đặt Bom 2'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game **Đặt Bom 2**
@@ -129,7 +129,7 @@ bomb-it-2:
 bomb-it-3:
   name: 'Đặt Bom 3'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game **Đặt Bom 3**
@@ -142,7 +142,7 @@ bomb-it-3:
 bomb-it-4:
   name: 'Đặt Bom 4'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game **Đặt Bom 4**
@@ -155,7 +155,7 @@ bomb-it-4:
 bomb-it-5:
   name: 'Đặt Bom 5'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game **Đặt Bom 5**
@@ -168,7 +168,7 @@ bomb-it-5:
 bomb-it-6:
   name: 'Đặt Bom 6'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game **Đặt Bom 6**
@@ -181,7 +181,7 @@ bomb-it-6:
 bomb-it-7:
   name: 'Đặt Bom 7'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     Cũng giống như phiên bản trước, nhiệm vụ của người chơi trong game **Đặt Bom 7**
@@ -465,20 +465,20 @@ ultimate-flash-sonic:
     chứa đựng nhiều điều bí ẩn. Trên đường đi bạn hãy sử dụng khả năng cuộn tròn thành cầu gai của Sonic để vượt qua những
     địa hình khó và thu nhặt thật nhiều vòng tròn vàng quý giá nhé!
 uphill-rush-5:
-  name: 'Uphill 5'
+  name: 'Uphill Rush 5'
   genre:
     - racing
     - arcade
-  desciption: >
+  description: >
     Đã đến lúc cho một cuộc đua thú vị. Bạn hãy lướt trên nước, đua qua những đường ray của tàu lượn siêu tốc và bay lượn trong
     không trung.
     Liệu bạn có thể giành được số điểm cao nhất bằng những chiêu trò thú vị?
 uphill-rush-6:
-  name: 'Unphill 6'
+  name: 'Uphill Rush 6'
   genre:
     - racing
     - arcade
-  desciption: >
+  description: >
     Hãy lao đi và lướt về đích trong cuộc đua trên mặt nước tuyệt đỉnh. Phiên bản mới của trò chơi
     Uphill Rush sẽ cho bạn lựa chọn mọi kiểu dáng và đặc điểm mới cho tay đua và xe của bạn.
     Chọn bộ đồ yêu thích và chiếc canô nổi để trông thật phong cách khi thi đấu.
@@ -489,7 +489,7 @@ yanloong-fighting:
     - action
     - combat
     - arcade
-  desciption: >
+  description: >
     Là trò chơi đối kháng rất hay. Bạn sẽ điều khiển nhân vật để chiến đấu với người chơi khác.Sử dụng kĩ năng và tích năng lượng
     ra đòn quyết định để hạ gục đối phương. game cho phép 2 người chơi
 yanloong-lengend-3.2:
@@ -498,7 +498,7 @@ yanloong-lengend-3.2:
     - action
     - adventure
     - arcade
-  desciption: >
+  description: >
     Yan loong là một môn sinh của các nổi tiếng Loong Đạo võ thuật, mà là rất nổi tiếng ở giới võ thuật Trung Quốc dưới môn võ
     "Rồng Qigong".
     Các bạn hãy thử đi con đường mà anh đã đi qua trò chơi này!  Game cho phép 2 người chơi .

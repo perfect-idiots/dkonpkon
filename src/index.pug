@@ -16,7 +16,8 @@ block main-section
           img.article-figure(src = imageurl)
           .text.content
             h2= content.title
-            p.paragraph!= renderMarkdownIt(content.description)
+            p.description.paragraph
+              != renderMarkdownIt(content.description)
 
           p.main-link-container
             a.main-link.link.pointer-cursor.underline(href = siteurl) Go to #{content.title}
