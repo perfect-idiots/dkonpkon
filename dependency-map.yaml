@@ -4,19 +4,30 @@ lib/layout.pug:
   - lib/object-list.js
   - lib/site-map.yaml
   - lib/repeater.js
+  - lib/genre.yaml
+  - lib/game/flash.yaml
+  - lib/game/retro.yaml
+  - lib/game/aaa.yaml
+  - lib/game/mobile.yaml
+  - lib/game/j2me.yaml
   - LICENSE.md
 
 src/page/flash.pug:
   - lib/game/flash.yaml
+  - lib/genre.yaml
 
 src/page/retro.pug:
   - lib/game/retro.yaml
+  - lib/genre.yaml
 
 src/page/aaa.pug:
   - lib/game/aaa.yaml
+  - lib/genre.yaml
 
 src/page/mobile.pug:
   - lib/game/mobile.yaml
+  - lib/genre.yaml
 
 src/page/j2me.pug:
   - lib/game/j2me.yaml
+  - lib/genre.yaml
