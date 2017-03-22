@@ -19,16 +19,20 @@ block main-section
         const radio = 'show-' + gameitem + '-radio'
         const {name, genre, description} = gameinfo[gameitem]
       input.zoom-in-radio(type = 'radio' id = radio name = 'zoom-article' hidden)
+
       label.article-container(for = radio id = 'article-' + gameitem + '-container' target-game-item = gameitem)
         article.article(id = gameitem + '-article')
           -
             const imageurl = [siteroot, 'media', 'image', 'flash', gameitem, 0].join('/')
           img.article-figure(src = imageurl)
+
           .text.content
             h2.name.game-name= name
+
             p.genre
               span.title.genre-title Thể loại:
               span.content.genre-list= genre.map(x => genremap[x]).join(', ')
+
             p.description.paragraph
               != renderMarkdownIt(description)
 
