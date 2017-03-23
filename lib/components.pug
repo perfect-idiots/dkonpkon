@@ -22,7 +22,7 @@ mixin script-list(siteroot, ...list)
 mixin main-game-list(category, mediadir)
   -
     const gamelist = readdirSync(mediadir)
-    const gameinfo = getyamlobj(`game/${info}.yaml`)
+    const gameinfo = getyamlobj(`game/${category}.yaml`)
     const genremap = getyamlobj('genre.yaml')
   input.zoom-out-radio#no-zoomed-article(type = 'radio' name = 'zoom-article' checked hidden)
 
