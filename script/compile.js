@@ -22,6 +22,7 @@ info('\nBUILDING...')
 compile(src, out, 0)
 info('\nCLEANING...')
 clean(out)
+info('\nUPDATING...')
 update()
 info('\ndone.')
 
