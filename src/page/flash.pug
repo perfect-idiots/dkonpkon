@@ -1,10 +1,14 @@
-
 extends ../../lib/layout.pug
 
 block title
   | Shockwave Flash Games
 
 block main-section
+  main#main.flash.no-side-pane
+    #main-embed-container.embed-container.flash
+    +main-game-list('flash', join(src, 'media', 'swf'))
+
+//- block main-section
   main#main.flash.no-side-pane
     #main-embed-container.embed-container.flash
       embed(type = 'application/x-shockwave-flash')#main-embed
