@@ -20,9 +20,9 @@ const markedChanges = getChangedFiles()
 info(`\n${markedChanges.size} files are marked as modified.`)
 info('\nBUILDING...')
 compile(src, out, 0)
-update()
 info('\nCLEANING...')
 clean(out)
+update()
 info('\ndone.')
 
 function getChangedFiles () {
