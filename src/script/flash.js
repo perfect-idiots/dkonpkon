@@ -1,6 +1,7 @@
 (function (window) {
   'use strict'
   const {document} = window
+  const mainEmbedContainer = document.getElementById('main-embed-container')
   const allArticleContainer = document.querySelectorAll('[target-game-item]')
 
   for (const articleContainer of allArticleContainer) {
