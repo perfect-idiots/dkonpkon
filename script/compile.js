@@ -20,9 +20,10 @@ const markedChanges = getChangedFiles()
 info(`\n${markedChanges.size} files are marked as modified.`)
 info('\nBUILDING...')
 compile(src, out, 0)
-writeFileSync(join(dep, 'dependencies.json'), JSON.stringify(genDepsTree, undefined, 2))
 info('\nCLEANING...')
 clean(out)
+info('\nUPDATING...')
+update()
 
 function getChangedFiles () {
   const result = new Set()
@@ -44,7 +45,6 @@ function getChangedFiles () {
       }
     }
   } while (!cmpset(previous, current))
-  writeFileSync(join(dep, 'mtime.json'), JSON.stringify(mtimeTable, undefined, 2))
   return result
   function check (name) {
     if (result.has(name)) return true
@@ -98,6 +98,11 @@ function clean (target) {
   } else if (stats.isFile()) {
     createdOutputFiles.has(target) || removeFile(target)
   }
+}
+
+function update () {
+  writeFileSync(join(dep, 'dependencies.json'), JSON.stringify(genDepsTree, undefined, 2))
+  writeFileSync(join(dep, 'mtime.json'), JSON.stringify(mtimeTable, undefined, 2))
 }
 
 function updateVersion (source, target) {
