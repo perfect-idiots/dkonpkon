@@ -6,7 +6,7 @@
   for (const articleContainer of allArticleContainer) {
     const button = document.createElement('button')
     articleContainer.appendChild(button)
-    button.textContent = 'play now'
+    button.textContent = 'chơi ngay'
     button.addEventListener('click', onClickPlayNow, false)
   }
 
