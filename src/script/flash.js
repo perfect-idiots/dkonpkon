@@ -18,6 +18,7 @@
 
     const embed = document.createElement('embed')
     mainEmbedContainer.appendChild(embed)
+    embed.classList.add('media')
     embed.type = 'application/x-shockwave-flash'
     embed.src = '../media/swf/' + targetGameItem
 
