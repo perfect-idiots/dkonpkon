@@ -1,6 +1,6 @@
 (function (window) {
   const {defineProperty, assign} = Object
-  const defineConst = (object, name, value) => defineProperty(object, name, {value, writable})
+  const defineConst = (object, name, value) => defineProperty(object, name, {value, writable: false})
 
   const out = {
     onResizeWindow () {
