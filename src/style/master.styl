@@ -308,7 +308,12 @@ body.show-search-box
 
   #main
     left 0px
-    right fun-std-inner-limit(2)
+
+    &:not(.no-side-pane)
+      right fun-std-inner-limit(2)
+
+    &.no-side-pane
+      right 0px
 
     .article-container .article
       p, h1, h2, h3

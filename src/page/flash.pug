@@ -5,8 +5,8 @@ block title
 
 block main-section
   main#main.flash.no-side-pane
-    #main-embed-container.embed-container.flash
     +main-game-list('flash', join(src, 'media', 'swf'))
+    #main-embed-container.embed-container.flash
 
 block append body-script
   +script-list(siteroot, 'flash')
