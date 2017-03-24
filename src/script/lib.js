@@ -8,7 +8,7 @@
       if (!mediaElement) return
       mediaElement.width = window.innerWidth
       mediaElement.height = window.innerHeight
-    }
+    },
 
     get fromLibJs () {
       return assign({}, out)
