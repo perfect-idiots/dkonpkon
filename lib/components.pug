@@ -44,7 +44,7 @@ mixin main-game-list(category, mediadir)
         article.article(id = gameitem + '-article')
           -
             const imageurl = [siteroot, 'media', 'image', 'flash', gameitem, 0].join('/')
-          img.article-figure(src = imageurl)
+          +background-image(imageurl).article-figure
 
           .text.content
             h2.name.game-name= name
