@@ -8,7 +8,6 @@
     const targetGameItem = articleContainer.getAttribute('target-game-item')
     const button = document.createElement('button')
     articleContainer.appendChild(button)
-    button.textContent = 'chơi ngay'
     button.addEventListener('click', () => openNewGame(targetGameItem), false)
     button.classList.add('play')
   }
