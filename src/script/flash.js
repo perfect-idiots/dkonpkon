@@ -1,6 +1,6 @@
 (function (window) {
   'use strict'
-  const {document} = window
+  const {document, onResizeWindow} = window
   const mainEmbedContainer = document.getElementById('main-embed-container')
   const allArticleContainer = document.querySelectorAll('[target-game-item]')
 
@@ -18,6 +18,7 @@
     const embed = document.createElement('embed')
     mainEmbedContainer.appendChild(embed)
     embed.classList.add('media')
+    onResizeWindow()
     embed.type = 'application/x-shockwave-flash'
     embed.src = '../media/swf/' + targetGameItem
 
