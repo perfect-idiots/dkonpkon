@@ -331,6 +331,28 @@ body.show-search-box
       &:not(:empty)
         opacity 1.0
 
+      button.close
+        background-color std-theme-background
+        background-origin padding-box
+        position fixed
+        right 0px
+        bottom 0px
+        margin std-square-margin
+        border 0px
+        text-transform uppercase
+        text-align center
+        vertical-align middle
+        font-size 1.5em
+        padding std-square-margin
+        color white
+        mix-std-inner-rectangle(4, 1)
+
+        &:hover
+          background-color std-hover-background
+
+        &:active
+          background-color std-active-background
+
     .article-container .article
       p, h1, h2, h3
         display block
