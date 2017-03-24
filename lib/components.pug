@@ -19,6 +19,13 @@ mixin script-list(siteroot, ...list)
     - const src = [siteroot, 'script', name + '.js'].join('/')
     script(type = 'text/javascript' src = src)&attributes(attributes)
 
+mixin background-image(src)
+  -
+    const backgroundImage = {'background-image': `url(${src})`}
+    const style = Object.assign({}, backgroundImage, attributes.style)
+    const newAttributes = Object.assign({}, attributes, {style})
+  .image.background-image&attributes(newAttributes)
+
 mixin main-game-list(category, mediadir)
   -
     const gamelist = readdirSync(mediadir)
