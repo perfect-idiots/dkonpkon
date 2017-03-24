@@ -315,6 +315,22 @@ body.show-search-box
     &.no-side-pane
       right 0px
 
+    .media-container
+      background-color std-theme-background
+      position fixed
+      left 0px
+      top 0px
+      right 0px
+      bottom 0px
+      z-index 6
+
+      &:empty
+        transform rotateY(90deg)
+        opacity 0.0
+
+      &:not(:empty)
+        opacity 1.0
+
     .article-container .article
       p, h1, h2, h3
         display block
