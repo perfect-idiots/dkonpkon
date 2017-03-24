@@ -18,3 +18,42 @@ mixin script-list(siteroot, ...list)
   for name in list
     - const src = [siteroot, 'script', name + '.js'].join('/')
     script(type = 'text/javascript' src = src)&attributes(attributes)
+
+mixin background-image(src)
+  -
+    const backgroundImage = {'background-image': `url(${src})`}
+    const style = Object.assign({}, backgroundImage, attributes.style)
+    const newAttributes = Object.assign({}, attributes, {style})
+  .image.background-image&attributes(newAttributes)
+
+mixin main-game-list(category, mediadir)
+  -
+    const gamelist = readdirSync(mediadir)
+    const gameinfo = getyamlobj(`game/${category}.yaml`)
+    const genremap = getyamlobj('genre.yaml')
+  input.zoom-out-radio#no-zoomed-article(type = 'radio' name = 'zoom-article' checked hidden)
+
+  #main-list.list(class = ['game-' + category])&attributes(attributes)
+    each gameitem in gamelist
+      -
+        const radio = 'show-' + gameitem + '-radio'
+        const {name, genre, description} = gameinfo[gameitem]
+      input.zoom-in-radio(type = 'radio' id = radio name = 'zoom-article' hidden)
+
+      label.article-container(for = radio id = 'article-' + gameitem + '-container' target-game-item = gameitem)
+        article.article(id = gameitem + '-article')
+          -
+            const imageurl = [siteroot, 'media', 'image', 'flash', gameitem, 0].join('/')
+          +background-image(imageurl).article-figure
+
+          .text.content
+            h2.name.game-name= name
+
+            p.genre
+              span.title.genre-title Thể loại:
+              span.content.genre-list= genre.map(x => genremap[x]).join(', ')
+
+            p.description.paragraph
+              != renderMarkdownIt(description)
+
+          label.zoom-out-button-container(for = 'no-zoomed-article'): .zoom-out-button đóng

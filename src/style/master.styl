@@ -182,7 +182,7 @@ for i in (1..6)
     display block
 
   #menu-button-container
-    z-index 200
+    z-index 2
 
     & > *
       display inline-block
@@ -249,7 +249,7 @@ for i in (1..6)
         font-size 0em
 
   &:checked + #menu-container
-    z-index 200
+    z-index 2
     height 100%
     background-color std-sidepane-background
 
@@ -263,7 +263,7 @@ for i in (1..6)
       left 0px
       width fun-std-outer-size(3)
       opacity 1.0
-      z-index 250
+      z-index 3
 
 #search-input
   position fixed
@@ -308,11 +308,35 @@ body.show-search-box
 
   #main
     left 0px
-    right fun-std-inner-limit(2)
+
+    &:not(.no-side-pane)
+      right fun-std-inner-limit(2)
+
+    &.no-side-pane
+      right 0px
+
+    .media-container
+      background-color std-theme-background
+      position fixed
+      left 0px
+      top 0px
+      right 0px
+      bottom 0px
+      z-index 6
+
+      &:empty
+        transform rotateY(90deg)
+        opacity 0.0
+
+      &:not(:empty)
+        opacity 1.0
 
     .article-container .article
       p, h1, h2, h3
         display block
+
+      .article-figure
+        background-size cover
 
       .content
         .genre
@@ -330,7 +354,7 @@ body.show-search-box
       &:active
         background-color std-active-background
 
-      img
+      .image, .background-image, .article-figure
         mix-std-inner-square(3)
 
       .content
@@ -344,6 +368,9 @@ body.show-search-box
       .zoom-out-button-container, .main-link-container
         display none
 
+      button.play
+        display none
+
     .zoom-in-radio:checked + .article-container
       display block
       background-color std-zoomed-article-background
@@ -353,9 +380,12 @@ body.show-search-box
       right 0px
       bottom 0px
       overflow-y auto
-      z-index 1000
+      z-index 4
 
-      img
+      .article, .article-figure, .content, .game-name, .genre, .paragraph
+        display block
+
+      .image, .background-image, .article-figure
         mix-std-inner-rectangle(4, 3)
 
       .zoom-out-button-container
@@ -366,19 +396,53 @@ body.show-search-box
         background-color std-theme-background
         mix-std-inner-rectangle(4, 1)
 
+        &:hover
+          background-color std-hover-background
+
+        &:active
+          background-color std-active-background
+
         .zoom-out-button
           text-transform uppercase
           text-align center
           vertical-align middle
           font-size 1.5em
           padding std-square-margin
+          background-color transparent
           mix-square(100%)
 
-        &:hover .zoom-out-button
-          background-color std-hover-background
+      button.play
+        display inline-block
+        border 0px
+        background-color transparent
+        background-image url(../image/play-button.svg)
+        background-position center
+        background-repeat no-repeat
+        background-size contain
+        mix-std-inner-square(1)
 
-        &:active .zoom-out-button
-          background-color std-active-background
+        &::after
+          color white
+          text-transform uppercase
+          text-align left
+          position relative
+          display inline-block
+          left std-square-size
+          content 'play now'
+          font-size 2.5em
+          overflow hidden
+          transition-duration 200ms
+          transition-timing-function ease
+          transform-origin left
+          padding-top std-square-margin
+          padding-bottom std-square-margin
+          mix-std-inner-rectangle(3, 1)
+
+        &:not(:hover)::after
+          transform rotateY(90deg)
+
+        &:hover::after
+          transform rotateY(0deg)
 
   #aside
     position absolute
