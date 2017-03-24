@@ -368,6 +368,9 @@ body.show-search-box
       .zoom-out-button-container, .main-link-container
         display none
 
+      button.play
+        display none
+
     .zoom-in-radio:checked + .article-container
       display block
       background-color std-zoomed-article-background
@@ -378,6 +381,9 @@ body.show-search-box
       bottom 0px
       overflow-y auto
       z-index 4
+
+      .article-figure, .content, .game-name, .genre, .paragraph
+        display block
 
       .image, .background-image, .article-figure
         mix-std-inner-rectangle(4, 3)
@@ -404,6 +410,39 @@ body.show-search-box
           padding std-square-margin
           background-color transparent
           mix-square(100%)
+
+      button.play
+        display inline-block
+        border 0px
+        background-color transparent
+        background-image url(../image/play-button.svg)
+        background-position center
+        background-repeat no-repeat
+        background-size contain
+        mix-std-inner-square(1)
+
+        &::after
+          color white
+          text-transform uppercase
+          text-align left
+          position relative
+          display inline-block
+          left std-square-size
+          content 'play now'
+          font-size 2.5em
+          overflow hidden
+          transition-duration 200ms
+          transition-timing-function ease
+          transform-origin left
+          padding-top std-square-margin
+          padding-bottom std-square-margin
+          mix-std-inner-rectangle(3, 1)
+
+        &:not(:hover)::after
+          transform rotateY(90deg)
+
+        &:hover::after
+          transform rotateY(0deg)
 
   #aside
     position absolute
