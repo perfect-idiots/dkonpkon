@@ -13,7 +13,7 @@ block main-section
             const imageurl = [siteroot, 'image', 'category', category].join('/')
             const siteurl = [siteroot, 'page', category + '.html'].join('/')
 
-          img.article-figure(src = imageurl)
+          +background-image(imageurl).article-figure
           .text.content
             h2= content.title
             p.description.paragraph
