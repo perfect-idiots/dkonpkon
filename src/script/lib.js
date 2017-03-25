@@ -20,7 +20,7 @@
 
   function mediaCommonAction (tagName, type, directory, callback) {
     const {document} = window
-    const mainEmbedContainer = document.querySelector('.media-container')
+    const mediaContainer = document.querySelector('.media-container')
     const allArticleContainer = document.querySelectorAll('[target-game-item]')
 
     const {
@@ -42,7 +42,7 @@
       closeCurrentGame()
 
       const player = document.createElement(tagName)
-      mainEmbedContainer.appendChild(player)
+      mediaContainer.appendChild(player)
       player.classList.add('media')
       onResizeWindow()
       player.type = type
@@ -52,7 +52,7 @@
       controller.classList.add('controller')
 
       const close = document.createElement('button')
-      mainEmbedContainer.appendChild(close)
+      mediaContainer.appendChild(close)
       close.addEventListener('click', closeCurrentGame, false)
       close.classList.add('close')
 
@@ -60,8 +60,8 @@
     }
 
     function closeCurrentGame () {
-      mainEmbedContainer.textContent = ''
-      onCloseMedia({mainEmbedContainer})
+      mediaContainer.textContent = ''
+      onCloseMedia({mediaContainer})
     }
   }
 })(window, window)
