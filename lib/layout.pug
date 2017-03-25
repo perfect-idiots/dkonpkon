@@ -39,7 +39,7 @@ html(lang = 'vi' home-page = isHomePage)
       -
         const href = name =>
           [siteroot, 'style', name + '.css'].join('/')
-      each name in ['basic', 'scrollbar', 'master']
+      each name in ['basic', 'scrollbar', 'zero-scrollbar', 'master']
         +style(href(name))
 
     block head-script
