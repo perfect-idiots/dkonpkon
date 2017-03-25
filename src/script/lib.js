@@ -37,6 +37,7 @@
   freeze(fullscreen)
 
   const lib = freeze({
+    donothing,
     onResizeWindow,
     mediaCommonAction,
     polyfill: freeze({fullscreen})
