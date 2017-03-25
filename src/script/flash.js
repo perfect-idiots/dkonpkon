@@ -1,6 +1,6 @@
 (function (window) {
   'use strict'
-  const {document, polyfill, mediaCommonAction} = window
+  const {document, dom, polyfill, mediaCommonAction} = window
   const {fullscreen} = polyfill
   mediaCommonAction('embed', 'application/x-shockwave-flash', '../media/swf', {onOpenMedia})
 
@@ -9,7 +9,7 @@
 
   function onOpenMedia ({mediaContainer, controller}) {
     const fullscreenButton = document.createElement('button')
-    controller.insertBefore(fullscreenButton, controller.firstChild)
+    dom.newFirstChild(controller, fullscreenButton)
     fullscreenButton.addEventListener('click', () => toggleFullscreenMode(mediaContainer), false)
     fullscreenButton.classList.add('fullscreen-button')
   }
