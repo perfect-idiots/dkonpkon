@@ -39,6 +39,9 @@
   }
   freeze(fullscreen)
 
+  const newFirstChild = (parent, child) =>
+    parent.insertBefore(child, parent.firstChild)
+
   const lib = freeze({
     donothing,
     onResizeWindow,
@@ -105,10 +108,6 @@
     function closeCurrentGame () {
       mediaContainer.textContent = ''
       onCloseMedia({mediaContainer})
-    }
-
-    function newFirstChild (parent, child) {
-      parent.insertBefore(child, parent.firstChild)
     }
   }
 })(window, window)
