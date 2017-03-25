@@ -14,14 +14,16 @@
     })
   } else if (document.webkitFullscreenEnabled) {
     assign(fullscreen, {
-      enabled: true, prefix: 'webkit',
+      enabled: true,
+      prefix: 'webkit',
       element: () => document.webkitFullscreenElement,
       request: element => element.webkitRequestFullscreen(),
       exit: () => document.webkitExitFullscreen()
     })
   } else if (document.mozFullscreenEnabled) {
     assign(fullscreen, {
-      enabled: true, prefix: 'moz',
+      enabled: true,
+      prefix: 'moz',
       element: () => element.mozFullscreenElement,
       request: element => element.mozRequestFullscreen(),
       exit: () => document.mozExitFullscreen()
