@@ -1,11 +1,45 @@
 (function (window) {
   const {defineProperty, freeze} = Object
+  const {document} = window
   const defineConst = (object, name, value) => defineProperty(object, name, {value, writable: false})
+  const donothing = () => {}
+
+  const fullscreen = {}
+  if (document.fullscreenEnabled) {
+    assign(fullscreen, {
+      enabled: true, prefix: null,
+      element: () => document.fullscreenElement,
+      request: element => element.requestFullscreen(),
+      exit: () => document.exitFullscreen()
+    })
+  } else if (document.webkitFullscreenEnabled) {
+    assign(fullscreen, {
+      enabled: true, prefix: 'webkit',
+      element: () => document.webkitFullscreenElement,
+      request: element => element.webkitRequestFullscreen(),
+      exit: () => document.webkitExitFullscreen()
+    })
+  } else if (document.mozFullscreenEnabled) {
+    assign(fullscreen, {
+      enabled: true, prefix: 'moz',
+      element: () => element.mozFullscreenElement,
+      request: element => element.mozRequestFullscreen(),
+      exit: () => document.mozExitFullscreen()
+    })
+  } else {
+    const enabled = false
+    const prefix = null
+    const element = donothing
+    const request = donothing
+    const exit = donothing
+    assign(fullscreen, {enabled, prefix, element, request, exit})
+  }
+  freeze(fullscreen)
 
   const lib = freeze({
     onResizeWindow,
     mediaCommonAction,
-    polyfill: freeze({})
+    polyfill: freeze({fullscreen})
   })
 
   for (const name in lib) {
