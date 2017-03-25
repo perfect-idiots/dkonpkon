@@ -61,9 +61,9 @@
     const allArticleContainer = document.querySelectorAll('[target-game-item]')
 
     const {
-      onEachIteration = () => {},
-      onOpenMedia = () => {},
-      onCloseMedia = () => {}
+      onEachIteration = donothing,
+      onOpenMedia = donothing,
+      onCloseMedia = donothing
     } = callback || {}
 
     for (const articleContainer of allArticleContainer) {
