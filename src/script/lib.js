@@ -1,5 +1,5 @@
 (function (window) {
-  const {defineProperty, freeze} = Object
+  const {defineProperty, freeze, assign} = Object
   const {document} = window
   const defineConst = (object, name, value) => defineProperty(object, name, {value, writable: false})
   const donothing = () => {}
