@@ -1,15 +1,18 @@
 (function (window) {
-  const {defineProperty} = Object
+  const {defineProperty, freeze} = Object
   const defineConst = (object, name, value) => defineProperty(object, name, {value, writable: false})
 
-  const out = {
+  const out = freeze({
     onResizeWindow,
-    mediaCommonAction
-  }
+    mediaCommonAction,
+    polyfill: freeze({})
+  })
 
   for (const name in out) {
     defineConst(window, name, out[name])
   }
+
+  defineConst(window, 'lib', out)
 
   function onResizeWindow () {
     const mediaElement = document.querySelector('.media')
