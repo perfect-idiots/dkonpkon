@@ -43,7 +43,7 @@
     donothing,
     onResizeWindow,
     mediaCommonAction,
-    dom: freeze({newFirstChild})
+    dom: freeze({newFirstChild}),
     polyfill: freeze({fullscreen})
   })
 
