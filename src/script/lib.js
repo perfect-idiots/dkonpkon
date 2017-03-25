@@ -107,7 +107,7 @@
       onCloseMedia({mediaContainer})
     }
 
-    function newFirstChild(parent, child) {
+    function newFirstChild (parent, child) {
       parent.insertBefore(child, parent.firstChild)
     }
   }
