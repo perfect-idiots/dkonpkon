@@ -2,7 +2,7 @@
   'use strict'
   const {document, polyfill, mediaCommonAction} = window
   const {fullscreen} = polyfill
-  mediaCommonAction('embed', 'application/x-shockwave-flash', '../media/swf')
+  mediaCommonAction('embed', 'application/x-shockwave-flash', '../media/swf', {onOpenMedia})
 
   const toggleFullscreenMode = element =>
     fullscreen.element() ? fullscreen.request(element) : fullscreen.exit()
