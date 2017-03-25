@@ -43,6 +43,7 @@
     donothing,
     onResizeWindow,
     mediaCommonAction,
+    dom: freeze({newFirstChild})
     polyfill: freeze({fullscreen})
   })
 
@@ -104,6 +105,10 @@
     function closeCurrentGame () {
       mediaContainer.textContent = ''
       onCloseMedia({mediaContainer})
+    }
+
+    function newFirstChild(parent, child) {
+      parent.insertBefore(child, parent.firstChild)
     }
   }
 })(window, window)
