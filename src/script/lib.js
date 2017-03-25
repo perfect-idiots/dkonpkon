@@ -43,7 +43,6 @@
 
       const close = document.createElement('button')
       mainEmbedContainer.appendChild(close)
-      close.textContent = 'đóng'
       close.addEventListener('click', closeCurrentGame, false)
       close.classList.add('close')
     }
