@@ -57,7 +57,7 @@
       close.addEventListener('click', closeCurrentGame, false)
       close.classList.add('close')
 
-      onOpenMedia({targetGameItem, player, controller, close})
+      onOpenMedia({targetGameItem, mediaContainer, player, controller, close})
     }
 
     function closeCurrentGame () {
