@@ -49,10 +49,11 @@
       player.src = directory + '/' + targetGameItem
 
       const controller = document.createElement('div')
+      mediaContainer.appendChild(controller)
       controller.classList.add('controller')
 
       const close = document.createElement('button')
-      mediaContainer.appendChild(close)
+      controller.appendChild(close)
       close.addEventListener('click', closeCurrentGame, false)
       close.classList.add('close')
 
