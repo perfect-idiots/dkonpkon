@@ -9,7 +9,7 @@
 
   function onOpenMedia ({mediaContainer, controller}) {
     const fullscreenButton = document.createElement('button')
-    mediaContainer.appendChild(fullscreenButton)
+    controller.appendChild(fullscreenButton)
     fullscreenButton.addEventListener('click', () => toggleFullscreenMode(mediaContainer), false)
     fullscreenButton.classList.add('fullscreen-button')
   }
