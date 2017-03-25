@@ -7,7 +7,8 @@
   const fullscreen = {}
   if (document.fullscreenEnabled) {
     assign(fullscreen, {
-      enabled: true, prefix: null,
+      enabled: true,
+      prefix: null,
       element: () => document.fullscreenElement,
       request: element => element.requestFullscreen(),
       exit: () => document.exitFullscreen()
