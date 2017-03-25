@@ -25,7 +25,7 @@
     assign(fullscreen, {
       enabled: true,
       prefix: 'moz',
-      element: () => element.mozFullscreenElement,
+      element: () => document.mozFullscreenElement,
       request: element => element.mozRequestFullscreen(),
       exit: () => document.mozExitFullscreen()
     })
