@@ -84,7 +84,7 @@ body
 for i in (1..6)
   h{i}
     font-weight normal
-    font-size ((std-square-size - std-square-margin) / i)
+    font-size ((std-square-size - 2 * std-square-margin) / i)
 
 :focus
   outline none !important
@@ -155,7 +155,7 @@ for i in (1..6)
   border 0px solid white
   mix-std-inner-square(1)
   margin std-square-margin
-  mix-bgimg-size(std-square-size - std-square-margin)
+  mix-bgimg-size(std-square-size - 2 * std-square-margin)
 
 #menu-button
   background-image url(../image/menu.svg)
@@ -278,7 +278,7 @@ for i in (1..6)
 #search-option-container
   position fixed
   top fun-std-outer-size(1)
-  mix-std-outer-rectangle(6, 1)
+  mix-std-outer-rectangle(7, 1)
 
   body.show-search-box &
     right 8px
@@ -297,14 +297,11 @@ for i in (1..6)
   background-position right
   background-color std-sidepane-background
   background-repeat no-repeat
-  mix-rectange(130px, 30px)
+  background-size (std-square-size - 2 * std-square-margin)
+  mix-std-inner-rectangle(3, 1)
 
 #checkbox-label
   font-size 1.5em
-
-#case-sensitive-checkbox
-  float: left
-  mix-rectange(40px,28px)
 
 body:not(.show-search-box)
   #logo-container
@@ -396,7 +393,7 @@ body.show-search-box
           background-color transparent
           background-position center
           background-repeat no-repeat
-          background-size (std-square-size - std-square-margin)
+          background-size (std-square-size - 2 * std-square-margin)
           mix-std-inner-square(1)
 
           &.close-button
