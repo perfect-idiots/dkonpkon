@@ -1,34 +1,16 @@
 (function (window) {
   'use strict'
-  const {document} = window
-  const mainEmbedContainer = document.getElementById('main-embed-container')
-  const allArticleContainer = document.querySelectorAll('[target-game-item]')
+  const {document, dom, polyfill, mediaCommonAction} = window
+  const {fullscreen} = polyfill
+  mediaCommonAction('embed', 'application/x-shockwave-flash', '../media/swf', {onOpenMedia})
 
-  for (const articleContainer of allArticleContainer) {
-    const targetGameItem = articleContainer.getAttribute('target-game-item')
-    const button = document.createElement('button')
-    articleContainer.appendChild(button)
-    button.addEventListener('click', () => openNewGame(targetGameItem), false)
-    button.classList.add('play')
-  }
+  const toggleFullscreenMode = element =>
+    fullscreen.element() ? fullscreen.request(element) : fullscreen.exit()
 
-  function openNewGame (targetGameItem) {
-    closeCurrentGame()
-
-    const embed = document.createElement('embed')
-    mainEmbedContainer.appendChild(embed)
-    embed.classList.add('media')
-    embed.type = 'application/x-shockwave-flash'
-    embed.src = '../media/swf/' + targetGameItem
-
-    const close = document.createElement('button')
-    mainEmbedContainer.appendChild(close)
-    close.textContent = 'đóng'
-    close.addEventListener('click', closeCurrentGame, false)
-    close.classList.add('close')
-  }
-
-  function closeCurrentGame () {
-    mainEmbedContainer.textContent = ''
+  function onOpenMedia ({mediaContainer, controller}) {
+    const fullscreenButton = document.createElement('button')
+    dom.newFirstChild(controller, fullscreenButton)
+    fullscreenButton.addEventListener('click', () => toggleFullscreenMode(mediaContainer), false)
+    fullscreenButton.classList.add('fullscreen-button')
   }
 }).call(window, window)
