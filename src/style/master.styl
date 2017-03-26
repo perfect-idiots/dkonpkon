@@ -276,6 +276,17 @@ for i in (1..6)
   color white
   font-size 1.75em
 
+#search-option-container
+  position fixed
+  top fun-std-outer-size(1)
+  mix-std-outer-rectangle(7, 1)
+
+  body.show-search-box &
+    right 0px
+
+  body:not(.show-search-box) &
+    right fun-std-outer-limit(-7)
+
 body:not(.show-search-box)
   #logo-container
     right fun-std-inner-limit(1)
