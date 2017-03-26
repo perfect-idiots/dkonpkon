@@ -58,5 +58,10 @@ mixin main-game-list(category, mediadir)
 
           label.zoom-out-button-container(for = 'no-zoomed-article'): .zoom-out-button đóng
 
+mixin non-flash-subpage-main-game-list(subPageName)
+  main#main.no-side-pane(class = [subPageName])
+    #main-embed-container.media-container.embed-container.aaa
+    +main-game-list(subPageName, join(src, 'media', 'video', subPageName))
+
 mixin subpage-script-list(...extra)
   +script-list(siteroot, 'lib', 'media', 'subpage-search', ...extra)&attributes(attributes)
