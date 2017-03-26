@@ -57,3 +57,6 @@ mixin main-game-list(category, mediadir)
               != renderMarkdownIt(description)
 
           label.zoom-out-button-container(for = 'no-zoomed-article'): .zoom-out-button đóng
+
+mixin subpage-script-list(...extra)
+  +script-list(siteroot, 'lib', 'media', 'subpage-search', ...extra)&attributes(attributes)
