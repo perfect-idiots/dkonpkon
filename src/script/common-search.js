@@ -26,6 +26,10 @@
     }, false)
 
   document
+    .getElementById('filter-field-select')
+    .addEventListener('click', () => document.getElementById('search-button').click(), false)
+
+  document
     .getElementById('search-option-container')
     .addEventListener('click', event => event.stopPropagation(), false)
 
