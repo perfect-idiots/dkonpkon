@@ -4,15 +4,6 @@ block title
   | Shockwave Flash Games
 
 block main-section
-  #search-option-container
-    select#filter-field-select
-      option(value = 'all') Tất cả
-      option(value = 'name') Tên
-      option(value = 'genre') Thể loại
-      option(value = 'description') Mô tả
-    input#case-sensitive-checkbox(type = 'checkbox')
-    label(for = 'case-sensitive-checkbox') Phân biệt hoa thường
-
   main#main.flash.no-side-pane
     #main-embed-container.media-container.embed-container.flash
     +main-game-list('flash', join(src, 'media', 'swf'))
