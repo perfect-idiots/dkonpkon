@@ -2,3 +2,9 @@ extends ../../lib/layout.pug
 
 block title
   | Retro Games
+
+block main-section
+  +non-flash-subpage-main-game-list('retro')
+
+block append body-script
+  +subpage-script-list('video')

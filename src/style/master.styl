@@ -347,27 +347,44 @@ body.show-search-box
         position fixed
         margin auto
 
-      button.close
-        background-color std-theme-background
-        background-origin padding-box
+      .controller
+        white-space nowrap
+        overflow hidden
         position fixed
+        top 0px
         right 0px
-        bottom 0px
-        margin std-square-margin
-        border 0px
-        text-transform uppercase
-        text-align center
-        vertical-align middle
-        font-size 1.5em
-        line-height std-square-size
-        color white
-        mix-std-inner-rectangle(4, 1)
+        height std-square-size
+        background-color std-sidepane-background
+        transform-origin right
+
+        &:not(:hover)
+          transform rotateY(85deg)
+
+          button
+            background-size 0px
 
         &:hover
-          background-color std-hover-background
+          transform rotateY(0deg)
 
-        &:active
-          background-color std-active-background
+          button:hover
+            background-color std-hover-background
+
+        button
+          display inline-block
+          padding 0px
+          border 0px
+          margin 0px
+          background-color transparent
+          background-position center
+          background-repeat no-repeat
+          background-size (std-square-size - std-square-margin)
+          mix-std-inner-square(1)
+
+          &.close-button
+            background-image url(../image/close.svg)
+
+          &.fullscreen-button
+            background-image url(../image/fullscreen.svg)
 
     .article-container .article
       p, h1, h2, h3
@@ -518,9 +535,9 @@ body.show-search-box
     display none
 
 @media print
-  body
+  *
     background-color white
     color black
 
   .no-print, .screen-only
-    display none
+    display none !important

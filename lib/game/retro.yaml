@@ -1,10 +1,10 @@
-# genre: arcade, adventure,arcade, board, combat, girl, open-world, role-play, puzzle, shooter, sport, racing, trategy
+# genre: arcade, adventure,arcade, board, combat, girl, open-world, role-play, puzzle, shooter, sport, racing, strategy
 
 battle-city:
   name: 'Battle City'
   genre:
     - shooter
-    - trategy
+    - strategy
     - arcade
   description: >
     Nói đến Game NES chúng ta không thể bỏ qua game bắn tank cổ điển  **Battle City**. Được phát hành năm 1990 trên hệ máy chơi
@@ -17,7 +17,7 @@ battle-city:
 bomberman:
   name: 'Bomberman'
   genre:
-    - trategy
+    - strategy
     - arcade
   description: >
     **Bomberman** được hãng Hudson Soft phát triển từ đầu thập niên 1980 và ra mắt bản dành cho điện tử 4 nút vào năm 1987
