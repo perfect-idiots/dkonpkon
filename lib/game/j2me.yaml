@@ -1,9 +1,9 @@
-# genre: arcade, adventure,arcade, board, combat, girl, open-world, role-play, puzzle, shooter, sport, racing, trategy
+# genre: arcade, adventure,arcade, board, combat, girl, open-world, role-play, puzzle, shooter, sport, racing, strategy
 
 age-of-empire-3:
   name: 'Age of Empires 3'
   genre:
-    - trategy
+    - strategy
     - puzzle
   description: >
     **Age of Empires 3** hay được các bạn gọi với cái tên quen thuộc ‘đế chế‘ là một game chiến thuật có thể nói là một game
