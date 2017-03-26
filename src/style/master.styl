@@ -281,26 +281,30 @@ for i in (1..6)
   mix-std-outer-rectangle(6, 1)
 
   body.show-search-box &
-    right 80px
+    right 8px
 
   body:not(.show-search-box) &
     right fun-std-outer-limit(-7)
 
 #filter-field-select
+  appearance none
   -webkit-appearance none
-  mix-rectange(130px,30px)
-  float: left
+  -moz-appearance none
   border none
   font-size 1.5em
   background-image url(../image/arrow2.svg)
   background-position right
-  background-color #666666
+  background-color std-sidepane-background
   background-repeat no-repeat
+  mix-rectange(130px, 30px)
+
 #checkbox-label
   font-size 1.5em
+
 #case-sensitive-checkbox
   float: left
   mix-rectange(40px,28px)
+
 body:not(.show-search-box)
   #logo-container
     right fun-std-inner-limit(1)
