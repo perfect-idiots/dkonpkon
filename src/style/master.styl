@@ -16,7 +16,6 @@ std-active-background = #b44014
 std-brighter-hover-background = #8c3b1c
 std-brighter-active-background = #bd481b
 std-zoomed-article-background = #300b06
-
 // FUNCTIONS
 
 fun-std-inner-size(count)
@@ -279,14 +278,29 @@ for i in (1..6)
 #search-option-container
   position fixed
   top fun-std-outer-size(1)
-  mix-std-outer-rectangle(7, 1)
+  mix-std-outer-rectangle(6, 1)
 
   body.show-search-box &
-    right 0px
+    right 80px
 
   body:not(.show-search-box) &
     right fun-std-outer-limit(-7)
 
+#filter-field-select
+  -webkit-appearance none
+  mix-rectange(130px,30px)
+  float: left
+  border none
+  font-size 1.5em
+  background-image url(../image/arrow2.svg)
+  background-position right
+  background-color #666666
+  background-repeat no-repeat
+#checkbox-label
+  font-size 1.5em
+#case-sensitive-checkbox
+  float: left
+  mix-rectange(40px,28px)
 body:not(.show-search-box)
   #logo-container
     right fun-std-inner-limit(1)
