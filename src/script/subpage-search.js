@@ -66,11 +66,8 @@
       } else {
         hideSearchBox()
       }
-    } else if (keyCode === 13) {
-      showSearchResult()
-    } else {
-      showSuggestionList()
     }
+    showSuggestionList()
   }
 
   function showSuggestionList () {
