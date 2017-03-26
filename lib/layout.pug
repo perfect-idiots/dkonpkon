@@ -73,18 +73,19 @@ html(lang = 'vi' home-page = isHomePage)
 
         #search-suggestion
 
+        block search-option-container
+          #search-option-container
+            select#filter-field-select
+              option(value = 'all') Tất cả
+              option(value = 'name') Tên
+              option(value = 'genre') Thể loại
+              option(value = 'description') Mô tả
+
+            input#case-sensitive-checkbox(type = 'checkbox')
+            label(for = 'case-sensitive-checkbox') Phân biệt hoa thường
+
+
     section#main-section
-      block search-option-container
-        #search-option-container
-          select#filter-field-select
-            option(value = 'all') Tất cả
-            option(value = 'name') Tên
-            option(value = 'genre') Thể loại
-            option(value = 'description') Mô tả
-
-          input#case-sensitive-checkbox(type = 'checkbox')
-          label(for = 'case-sensitive-checkbox') Phân biệt hoa thường
-
       block main-section
 
     footer#main-footer
