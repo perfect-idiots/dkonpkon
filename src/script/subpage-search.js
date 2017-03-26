@@ -51,6 +51,10 @@
       searchTextBox.value ? showSearchResult() : toggleSearchBox()
     }, false)
 
+  document
+    .getElementById('search-option-container')
+    .addEventListener('click', event => event.stopPropagation(), false)
+
   document.addEventListener('click', () => searchTextBox.value || hideSearchBox(), false)
   searchTextBox.addEventListener('keydown', onkeydown, false)
   searchTextBox.addEventListener('click', event => event.stopPropagation(), false)
