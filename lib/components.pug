@@ -43,7 +43,7 @@ mixin main-game-list(category, mediadir)
       label.article-container(for = radio id = 'article-' + gameitem + '-container' target-game-item = gameitem)
         article.article(id = gameitem + '-article')
           -
-            const imageurl = [siteroot, 'media', 'image', 'flash', gameitem, 0].join('/')
+            const imageurl = [siteroot, 'media', 'image', category, gameitem, 0].join('/')
           +background-image(imageurl).article-figure
 
           .text.content
