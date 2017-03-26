@@ -354,13 +354,20 @@ body.show-search-box
         top 0px
         right 0px
         height std-square-size
+        background-color std-sidepane-background
         transform-origin right
 
         &:not(:hover)
           transform rotateY(85deg)
 
+          button
+            background-size 0px
+
         &:hover
           transform rotateY(0deg)
+
+          button:hover
+            background-color std-hover-background
 
         button
           display inline-block
@@ -368,7 +375,16 @@ body.show-search-box
           border 0px
           margin 0px
           background-color transparent
+          background-position center
+          background-repeat no-repeat
+          background-size (std-square-size - std-square-margin)
           mix-std-inner-square(1)
+
+          &.close-button
+            background-image url(../image/close.svg)
+
+          &.fullscreen-button
+            background-image url(../image/fullscreen.svg)
 
     .article-container .article
       p, h1, h2, h3
