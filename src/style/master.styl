@@ -347,6 +347,29 @@ body.show-search-box
         position fixed
         margin auto
 
+      .controller
+        white-space nowrap
+        overflow hidden
+        position fixed
+        top 2px
+        right 0px
+        height std-square-size
+        transform-origin right
+
+        &:not(:hover)
+          transform rotateY(85deg)
+
+        &:hover
+          transform rotateY(0deg)
+
+        button
+          display inline-block
+          padding 0px
+          border 0px
+          margin 0px
+          background-color transparent
+          mix-std-inner-square(1)
+
     .article-container .article
       p, h1, h2, h3
         display block
