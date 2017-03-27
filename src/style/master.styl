@@ -85,7 +85,7 @@ body
 for i in (1..6)
   h{i}
     font-weight normal
-    font-size ((std-square-size - std-square-margin) / i)
+    font-size ((std-square-size - 2 * std-square-margin) / i)
 
 :focus
   outline none !important
@@ -156,7 +156,7 @@ for i in (1..6)
   border 0px solid white
   mix-std-inner-square(1)
   margin std-square-margin
-  mix-bgimg-size(std-square-size - std-square-margin)
+  mix-bgimg-size(std-square-size - 2 * std-square-margin)
 
 #menu-button
   background-image url(../image/menu.svg)
@@ -282,10 +282,48 @@ for i in (1..6)
   mix-std-outer-rectangle(7, 1)
 
   body.show-search-box &
-    right 0px
+    right 8px
 
   body:not(.show-search-box) &
     right fun-std-outer-limit(-7)
+
+#filter-field-select
+  appearance none
+  -webkit-appearance none
+  -moz-appearance none
+  border none
+  color white
+  font-size 1.5em
+  background-image url(../image/arrow-down.svg)
+  background-position right
+  background-color std-sidepane-background
+  background-repeat no-repeat
+  background-size (std-square-size - 2 * std-square-margin)
+  width (fun-std-outer-size(7) - fun-std-inner-limit(1))
+  height std-square-size
+
+#case-sensitive-checkbox
+  & + label
+    display inline-block
+    font-size 2em
+    text-align center
+    vertical-align center
+    line-height std-square-size
+    mix-std-inner-square(1)
+
+    *
+      transition-duration 0s
+
+    &:hover *
+      filter drop-shadow(0px 0px 2px)
+
+  &:not(:checked) + label
+    background-color std-sidepane-background
+    color std-active-background
+
+  &:checked + label
+    background-color std-active-background
+    color std-sidepane-background
 
 body:not(.show-search-box)
   #logo-container
@@ -377,7 +415,7 @@ body.show-search-box
           background-color transparent
           background-position center
           background-repeat no-repeat
-          background-size (std-square-size - std-square-margin)
+          background-size (std-square-size - 2 * std-square-margin)
           mix-std-inner-square(1)
 
           &.close-button

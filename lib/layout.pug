@@ -1,5 +1,5 @@
 -
-  const {join, resolve} = require('path')
+  const {join, resolve, parse} = require('path')
   const {readFileSync, readdirSync} = require('fs')
   const fnMdIt = require('markdown-it')
   const getyamlobj = getlib('getyamlobj')
@@ -29,7 +29,7 @@ doctype html
 
 | !{'\n\n<!--\n' + license + '\n-->\n\n'}
 
-html(lang = 'vi' home-page = isHomePage)
+html(lang = 'vi' home-page = isHomePage subpage-name = name)
   head
     meta(charset = 'utf-8')
     title: block title
@@ -79,9 +79,8 @@ html(lang = 'vi' home-page = isHomePage)
               option(value = 'genre') Thể loại
               option(value = 'description') Mô tả
 
-            input#case-sensitive-checkbox(type = 'checkbox')
-            label(for = 'case-sensitive-checkbox') Phân biệt hoa thường
-
+            input#case-sensitive-checkbox(type = 'checkbox' hidden)
+            label(for = 'case-sensitive-checkbox'): div Aa
 
     section#main-section
       block main-section
