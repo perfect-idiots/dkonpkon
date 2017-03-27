@@ -300,8 +300,22 @@ for i in (1..6)
   background-size (std-square-size - 2 * std-square-margin)
   mix-std-inner-rectangle(3, 1)
 
-#checkbox-label
-  font-size 1.5em
+#case-sensitive-checkbox
+  & + label
+    display inline-block
+    font-size 1.5em
+    text-align center
+    vertical-align center
+    line-height std-square-size
+    mix-std-inner-square(1)
+
+  &:not(:checked) + label
+    background-color std-sidepane-background
+    color std-active-background
+
+  &:checked + label
+    background-color std-active-background
+    color std-sidepane-background
 
 body:not(.show-search-box)
   #logo-container
