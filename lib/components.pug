@@ -12,7 +12,7 @@ mixin json-script(...args)
   +data-script('application/json', json).json&attributes(attributes)
 
 mixin pretty-json-script(object)
-  +json-script(object, undefined, 2)
+  +json-script(object, undefined, 2)&attributes(attributes)
 
 mixin script-list(siteroot, ...list)
   for name in list
