@@ -1,5 +1,16 @@
 extends ../lib/layout.pug
 
+block append data
+  -
+    const gameYamlData = {}
+    for (const subpage of readdirSync(join(lib, 'game'))) {
+      const subdata = getyamlobj(`game/${subpage}`)
+      for (const subitem in subdata) {
+        gameYamlData[subitem] = Object.assign({subpage}, subdata[subitem])
+      }
+    }
+  +pretty-json-script(gameYamlData)#data-game-list
+
 block main-section
   main#main
     input.zoom-out-radio#no-zoomed-article(type = 'radio' name = 'zoom-article' checked hidden)
