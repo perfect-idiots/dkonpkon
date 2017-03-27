@@ -33,6 +33,10 @@
     .getElementById('search-option-container')
     .addEventListener('click', event => event.stopPropagation(), false)
 
+  document
+    .getElementById('case-sensitive-checkbox')
+    .addEventListener('change', () => searchTextBox.showSearchResult(), false)
+
   document.addEventListener('click', () => searchTextBox.value || hideSearchBox(), false)
   searchTextBox.addEventListener('keydown', onkeydown, false)
   searchTextBox.addEventListener('click', event => event.stopPropagation(), false)
