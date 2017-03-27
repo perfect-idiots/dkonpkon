@@ -299,7 +299,8 @@ for i in (1..6)
   background-color std-sidepane-background
   background-repeat no-repeat
   background-size (std-square-size - 2 * std-square-margin)
-  mix-std-inner-rectangle(3, 1)
+  width (fun-std-outer-size(7) - fun-std-inner-limit(1))
+  height std-square-size
 
 #case-sensitive-checkbox
   & + label
