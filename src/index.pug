@@ -2,11 +2,12 @@ extends ../lib/layout.pug
 
 block append data
   -
-    const gameYamlData = {}
+    const gameYamlData = []
     for (const subpage of readdirSync(join(lib, 'game'))) {
       const subdata = getyamlobj(`game/${subpage}`)
       for (const subitem in subdata) {
-        gameYamlData[subitem] = Object.assign({subpage}, subdata[subitem])
+        const {name: key} = parse(subitem)
+        gameYamlData.push(Object.assign({key, subpage}, subdata[subitem]))
       }
     }
   +pretty-json-script(gameYamlData)#data-game-list
