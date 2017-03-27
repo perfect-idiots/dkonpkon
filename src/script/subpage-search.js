@@ -29,6 +29,8 @@
   const getNonDiaStr = diaString =>
     Array.from(diaString).map(diaChar => reverseDiacritic[diaChar] || diaChar).join('')
 
+  searchTextBox.showSearchResult = showSearchResult
+
   document
     .getElementById('search-button')
     .addEventListener('click', showSearchResult, false)

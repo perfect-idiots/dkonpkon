@@ -27,7 +27,7 @@
 
   document
     .getElementById('filter-field-select')
-    .addEventListener('click', () => searchButton.click(), false)
+    .addEventListener('click', () => searchTextBox.showSearchResult(), false)
 
   document
     .getElementById('search-option-container')
