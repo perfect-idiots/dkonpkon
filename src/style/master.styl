@@ -305,11 +305,17 @@ for i in (1..6)
 #case-sensitive-checkbox
   & + label
     display inline-block
-    font-size 1.5em
+    font-size 2em
     text-align center
     vertical-align center
     line-height std-square-size
     mix-std-inner-square(1)
+
+    *
+      transition-duration 0s
+
+    &:hover *
+      filter drop-shadow(0px 0px 2px)
 
   &:not(:checked) + label
     background-color std-sidepane-background
