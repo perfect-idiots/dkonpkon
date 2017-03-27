@@ -29,7 +29,7 @@ doctype html
 
 | !{'\n\n<!--\n' + license + '\n-->\n\n'}
 
-html(lang = 'vi' home-page = isHomePage)
+html(lang = 'vi' home-page = isHomePage subpage-name = name)
   head
     meta(charset = 'utf-8')
     title: block title
@@ -71,7 +71,16 @@ html(lang = 'vi' home-page = isHomePage)
           input#search-input.text-cursor(type = 'text' placeholder = 'Search')
           #search-button
 
-        #search-suggestion
+        block search-option-container
+          #search-option-container
+            select#filter-field-select
+              option(value = 'all') Tất cả
+              option(value = 'name') Tên
+              option(value = 'genre') Thể loại
+              option(value = 'description') Mô tả
+
+            input#case-sensitive-checkbox(type = 'checkbox' hidden)
+            label(for = 'case-sensitive-checkbox') Aa
 
     section#main-section
       block main-section
@@ -89,4 +98,4 @@ html(lang = 'vi' home-page = isHomePage)
           Under [MIT License](https://github.com/perfect-idiots/dkonpkon/blob/master/LICENSE.md)
 
     block body-script
-      +script-list(siteroot, 'onload', 'checkboxes')
+      +script-list(siteroot, 'onload', 'checkboxes', 'common-search')

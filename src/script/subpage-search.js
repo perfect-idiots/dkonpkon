@@ -1,9 +1,7 @@
 (function (window) {
   'use strict'
   const {document} = window
-  const {body} = document
   const searchTextBox = document.getElementById('search-input')
-  const menuVisibilityCheckbox = document.getElementById('menu-visibility-checkbox')
   const list = document.querySelectorAll('#main-list .article-container')
   const filterFieldSelect = document.getElementById('filter-field-select')
   const caseSensitiveCheckbox = document.getElementById('case-sensitive-checkbox')
@@ -31,47 +29,13 @@
   const getNonDiaStr = diaString =>
     Array.from(diaString).map(diaChar => reverseDiacritic[diaChar] || diaChar).join('')
 
-  const toggleSearchBox = () =>
-    isSearchBoxShown() ? hideSearchBox() : showSearchBox()
-
-  const isSearchBoxShown = () =>
-    body.classList.contains('show-search-box')
-
-  const showSearchBox = () =>
-    body.classList.add('show-search-box')
-
-  const hideSearchBox = () =>
-    body.classList.remove('show-search-box')
+  searchTextBox.showSearchResult = showSearchResult
 
   document
     .getElementById('search-button')
-    .addEventListener('click', event => {
-      event.stopPropagation()
-      menuVisibilityCheckbox.checked = false
-      searchTextBox.value ? showSearchResult() : toggleSearchBox()
-    }, false)
+    .addEventListener('click', showSearchResult, false)
 
-  document
-    .getElementById('search-option-container')
-    .addEventListener('click', event => event.stopPropagation(), false)
-
-  document.addEventListener('click', () => searchTextBox.value || hideSearchBox(), false)
-  searchTextBox.addEventListener('keydown', onkeydown, false)
-  searchTextBox.addEventListener('click', event => event.stopPropagation(), false)
-
-  function onkeydown ({keyCode}) {
-    if (keyCode === 27) {
-      if (searchTextBox.value) {
-        searchTextBox.value = ''
-      } else {
-        hideSearchBox()
-      }
-    } else if (keyCode === 13) {
-      showSearchResult()
-    } else {
-      showSuggestionList()
-    }
-  }
+  searchTextBox.addEventListener('keydown', showSuggestionList, false)
 
   function showSuggestionList () {
     showSearchResult()

@@ -43,7 +43,7 @@ mixin main-game-list(category, mediadir)
       label.article-container(for = radio id = 'article-' + gameitem + '-container' target-game-item = gameitem)
         article.article(id = gameitem + '-article')
           -
-            const imageurl = [siteroot, 'media', 'image', 'flash', gameitem, 0].join('/')
+            const imageurl = [siteroot, 'media', 'image', category, gameitem, 0].join('/')
           +background-image(imageurl).article-figure
 
           .text.content
@@ -57,3 +57,11 @@ mixin main-game-list(category, mediadir)
               != renderMarkdownIt(description)
 
           label.zoom-out-button-container(for = 'no-zoomed-article'): .zoom-out-button đóng
+
+mixin non-flash-subpage-main-game-list(category)
+  main#main.no-side-pane(class = [category])
+    #main-embed-container.media-container.embed-container.aaa
+    +main-game-list(category, join(src, 'media', 'video', category))
+
+mixin subpage-script-list(...extra)
+  +script-list(siteroot, 'lib', 'media', 'subpage-search', ...extra)&attributes(attributes)

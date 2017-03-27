@@ -2,3 +2,9 @@ extends ../../lib/layout.pug
 
 block title
   | AAA Games
+
+block main-section
+  +non-flash-subpage-main-game-list('aaa')
+
+block append body-script
+  +subpage-script-list('video')

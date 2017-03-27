@@ -100,6 +100,7 @@
       const close = document.createElement('button')
       controller.appendChild(close)
       close.addEventListener('click', closeCurrentGame, false)
+      close.addEventListener('click', fullscreen.exit, false)
       close.classList.add('close-button')
 
       onOpenMedia({targetGameItem, mediaContainer, player, controller, close})
