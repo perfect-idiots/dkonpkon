@@ -3,7 +3,6 @@
   const {document} = window
   const {body} = document
   const searchTextBox = document.getElementById('search-input')
-  const searchButton = document.getElementById('search-button')
   const menuVisibilityCheckbox = document.getElementById('menu-visibility-checkbox')
 
   const toggleSearchBox = () =>
@@ -18,7 +17,8 @@
   const hideSearchBox = () =>
     body.classList.remove('show-search-box')
 
-  searchButton
+  document
+    .getElementById('search-button')
     .addEventListener('click', event => {
       event.stopPropagation()
       menuVisibilityCheckbox.checked = false
@@ -27,11 +27,15 @@
 
   document
     .getElementById('filter-field-select')
-    .addEventListener('click', () => searchButton.click(), false)
+    .addEventListener('click', () => searchTextBox.showSearchResult(), false)
 
   document
     .getElementById('search-option-container')
     .addEventListener('click', event => event.stopPropagation(), false)
+
+  document
+    .getElementById('case-sensitive-checkbox')
+    .addEventListener('change', () => searchTextBox.showSearchResult(), false)
 
   document.addEventListener('click', () => searchTextBox.value || hideSearchBox(), false)
   searchTextBox.addEventListener('keydown', onkeydown, false)
