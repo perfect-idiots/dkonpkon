@@ -16,6 +16,7 @@ std-active-background = #b44014
 std-brighter-hover-background = #8c3b1c
 std-brighter-active-background = #bd481b
 std-zoomed-article-background = #300b06
+
 // FUNCTIONS
 
 fun-std-inner-size(count)
@@ -298,7 +299,8 @@ for i in (1..6)
   background-color std-sidepane-background
   background-repeat no-repeat
   background-size (std-square-size - 2 * std-square-margin)
-  mix-std-inner-rectangle(3, 1)
+  width (fun-std-outer-size(7) - fun-std-inner-limit(1))
+  height std-square-size
 
 #case-sensitive-checkbox
   & + label
