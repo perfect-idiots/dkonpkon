@@ -20,7 +20,8 @@
   function onHashChange () {
     hashObject = urlParser.parseHashObject(window.location.hash)
     const {targetGameItem} = hashObject
-    const targetGameElement = document.querySelector(`#main-list [target-game-item="${targetGameItem}"]`)
+    const targetGameElement = document
+      .querySelector(`#main-list [target-game-item="${targetGameItem}"]`)
     const targetCheckbox = targetGameElement
       ? targetGameElement.previousElementSibling
       : document.getElementById('no-zoomed-article')
