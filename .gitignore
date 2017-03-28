@@ -17,6 +17,8 @@ temp.*
 /dep
 /design/*
 !/design/*.vsd
+*.tern-project
+*.tern-project.json
 
 # Logs
 logs

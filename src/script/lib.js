@@ -39,6 +39,35 @@
   }
   freeze(fullscreen)
 
+  const dashToCamel = string => {
+    const [first, ...rest] = String(string).split('-')
+    return first + rest.map(capitalize).join('')
+  }
+
+  const camelToDash = string => Array.from(String(string))
+    .map(x => x < 'A' || x > 'Z' ? x : '-' + x.toLowerCase())
+    .join('')
+
+  const capitalize = string => {
+    const [first, ...rest] = String(string)
+    return first.toUpperCase() + rest.join('')
+  }
+
+  const parseHashObject = hash => String(hash)
+    .slice(1)
+    .split('&')
+    .map(pair => pair.split('='))
+    .reduce((prev, [key, val]) => assign({[dashToCamel(key)]: val}, prev), {})
+
+  const stringifyHashObject = object => {
+    const buffer = []
+    for (const key in object) {
+      const value = object[key]
+      new Set([undefined, null, '']).has(value) || buffer.push(camelToDash(key) + '=' + value)
+    }
+    return '#' + buffer.join('&')
+  }
+
   const newFirstChild = (parent, child) =>
     parent.insertBefore(child, parent.firstChild)
 
@@ -47,7 +76,9 @@
     onResizeWindow,
     mediaCommonAction,
     dom: freeze({newFirstChild}),
-    polyfill: freeze({fullscreen})
+    urlParser: {parseHashObject, stringifyHashObject},
+    polyfill: freeze({fullscreen}),
+    utils: freeze({dashToCamel, capitalize})
   })
 
   for (const name in lib) {
