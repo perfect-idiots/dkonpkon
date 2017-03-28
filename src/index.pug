@@ -39,3 +39,6 @@ block main-section
   aside#aside
     - for (let i = 0; i !== 1; ++i)
       a.recommendation(id = 'recommendation-' + i): article
+
+block append body-script
+  +script-list(siteroot, 'index-search')
