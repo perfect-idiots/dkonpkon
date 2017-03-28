@@ -21,11 +21,10 @@
     hashObject = urlParser.parseHashObject(window.location.hash)
     const {targetGameItem} = hashObject
     const targetGameElement = document.querySelector(`#main-list [target-game-item="${targetGameItem}"]`)
-    if (targetGameElement) {
-      targetGameElement.previousElementSibling.checked = true
-    } else {
-      document.getElementById('no-zoomed-article').checked = true
-    }
+    const targetCheckbox = targetGameElement
+      ? targetGameElement.previousElementSibling
+      : document.getElementById('no-zoomed-article')
+    targetCheckbox.checked = true
   }
 
   function createCheckboxHashUpdater (targetGameItem) {
