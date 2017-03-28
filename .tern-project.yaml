@@ -3,7 +3,9 @@ ecmaVersion: 6
 libs:
   - browser
 
-loadEagerly: []
+loadEagerly:
+  - src/script/*.js
+  - src/script/**/*.js
 
 dontLoad:
   - node_modules/**
