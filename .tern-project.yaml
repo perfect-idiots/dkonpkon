@@ -1,0 +1,13 @@
+ecmaVersion: 6
+libs:
+  - browsers
+loadEagerly: []
+dontLoad:
+  - node_modules/**
+plugins:
+  modules: {}
+  es_modules: {}
+  node: {}
+  doc_comment:
+    fullDocs: true
+    strong: true
