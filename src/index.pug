@@ -6,8 +6,8 @@ block append data
     for (const yamlfilename of readdirSync(join(lib, 'game'))) {
       const subdata = getyamlobj(`game/${yamlfilename}`)
       for (const subitem in subdata) {
-        const {name: subpage} = parse(yamlfilename)
-        const {name: key} = parse(subitem)
+        const subpage = parse(yamlfilename).name
+        const key = parse(subitem).name
         gameYamlData.push(Object.assign({key, subpage}, subdata[subitem]))
       }
     }
