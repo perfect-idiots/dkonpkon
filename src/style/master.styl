@@ -450,6 +450,9 @@ body.show-search-box
       .image, .background-image, .article-figure
         mix-std-inner-square(3)
 
+      .image-container :not(:first-child)
+        display none
+
       .content
         width fun-std-inner-size(4)
         height fun-std-inner-size(3)
@@ -475,8 +478,11 @@ body.show-search-box
       overflow-y auto
       z-index 4
 
-      .article, .article-figure, .content, .game-name, .genre, .paragraph
+      .article, .image-container, .article-figure, .content, .game-name, .genre, .paragraph
         display block
+
+      .image-container .article-figure
+        display inline-block
 
       .image, .background-image, .article-figure
         mix-std-inner-rectangle(4, 3)

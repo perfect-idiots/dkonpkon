@@ -3,10 +3,11 @@ extends ../lib/layout.pug
 block append data
   -
     const gameYamlData = []
-    for (const subpage of readdirSync(join(lib, 'game'))) {
-      const subdata = getyamlobj(`game/${subpage}`)
+    for (const yamlfilename of readdirSync(join(lib, 'game'))) {
+      const subdata = getyamlobj(`game/${yamlfilename}`)
       for (const subitem in subdata) {
-        const {name: key} = parse(subitem)
+        const subpage = parse(yamlfilename).name
+        const key = parse(subitem).name
         gameYamlData.push(Object.assign({key, subpage}, subdata[subitem]))
       }
     }
@@ -38,3 +39,6 @@ block main-section
   aside#aside
     - for (let i = 0; i !== 1; ++i)
       a.recommendation(id = 'recommendation-' + i): article
+
+block append body-script
+  +script-list(siteroot, 'index-search')
