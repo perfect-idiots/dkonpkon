@@ -26,6 +26,7 @@
       ? targetGameElement.previousElementSibling
       : document.getElementById('no-zoomed-article')
     targetCheckbox.checked = true
+    targetCheckbox.dispatchEvent(new window.CustomEvent('change'))
   }
 
   function createCheckboxHashUpdater (targetGameItem) {
