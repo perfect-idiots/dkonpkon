@@ -67,6 +67,15 @@ mix-deep-transition()
   &, & *
     mix-transition()
 
+// CSS ASSETS
+
+@keyframes horizontal-spin
+  from
+    transform rotateY(0deg)
+
+  to
+    transform rotateY(-360deg)
+
 // GLOBAL RULES
 
 .ready-for-transition
@@ -503,6 +512,7 @@ body.show-search-box
             margin auto
             transform-style preserve-3d
             height fun-std-inner-size(4)
+            animation horizontal-spin 5s infinite linear
 
             *
               backface-visibility hidden
@@ -530,9 +540,6 @@ body.show-search-box
             right 0px
             margin-left auto
             margin-right auto
-
-        .controller
-          color lime // I don't know what to do with this right now
 
       .image, .background-image, .article-figure
         mix-std-inner-rectangle(4, 3)
