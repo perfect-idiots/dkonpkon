@@ -71,11 +71,22 @@
   const newFirstChild = (parent, child) =>
     parent.insertBefore(child, parent.firstChild)
 
+  const attribute = {
+    string (element, name, value) {
+      value
+        ? element.setAttribute(name, value)
+        : element.removeAttribute(name)
+    },
+    boolean (element, name, value) {
+      attribute.string(element, name, value && name)
+    }
+  }
+
   const lib = freeze({
     donothing,
     onResizeWindow,
     mediaCommonAction,
-    dom: freeze({newFirstChild}),
+    dom: freeze({newFirstChild, attribute}),
     urlParser: {parseHashObject, stringifyHashObject},
     polyfill: freeze({fullscreen}),
     utils: freeze({dashToCamel, capitalize})
