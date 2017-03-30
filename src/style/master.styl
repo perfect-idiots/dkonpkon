@@ -491,19 +491,45 @@ body.show-search-box
       html.javascript-enabled &
         .image-container
           position static
-          height fun-std-inner-size(4)
           perspective 1000px
           perspective-origin center
+          height fun-std-inner-size(5)
+
+          .wrap
+            translate = (fun-std-inner-size(4) / 2)
+            position absolute
+            left 0px
+            right 0px
+            margin auto
+            transform-style preserve-3d
+            height fun-std-inner-size(4)
+
+            *
+              backface-visibility hidden
+
+            :nth-child(1)
+              transform translateZ(translate)
+
+            :nth-child(2)
+              transform rotateY(-270deg) translateX(translate)
+              transform-origin top right
+
+            :nth-child(3)
+              transform translateZ(- translate) rotateY(180deg)
+
+            :nth-child(4)
+              transform rotateY(270deg) translateX(- translate)
+              transform-origin center left
 
           .article-figure
             display block
             position absolute
+            height fun-std-inner-size(4)
+            top std-square-size
+            left 0px
+            right 0px
             margin-left auto
             margin-right auto
-            left 0px
-            top 0px
-            right 0px
-            mix-std-inner-rectangle(6, 4)
 
         .controller
           color lime // I don't know what to do with this right now
