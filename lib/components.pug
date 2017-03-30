@@ -45,7 +45,7 @@ mixin main-game-list(category, mediadir)
           -
             const imageurl = index =>
               [siteroot, 'media', 'image', category, gameitem, index].join('/')
-          #article-figure-container.image-container: .wrap
+          .image-container: .wrap
             each index in [0, 1, 2, 3]
               +background-image(imageurl(index)).article-figure
 
