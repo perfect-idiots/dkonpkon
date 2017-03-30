@@ -67,6 +67,15 @@ mix-deep-transition()
   &, & *
     mix-transition()
 
+// CSS ASSETS
+
+@keyframes horizontal-spin
+  from
+    transform rotateY(0deg)
+
+  to
+    transform rotateY(-360deg)
+
 // GLOBAL RULES
 
 .ready-for-transition
@@ -89,6 +98,9 @@ for i in (1..6)
 
 :focus
   outline none !important
+
+disabled, [disabled], .disabled
+  filter brightness(0.5) !important
 
 #main-header, #main-section, #main-footer
   width 100%
@@ -143,6 +155,9 @@ for i in (1..6)
 
 #search-container, #search-button-container
   right 0px
+
+  html:not(.javascript-enabled) &
+    display none !important
 
 #logo-container
   position absolute
@@ -481,8 +496,53 @@ body.show-search-box
       .article, .image-container, .article-figure, .content, .game-name, .genre, .paragraph
         display block
 
-      .image-container .article-figure
-        display inline-block
+      html:not(.javascript-enabled) &
+        .image-container .article-figure
+          display inline-block
+
+      html.javascript-enabled &
+        .image-container
+          position static
+          perspective 750px
+          perspective-origin center
+          height fun-std-inner-size(5)
+
+          .wrap
+            translate = (fun-std-inner-size(4) / 2)
+            position absolute
+            left 0px
+            right 0px
+            margin auto
+            transform-style preserve-3d
+            height fun-std-inner-size(4)
+            animation horizontal-spin 5s infinite linear
+
+            *
+              backface-visibility hidden
+
+            :nth-child(1)
+              transform translateZ(translate)
+
+            :nth-child(2)
+              transform rotateY(-270deg) translateX(translate)
+              transform-origin top right
+
+            :nth-child(3)
+              transform translateZ(- translate) rotateY(180deg)
+
+            :nth-child(4)
+              transform rotateY(270deg) translateX(- translate)
+              transform-origin center left
+
+          .article-figure
+            display block
+            position absolute
+            height fun-std-inner-size(4)
+            top std-square-size
+            left 0px
+            right 0px
+            margin-left auto
+            margin-right auto
 
       .image, .background-image, .article-figure
         mix-std-inner-rectangle(4, 3)

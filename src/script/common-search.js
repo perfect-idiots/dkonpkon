@@ -22,6 +22,7 @@
     .addEventListener('click', event => {
       event.stopPropagation()
       menuVisibilityCheckbox.checked = false
+      menuVisibilityCheckbox.dispatchEvent(new window.CustomEvent('change'))
       searchTextBox.value || toggleSearchBox()
     }, false)
 
