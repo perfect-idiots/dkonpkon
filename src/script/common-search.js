@@ -11,11 +11,15 @@
   const isSearchBoxShown = () =>
     body.classList.contains('show-search-box')
 
-  const showSearchBox = () =>
+  const showSearchBox = () => {
     body.classList.add('show-search-box')
+    searchTextBox.focus()
+  }
 
-  const hideSearchBox = () =>
+  const hideSearchBox = () => {
     body.classList.remove('show-search-box')
+    searchTextBox.blur()
+  }
 
   document
     .getElementById('search-button')
