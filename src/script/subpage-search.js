@@ -15,7 +15,7 @@
   searchTextBox.addEventListener('keydown', showSuggestionList, false)
 
   function showSuggestionList () {
-    showSearchResult()
+    setTimeout(showSearchResult)
   }
 
   function showSearchResult () {
