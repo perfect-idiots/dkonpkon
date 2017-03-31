@@ -1,33 +1,12 @@
 (function (window) {
   'use strict'
-  const {document} = window
+  const {document, search: {check}} = window
+  const dataGenre = JSON.parse(document.getElementById('data-genre').textContent)
+  const dataGameList = JSON.parse(document.getElementById('data-game-list').textContent)
   const searchTextBox = document.getElementById('search-input')
-  const list = document.querySelectorAll('#main-list .article-container')
+  const searchResult = document.getElementById('search-result')
   const filterFieldSelect = document.getElementById('filter-field-select')
   const caseSensitiveCheckbox = document.getElementById('case-sensitive-checkbox')
-
-  const diacritic = {
-    a: 'áàảãạăắằẳẵặâấầẩẫậ',
-    d: 'đ',
-    e: 'éèẻẽẹêếềểễệ',
-    i: 'íìỉĩị',
-    o: 'óòỏõọôốồổỗộơờởỡợ',
-    u: 'úùủũụưứừửữự',
-    y: 'ýỳỷỹỵ'
-  }
-  for (const nonDiaChar in diacritic) {
-    diacritic[nonDiaChar.toUpperCase()] = diacritic[nonDiaChar].toUpperCase()
-  }
-
-  const reverseDiacritic = {}
-  for (const nonDiaChar in diacritic) {
-    for (const diaChar of diacritic[nonDiaChar]) {
-      reverseDiacritic[diaChar] = nonDiaChar
-    }
-  }
-
-  const getNonDiaStr = diaString =>
-    Array.from(diaString).map(diaChar => reverseDiacritic[diaChar] || diaChar).join('')
 
   searchTextBox.showSearchResult = showSearchResult
 
@@ -35,35 +14,72 @@
     .getElementById('search-button')
     .addEventListener('click', showSearchResult, false)
 
-  searchTextBox.addEventListener('keydown', showSuggestionList, false)
+  for (const type of ['keydown', 'change', 'paste']) {
+    searchTextBox.addEventListener(type, showSuggestionList, false)
+  }
 
   function showSuggestionList () {
-    showSearchResult()
+    setTimeout(showSearchResult)
   }
 
   function showSearchResult () {
+    searchResult.textContent = ''
+    searchResult.removeAttribute('match-count')
+    if (!searchTextBox.value) return
+
     const getText = caseSensitiveCheckbox.checked
       ? string => string
       : string => string.toUpperCase()
     const text = getText(searchTextBox.value)
     const filterField = filterFieldSelect.value
-    const getContentElement = filterField === 'all'
-      ? articleContainer => articleContainer
-      : articleContainer => articleContainer.querySelector('.' + filterField)
+    const getContent = filterField === 'all'
+      ? object => {
+        const {key, subpage, name, genre, description} = object
+        return [key, subpage, name, genre, description].join('\n')
+      }
+      : object => object[filterField]
 
-    for (const articleContainer of list) {
-      // Sửa từ dòng này
-      const content = getText(getContentElement(articleContainer).textContent)
-      articleContainer.hidden = check(content, text)
-      // Đến dòng này
+    const filtered = dataGameList.filter(object => !check(getText(getContent(object)), text))
+    searchResult.setAttribute('match-count', filtered.length)
+
+    if (!filtered.length) {
+      const noSearchResult = document.createElement('p')
+      searchResult.appendChild(noSearchResult)
+      noSearchResult.classList.add('no-search-result')
+      noSearchResult.textContent = `No result for "${searchTextBox.value}"`
+      return
     }
 
-    function check (content, text) {
-      return notSubStr(content, text) && notSubStr(getNonDiaStr(content), text)
-    }
+    for (const object of filtered) {
+      const {key, subpage, name, genre, description} = object
 
-    function notSubStr (container, substring) {
-      return container.indexOf(substring) === -1
+      const div = document.createElement('div')
+      searchResult.appendChild(div)
+      div.setAttribute('data-json', JSON.stringify(object))
+
+      const heading = document.createElement('h2')
+      div.appendChild(heading)
+      heading.classList.add('name', 'heading', 'title')
+
+      const anchor = document.createElement('a')
+      heading.appendChild(anchor)
+      anchor.textContent = name
+      anchor.href = `page/${subpage}.html#target-game-item=${key}`
+      anchor.classList.add('link', 'hyperlink', 'pointer-cursor')
+
+      const genreParagraph = document.createElement('p')
+      div.appendChild(genreParagraph)
+      genreParagraph.textContent = `Thể loại: ${genre.map(x => dataGenre[x]).join(', ')}`
+      genreParagraph.classList.add('genre')
+
+      const descriptionParagraph = document.createElement('p')
+      div.appendChild(descriptionParagraph)
+      descriptionParagraph.innerHTML = description
+      descriptionParagraph.classList.add('description', 'details')
+
+      for (const property in object) {
+        div.setAttribute(`data-${property}`, object[property])
+      }
     }
   }
 }).call(window, window)

@@ -82,6 +82,31 @@
     }
   }
 
+  const diacritic = {
+    a: 'áàảãạăắằẳẵặâấầẩẫậ',
+    d: 'đ',
+    e: 'éèẻẽẹêếềểễệ',
+    i: 'íìỉĩị',
+    o: 'óòỏõọôốồổỗộơờởỡợ',
+    u: 'úùủũụưứừửữự',
+    y: 'ýỳỷỹỵ'
+  }
+  for (const nonDiaChar in diacritic) {
+    diacritic[nonDiaChar.toUpperCase()] = diacritic[nonDiaChar].toUpperCase()
+  }
+
+  const reverseDiacritic = {}
+  for (const nonDiaChar in diacritic) {
+    for (const diaChar of diacritic[nonDiaChar]) {
+      reverseDiacritic[diaChar] = nonDiaChar
+    }
+  }
+
+  const getNonDiaStr = diaString =>
+    Array.from(diaString).map(diaChar => reverseDiacritic[diaChar] || diaChar).join('')
+
+  const notSubStr = (container, substring) => container.indexOf(substring) === -1
+
   const lib = freeze({
     donothing,
     onResizeWindow,
@@ -89,7 +114,21 @@
     dom: freeze({newFirstChild, attribute}),
     urlParser: {parseHashObject, stringifyHashObject},
     polyfill: freeze({fullscreen}),
-    utils: freeze({dashToCamel, capitalize})
+    search: freeze({
+      check (content, text) {
+        return notSubStr(content, text) && notSubStr(getNonDiaStr(content), text)
+      }
+    }),
+    utils: freeze({
+      dashToCamel,
+      capitalize,
+      diacritic: freeze({
+        table: diacritic,
+        reverse: reverseDiacritic,
+        convert: getNonDiaStr
+      }),
+      notSubStr
+    })
   })
 
   for (const name in lib) {
