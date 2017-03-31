@@ -8,7 +8,7 @@ block append data
       for (const subitem in subdata) {
         const subpage = parse(yamlfilename).name
         const key = parse(subitem).name
-        const {name, genre, description} = subdata[item]
+        const {name, genre, description} = subdata[subitem]
         gameYamlData.push({key, subpage, name, genre, description: renderMarkdownIt(description)})
       }
     }
