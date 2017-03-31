@@ -57,15 +57,15 @@
       searchResult.appendChild(div)
       div.setAttribute('data-json', JSON.stringify(object))
 
+      const heading = document.createElement('h2')
+      div.appendChild(heading)
+      heading.classList.add('name', 'heading', 'title')
+
       const anchor = document.createElement('a')
-      div.appendChild(anchor)
+      heading.appendChild(anchor)
+      anchor.textContent = name
       anchor.href = `page/${subpage}.html#target-game-item=${key}`
       anchor.classList.add('link', 'hyperlink', 'pointer-cursor')
-
-      const heading = document.createElement('h2')
-      anchor.appendChild(heading)
-      heading.textContent = name
-      heading.classList.add('name', 'heading', 'title')
 
       const genreParagraph = document.createElement('p')
       div.appendChild(genreParagraph)
