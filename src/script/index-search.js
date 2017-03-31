@@ -46,6 +46,7 @@
       noSearchResult.classList.add('no-search-result')
       noSearchResult.textContent = `No result for "${searchTextBox.value}"`
       searchResult.setAttribute('match-count', 0)
+      return
     }
 
     for (const object of filtered) {
