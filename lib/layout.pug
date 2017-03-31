@@ -45,9 +45,6 @@ html(lang = 'vi' home-page = isHomePage subpage-name = name)
     block head-script
 
     block data
-      +pretty-json-script(getyamlobj('genre.yaml'))#data-genre
-      +pretty-json-script(sitemap)#data-sitemap
-      +pretty-json-script(Object.getOwnPropertyNames(categories))#data-categories
 
   body
     header#main-header

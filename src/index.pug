@@ -11,6 +11,10 @@ block append data
         gameYamlData.push(Object.assign({key, subpage}, subdata[subitem]))
       }
     }
+
+  +pretty-json-script(getyamlobj('genre.yaml'))#data-genre
+  +pretty-json-script(sitemap)#data-sitemap
+  +pretty-json-script(Object.getOwnPropertyNames(categories))#data-categories
   +pretty-json-script(gameYamlData)#data-game-list
 
 block main-section
