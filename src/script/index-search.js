@@ -76,7 +76,7 @@
       descriptionParagraph.classList.add('description', 'details')
 
       for (const property in object) {
-        div.setAttribute(`data-json-${property}`, object[property])
+        div.setAttribute(`data-${property}`, object[property])
       }
     }
   }
