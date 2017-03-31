@@ -102,6 +102,9 @@ for i in (1..6)
 disabled, [disabled], .disabled
   filter brightness(0.5) !important
 
+.details, .description
+  text-align justify
+
 #main-header, #main-section, #main-footer
   width 100%
   display block
@@ -378,6 +381,40 @@ body.show-search-box
     &:not(:empty)
       & + #main
         display none
+
+    &, & .heading, & p
+      display block
+
+    .link
+      &:visited, &:link
+        color red
+
+        &:hover
+          color orange
+
+        &:active
+          color yellow
+
+    & > .no-search-result
+      display block
+      height fun-std-inner-size(4)
+      line-height fun-std-inner-size(4)
+      text-align center
+      vertical-align center
+      font-size 2.5em
+
+    & > :not(.no-search-result)
+      display block
+      padding-left std-square-margin
+      padding-right std-square-margin
+      margin-top std-square-margin
+      margin-bottom std-square-margin
+      overflow hidden
+      background-color std-sidepane-background
+      background-clip content-box
+      width 100%
+      height fun-std-inner-size(3)
+      box-sizing border-box
 
   #main
     left 0px
