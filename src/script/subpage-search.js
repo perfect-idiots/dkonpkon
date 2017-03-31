@@ -12,7 +12,9 @@
     .getElementById('search-button')
     .addEventListener('click', showSearchResult, false)
 
-  searchTextBox.addEventListener('keydown', showSuggestionList, false)
+  for (const type of ['keydown', 'change', 'paste']) {
+    searchTextBox.addEventListener(type, showSuggestionList, false)
+  }
 
   function showSuggestionList () {
     setTimeout(showSearchResult)
