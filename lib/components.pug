@@ -67,4 +67,4 @@ mixin non-flash-subpage-main-game-list(category)
     +main-game-list(category, join(src, 'media', 'video', category))
 
 mixin subpage-script-list(...extra)
-  +script-list(siteroot, 'lib', 'media', 'subpage-search', ...extra)&attributes(attributes)
+  +script-list(siteroot, 'media', 'subpage-search', ...extra)&attributes(attributes)

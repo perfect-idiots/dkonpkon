@@ -8,13 +8,20 @@ block append data
       for (const subitem in subdata) {
         const subpage = parse(yamlfilename).name
         const key = parse(subitem).name
-        gameYamlData.push(Object.assign({key, subpage}, subdata[subitem]))
+        const {name, genre, description} = subdata[subitem]
+        gameYamlData.push({key, subpage, name, genre, description: renderMarkdownIt(description)})
       }
     }
+
+  +pretty-json-script(getyamlobj('genre.yaml'))#data-genre
+  +pretty-json-script(sitemap)#data-sitemap
+  +pretty-json-script(Object.getOwnPropertyNames(categories))#data-subpages
   +pretty-json-script(gameYamlData)#data-game-list
 
 block main-section
-  main#main
+  #search-result.search-result
+
+  main#main.no-side-pane
     input.zoom-out-radio#no-zoomed-article(type = 'radio' name = 'zoom-article' checked hidden)
     each content, category in categories
       -
@@ -35,10 +42,6 @@ block main-section
           p.main-link-container
             a.main-link.link.pointer-cursor.underline(href = siteurl) Go to #{content.title}
           label.zoom-out-button-container(for = 'no-zoomed-article'): .zoom-out-button đóng
-
-  aside#aside
-    - for (let i = 0; i !== 1; ++i)
-      a.recommendation(id = 'recommendation-' + i): article
 
 block append body-script
   +script-list(siteroot, 'index-search')
