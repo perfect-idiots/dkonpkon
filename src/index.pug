@@ -18,6 +18,8 @@ block append data
   +pretty-json-script(gameYamlData)#data-game-list
 
 block main-section
+  #search-result.search-result
+
   main#main
     input.zoom-out-radio#no-zoomed-article(type = 'radio' name = 'zoom-article' checked hidden)
     each content, category in categories
