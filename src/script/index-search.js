@@ -59,7 +59,7 @@
       const anchor = document.createElement('a')
       div.appendChild(anchor)
       anchor.href = `page/${subpage}.html#target-game-item=${key}`
-      anchor.classList.add('link')
+      anchor.classList.add('link', 'hyperlink', 'pointer-cursor')
 
       const heading = document.createElement('h2')
       anchor.appendChild(heading)
