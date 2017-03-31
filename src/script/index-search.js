@@ -54,7 +54,7 @@
 
       const div = document.createElement('div')
       searchResult.appendChild(div)
-      div.setAttribute('json-data', JSON.stringify(object))
+      div.setAttribute('data-json', JSON.stringify(object))
 
       const anchor = document.createElement('a')
       div.appendChild(anchor)
