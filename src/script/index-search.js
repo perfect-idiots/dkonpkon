@@ -73,7 +73,7 @@
 
       const descriptionParagraph = document.createElement('p')
       div.appendChild(descriptionParagraph)
-      descriptionParagraph.textContent = description
+      descriptionParagraph.innerHTML = description
       descriptionParagraph.classList.add('description', 'details')
 
       for (const property in object) {
