@@ -20,7 +20,7 @@ block append data
 block main-section
   #search-result.search-result
 
-  main#main
+  main#main.no-side-pane
     input.zoom-out-radio#no-zoomed-article(type = 'radio' name = 'zoom-article' checked hidden)
     each content, category in categories
       -
@@ -41,10 +41,6 @@ block main-section
           p.main-link-container
             a.main-link.link.pointer-cursor.underline(href = siteurl) Go to #{content.title}
           label.zoom-out-button-container(for = 'no-zoomed-article'): .zoom-out-button đóng
-
-  aside#aside
-    - for (let i = 0; i !== 1; ++i)
-      a.recommendation(id = 'recommendation-' + i): article
 
 block append body-script
   +script-list(siteroot, 'index-search')
