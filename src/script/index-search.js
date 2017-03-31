@@ -40,12 +40,13 @@
       : object => object[filterField]
 
     const filtered = dataGameList.filter(object => !check(getText(getContent(object)), text))
+    searchResult.setAttribute('match-count', filtered.length)
+
     if (!filtered.length) {
       const noSearchResult = document.createElement('p')
       searchResult.appendChild(noSearchResult)
       noSearchResult.classList.add('no-search-result')
       noSearchResult.textContent = `No result for "${searchTextBox.value}"`
-      searchResult.setAttribute('match-count', 0)
       return
     }
 
