@@ -53,9 +53,12 @@
 
     for (const object of filtered) {
       const {key, subpage, name, genre, description} = object
-      const cloned = document.importNode(singleSearchResultTemplate.content, true)
 
-      const div = cloned.firstElementChild
+      const div = document
+        .importNode(singleSearchResultTemplate.content, true)
+        .firstElementChild
+
+      searchResult.appendChild(div)
       div.setAttribute('data-json', JSON.stringify(object))
 
       Object.assign(
@@ -77,8 +80,6 @@
       for (const property in object) {
         div.setAttribute(`data-${property}`, object[property])
       }
-
-      searchResult.appendChild(cloned)
     }
   }
 }).call(window, window)
