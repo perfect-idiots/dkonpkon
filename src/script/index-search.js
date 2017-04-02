@@ -58,15 +58,21 @@
       const div = cloned.firstElementChild
       div.setAttribute('data-json', JSON.stringify(object))
 
-      const anchor = div.querySelector('.link')
-      anchor.textContent = name
-      anchor.href = `page/${subpage}.html#target-game-item=${key}`
+      Object.assign(
+        div.querySelector('.link'),
+        {
+          textContent: name,
+          href: `page/${subpage}.html#target-game-item=${key}`
+        }
+      )
 
-      const genreParagraph = div.querySelector('.genre')
-      genreParagraph.textContent = `Thể loại: ${genre.map(x => dataGenre[x]).join(', ')}`
+      div
+        .querySelector('.genre')
+        .textContent = `Thể loại: ${genre.map(x => dataGenre[x]).join(', ')}`
 
-      const descriptionParagraph = div.querySelector('.description')
-      descriptionParagraph.innerHTML = description
+      div
+        .querySelector('.description')
+        .innerHTML = description
 
       for (const property in object) {
         div.setAttribute(`data-${property}`, object[property])
