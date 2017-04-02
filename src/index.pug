@@ -18,6 +18,12 @@ block append data
   +pretty-json-script(Object.getOwnPropertyNames(categories))#data-subpages
   +pretty-json-script(gameYamlData)#data-game-list
 
+  template#single-search-result-template
+    .single-search-result
+      h2.name.heading.title: a.link.hyperlink.pointer-cursor
+      p.genre
+      p.description.details
+
 block main-section
   #search-result.search-result
 

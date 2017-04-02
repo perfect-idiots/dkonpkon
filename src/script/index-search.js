@@ -3,6 +3,7 @@
   const {document, search: {check}} = window
   const dataGenre = JSON.parse(document.getElementById('data-genre').textContent)
   const dataGameList = JSON.parse(document.getElementById('data-game-list').textContent)
+  const singleSearchResultTemplate = document.getElementById('single-search-result-template')
   const searchTextBox = document.getElementById('search-input')
   const searchResult = document.getElementById('search-result')
   const filterFieldSelect = document.getElementById('filter-field-select')
@@ -53,29 +54,28 @@
     for (const object of filtered) {
       const {key, subpage, name, genre, description} = object
 
-      const div = document.createElement('div')
+      const div = document
+        .importNode(singleSearchResultTemplate.content, true)
+        .firstElementChild
+
       searchResult.appendChild(div)
       div.setAttribute('data-json', JSON.stringify(object))
 
-      const heading = document.createElement('h2')
-      div.appendChild(heading)
-      heading.classList.add('name', 'heading', 'title')
+      Object.assign(
+        div.querySelector('.link'),
+        {
+          textContent: name,
+          href: `page/${subpage}.html#target-game-item=${key}`
+        }
+      )
 
-      const anchor = document.createElement('a')
-      heading.appendChild(anchor)
-      anchor.textContent = name
-      anchor.href = `page/${subpage}.html#target-game-item=${key}`
-      anchor.classList.add('link', 'hyperlink', 'pointer-cursor')
+      div
+        .querySelector('.genre')
+        .textContent = `Thể loại: ${genre.map(x => dataGenre[x]).join(', ')}`
 
-      const genreParagraph = document.createElement('p')
-      div.appendChild(genreParagraph)
-      genreParagraph.textContent = `Thể loại: ${genre.map(x => dataGenre[x]).join(', ')}`
-      genreParagraph.classList.add('genre')
-
-      const descriptionParagraph = document.createElement('p')
-      div.appendChild(descriptionParagraph)
-      descriptionParagraph.innerHTML = description
-      descriptionParagraph.classList.add('description', 'details')
+      div
+        .querySelector('.description')
+        .innerHTML = description
 
       for (const property in object) {
         div.setAttribute(`data-${property}`, object[property])
